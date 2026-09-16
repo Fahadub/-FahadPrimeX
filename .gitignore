@@ -1,0 +1,7 @@
+model.safetensors.part*
+models/*/model.safetensors
+models/*/*.part*
+models/*/*.tmp
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,8904 @@
+{
+ "classes": {
+  "AONode": {
+   "base": "LightingNode",
+   "methods": [
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/AONode.js"
+   ]
+  },
+  "AmbientLight": {
+   "base": "Light",
+   "methods": [],
+   "files": [
+    "src/lights/AmbientLight.js"
+   ]
+  },
+  "AmbientLightNode": {
+   "base": "AnalyticLightNode",
+   "methods": [
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/AmbientLightNode.js"
+   ]
+  },
+  "AnalyticLightNode": {
+   "base": "LightingNode",
+   "methods": [
+    "dispose",
+    "disposeShadow",
+    "getHash",
+    "getLightVector",
+    "setup",
+    "setupDirect",
+    "setupDirectRectArea",
+    "setupShadow",
+    "setupShadowNode",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/lighting/AnalyticLightNode.js"
+   ]
+  },
+  "Animation": {
+   "base": null,
+   "methods": [
+    "dispose",
+    "getAnimationLoop",
+    "getContext",
+    "setAnimationLoop",
+    "setContext",
+    "start",
+    "stop",
+    "update"
+   ],
+   "files": [
+    "src/renderers/common/Animation.js"
+   ]
+  },
+  "AnimationAction": {
+   "base": null,
+   "methods": [
+    "_scheduleFading",
+    "_setEndings",
+    "_update",
+    "_updateTime",
+    "_updateTimeScale",
+    "_updateWeight",
+    "crossFadeFrom",
+    "crossFadeTo",
+    "fadeIn",
+    "fadeOut",
+    "getClip",
+    "getEffectiveTimeScale",
+    "getEffectiveWeight",
+    "getMixer",
+    "getRoot",
+    "halt",
+    "isRunning",
+    "isScheduled",
+    "play",
+    "reset",
+    "setDuration",
+    "setEffectiveTimeScale",
+    "setEffectiveWeight",
+    "setLoop",
+    "startAt",
+    "stop",
+    "stopFading",
+    "stopWarping",
+    "syncWith",
+    "warp"
+   ],
+   "files": [
+    "src/animation/AnimationAction.js"
+   ]
+  },
+  "AnimationClip": {
+   "base": null,
+   "methods": [
+    "CreateClipsFromMorphTargetSequences",
+    "CreateFromMorphTargetSequence",
+    "clone",
+    "findByName",
+    "optimize",
+    "parse",
+    "resetDuration",
+    "toJSON",
+    "trim",
+    "validate"
+   ],
+   "files": [
+    "src/animation/AnimationClip.js"
+   ]
+  },
+  "AnimationLoader": {
+   "base": "Loader",
+   "methods": [
+    "error",
+    "load",
+    "onError",
+    "onLoad",
+    "parse"
+   ],
+   "files": [
+    "src/loaders/AnimationLoader.js"
+   ]
+  },
+  "AnimationMixer": {
+   "base": "EventDispatcher",
+   "methods": [
+    "_activateAction",
+    "_addInactiveAction",
+    "_addInactiveBinding",
+    "_bindAction",
+    "_deactivateAction",
+    "_initMemoryManager",
+    "_isActiveAction",
+    "_lendAction",
+    "_lendBinding",
+    "_lendControlInterpolant",
+    "_removeInactiveAction",
+    "_removeInactiveBinding",
+    "_removeInactiveBindingsForAction",
+    "_takeBackAction",
+    "_takeBackBinding",
+    "_takeBackControlInterpolant",
+    "clipAction",
+    "existingAction",
+    "getRoot",
+    "inUse",
+    "setTime",
+    "stopAllAction",
+    "total",
+    "uncacheAction",
+    "uncacheClip",
+    "uncacheRoot",
+    "update"
+   ],
+   "files": [
+    "src/animation/AnimationMixer.js"
+   ]
+  },
+  "AnimationObjectGroup": {
+   "base": null,
+   "methods": [
+    "add",
+    "bindingsPerObject",
+    "error",
+    "inUse",
+    "remove",
+    "subscribe_",
+    "total",
+    "uncache",
+    "unsubscribe_"
+   ],
+   "files": [
+    "src/animation/AnimationObjectGroup.js"
+   ]
+  },
+  "AnimationUtils": {
+   "base": null,
+   "methods": [
+    "convertArray",
+    "flattenJSON",
+    "getKeyframeOrder",
+    "hasTangents",
+    "isTypedArray",
+    "makeClipAdditive",
+    "sortedArray",
+    "subclip"
+   ],
+   "files": [
+    "src/animation/AnimationUtils.js"
+   ]
+  },
+  "ArcCurve": {
+   "base": "EllipseCurve",
+   "methods": [],
+   "files": [
+    "src/extras/curves/ArcCurve.js"
+   ]
+  },
+  "ArrayCamera": {
+   "base": "PerspectiveCamera",
+   "methods": [],
+   "files": [
+    "src/cameras/ArrayCamera.js"
+   ]
+  },
+  "ArrayElementNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "getMemberType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/ArrayElementNode.js"
+   ]
+  },
+  "ArrayNode": {
+   "base": "TempNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "getArrayCount",
+    "getElementType",
+    "getMemberType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/ArrayNode.js"
+   ]
+  },
+  "ArrowHelper": {
+   "base": "Object3D",
+   "methods": [
+    "copy",
+    "dispose",
+    "setColor",
+    "setDirection",
+    "setLength"
+   ],
+   "files": [
+    "src/helpers/ArrowHelper.js"
+   ]
+  },
+  "AssignNode": {
+   "base": "TempNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "hasDependencies",
+    "needsSplitAssign",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/AssignNode.js"
+   ]
+  },
+  "AtomicFunctionNode": {
+   "base": "Node",
+   "methods": [
+    "ATOMIC_ADD",
+    "ATOMIC_AND",
+    "ATOMIC_LOAD",
+    "ATOMIC_MAX",
+    "ATOMIC_MIN",
+    "ATOMIC_OR",
+    "ATOMIC_STORE",
+    "ATOMIC_SUB",
+    "ATOMIC_XOR",
+    "error",
+    "generate",
+    "generateNodeType",
+    "getInputType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/gpgpu/AtomicFunctionNode.js"
+   ]
+  },
+  "AttributeNode": {
+   "base": "Node",
+   "methods": [
+    "deserialize",
+    "generate",
+    "generateNodeType",
+    "getAttributeName",
+    "getHash",
+    "serialize",
+    "setAttributeName",
+    "type",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/core/AttributeNode.js"
+   ]
+  },
+  "Attributes": {
+   "base": "DataMap",
+   "methods": [
+    "_getBufferAttribute",
+    "update"
+   ],
+   "files": [
+    "src/renderers/common/Attributes.js"
+   ]
+  },
+  "Audio": {
+   "base": "Object3D",
+   "methods": [
+    "clone",
+    "connect",
+    "copy",
+    "disconnect",
+    "getDetune",
+    "getFilter",
+    "getFilters",
+    "getLoop",
+    "getOutput",
+    "getPlaybackRate",
+    "getVolume",
+    "onEnded",
+    "pause",
+    "play",
+    "setBuffer",
+    "setDetune",
+    "setFilter",
+    "setFilters",
+    "setLoop",
+    "setLoopEnd",
+    "setLoopStart",
+    "setMediaElementSource",
+    "setMediaStreamSource",
+    "setNodeSource",
+    "setPlaybackRate",
+    "setVolume",
+    "stop",
+    "warn"
+   ],
+   "files": [
+    "src/audio/Audio.js"
+   ]
+  },
+  "AudioAnalyser": {
+   "base": null,
+   "methods": [
+    "getAverageFrequency",
+    "getFrequencyData"
+   ],
+   "files": [
+    "src/audio/AudioAnalyser.js"
+   ]
+  },
+  "AudioContext": {
+   "base": null,
+   "methods": [
+    "getContext",
+    "setContext"
+   ],
+   "files": [
+    "src/audio/AudioContext.js"
+   ]
+  },
+  "AudioListener": {
+   "base": "Object3D",
+   "methods": [
+    "getFilter",
+    "getInput",
+    "getMasterVolume",
+    "removeFilter",
+    "setFilter",
+    "setMasterVolume",
+    "updateMatrixWorld"
+   ],
+   "files": [
+    "src/audio/AudioListener.js"
+   ]
+  },
+  "AudioLoader": {
+   "base": "Loader",
+   "methods": [
+    "error",
+    "handleError",
+    "load",
+    "onError",
+    "onLoad"
+   ],
+   "files": [
+    "src/loaders/AudioLoader.js"
+   ]
+  },
+  "AxesHelper": {
+   "base": "LineSegments",
+   "methods": [
+    "dispose",
+    "setColors"
+   ],
+   "files": [
+    "src/helpers/AxesHelper.js"
+   ]
+  },
+  "Backend": {
+   "base": null,
+   "methods": [
+    "_getQueryPool",
+    "beginCompute",
+    "beginRender",
+    "compute",
+    "coordinateSystem",
+    "copyFramebufferToTexture",
+    "copyTextureToBuffer",
+    "copyTextureToTexture",
+    "createAttribute",
+    "createBindings",
+    "createComputePipeline",
+    "createDefaultTexture",
+    "createIndexAttribute",
+    "createNodeBuilder",
+    "createProgram",
+    "createRenderPipeline",
+    "createStorageAttribute",
+    "createTexture",
+    "createUniformBuffer",
+    "deleteBindGroupData",
+    "destroyAttribute",
+    "destroyProgram",
+    "destroySampler",
+    "destroyTexture",
+    "destroyUniformBuffer",
+    "dispose",
+    "draw",
+    "finishCompute",
+    "finishRender",
+    "generateMipmaps",
+    "get",
+    "getArrayBufferAsync",
+    "getClearColor",
+    "getContext",
+    "getDomElement",
+    "getDrawingBufferSize",
+    "getRenderCacheKey",
+    "getTimestamp",
+    "getTimestampFrames",
+    "getTimestampUID",
+    "has",
+    "hasCompatibility",
+    "hasFeature",
+    "hasFeatureAsync",
+    "hasTimestamp",
+    "hasTimestampQuery",
+    "init",
+    "initRenderTarget",
+    "isOccluded",
+    "needsRenderUpdate",
+    "resetState",
+    "resolveTimestampsAsync",
+    "set",
+    "setScissorTest",
+    "setXRTarget",
+    "updateAttribute",
+    "updateBinding",
+    "updateBindings",
+    "updateSampler",
+    "updateSize",
+    "updateTexture",
+    "updateTimeStampUID",
+    "updateViewport",
+    "warnOnce"
+   ],
+   "files": [
+    "src/renderers/common/Backend.js"
+   ]
+  },
+  "Background": {
+   "base": "DataMap",
+   "methods": [
+    "error",
+    "update"
+   ],
+   "files": [
+    "src/renderers/common/Background.js"
+   ]
+  },
+  "BarrierNode": {
+   "base": "Node",
+   "methods": [
+    "error",
+    "generate",
+    "setup"
+   ],
+   "files": [
+    "src/nodes/gpgpu/BarrierNode.js"
+   ]
+  },
+  "BasicEnvironmentNode": {
+   "base": "LightingNode",
+   "methods": [
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/BasicEnvironmentNode.js"
+   ]
+  },
+  "BasicLightMapNode": {
+   "base": "LightingNode",
+   "methods": [
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/BasicLightMapNode.js"
+   ]
+  },
+  "BasicLightingModel": {
+   "base": "LightingModel",
+   "methods": [
+    "finish",
+    "indirect",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/functions/BasicLightingModel.js"
+   ]
+  },
+  "BasicNodeLibrary": {
+   "base": "NodeLibrary",
+   "methods": [],
+   "files": [
+    "src/renderers/webgpu/nodes/BasicNodeLibrary.js"
+   ]
+  },
+  "BatchedMesh": {
+   "base": "Mesh",
+   "methods": [
+    "_initColorsTexture",
+    "_initIndirectTexture",
+    "_initMatricesTexture",
+    "_initializeGeometry",
+    "_validateGeometry",
+    "addGeometry",
+    "addInstance",
+    "computeBoundingBox",
+    "computeBoundingSphere",
+    "copy",
+    "copyArrayContents",
+    "copyAttributeData",
+    "deleteGeometry",
+    "deleteInstance",
+    "dispose",
+    "getBoundingBoxAt",
+    "getBoundingSphereAt",
+    "getColorAt",
+    "getGeometryIdAt",
+    "getGeometryRangeAt",
+    "getMatrixAt",
+    "getVisibleAt",
+    "instanceCount",
+    "maxInstanceCount",
+    "onBeforeRender",
+    "onBeforeShadow",
+    "optimize",
+    "raycast",
+    "setColorAt",
+    "setCustomSort",
+    "setGeometryAt",
+    "setGeometryIdAt",
+    "setGeometrySize",
+    "setInstanceCount",
+    "setMatrixAt",
+    "setVisibleAt",
+    "unusedIndexCount",
+    "unusedVertexCount",
+    "validateGeometryId",
+    "validateInstanceId"
+   ],
+   "files": [
+    "src/objects/BatchedMesh.js"
+   ]
+  },
+  "BezierInterpolant": {
+   "base": "Interpolant",
+   "methods": [
+    "interpolate_"
+   ],
+   "files": [
+    "src/math/interpolants/BezierInterpolant.js"
+   ]
+  },
+  "BindGroup": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/renderers/common/BindGroup.js"
+   ]
+  },
+  "BindGroupLayout": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/renderers/webgpu/utils/WebGPUBindingUtils.js"
+   ]
+  },
+  "Binding": {
+   "base": null,
+   "methods": [
+    "clone",
+    "getVisibility",
+    "setVisibility"
+   ],
+   "files": [
+    "src/renderers/common/Binding.js"
+   ]
+  },
+  "Bindings": {
+   "base": "DataMap",
+   "methods": [
+    "_createBindings",
+    "_destroyBindings",
+    "_update",
+    "_updateBindings",
+    "deleteForCompute",
+    "deleteForRender",
+    "getForCompute",
+    "getForRender",
+    "updateForCompute",
+    "updateForRender",
+    "updateSharedForRender"
+   ],
+   "files": [
+    "src/renderers/common/Bindings.js"
+   ]
+  },
+  "BitcastNode": {
+   "base": "TempNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/math/BitcastNode.js"
+   ]
+  },
+  "BitcountNode": {
+   "base": "MathNode",
+   "methods": [
+    "COUNT_LEADING_ZEROS",
+    "COUNT_ONE_BITS",
+    "COUNT_TRAILING_ZEROS",
+    "If",
+    "_createLeadingZerosBaseLayout",
+    "_createMainLayout",
+    "_createOneBitsBaseLayout",
+    "_createTrailingZerosBaseLayout",
+    "_resolveElementType",
+    "_returnDataNode",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/math/BitcountNode.js"
+   ]
+  },
+  "BlendMode": {
+   "base": null,
+   "methods": [
+    "clone",
+    "copy"
+   ],
+   "files": [
+    "src/renderers/common/BlendMode.js"
+   ]
+  },
+  "Bone": {
+   "base": "Object3D",
+   "methods": [],
+   "files": [
+    "src/objects/Bone.js"
+   ]
+  },
+  "BooleanKeyframeTrack": {
+   "base": "KeyframeTrack",
+   "methods": [],
+   "files": [
+    "src/animation/tracks/BooleanKeyframeTrack.js"
+   ]
+  },
+  "Box2": {
+   "base": null,
+   "methods": [
+    "clampPoint",
+    "clone",
+    "containsBox",
+    "containsPoint",
+    "copy",
+    "distanceToPoint",
+    "equals",
+    "expandByPoint",
+    "expandByScalar",
+    "expandByVector",
+    "getCenter",
+    "getParameter",
+    "getSize",
+    "intersect",
+    "intersectsBox",
+    "isEmpty",
+    "makeEmpty",
+    "set",
+    "setFromCenterAndSize",
+    "setFromPoints",
+    "translate",
+    "union"
+   ],
+   "files": [
+    "src/math/Box2.js"
+   ]
+  },
+  "Box3": {
+   "base": null,
+   "methods": [
+    "applyMatrix4",
+    "clampPoint",
+    "clone",
+    "containsBox",
+    "containsPoint",
+    "copy",
+    "distanceToPoint",
+    "equals",
+    "expandByObject",
+    "expandByPoint",
+    "expandByScalar",
+    "expandByVector",
+    "fromJSON",
+    "getBoundingSphere",
+    "getCenter",
+    "getParameter",
+    "getSize",
+    "intersect",
+    "intersectsBox",
+    "intersectsPlane",
+    "intersectsSphere",
+    "intersectsTriangle",
+    "isEmpty",
+    "makeEmpty",
+    "set",
+    "setFromArray",
+    "setFromBufferAttribute",
+    "setFromCenterAndSize",
+    "setFromObject",
+    "setFromPoints",
+    "toJSON",
+    "translate",
+    "union"
+   ],
+   "files": [
+    "src/math/Box3.js"
+   ]
+  },
+  "Box3Helper": {
+   "base": "LineSegments",
+   "methods": [
+    "dispose",
+    "updateMatrixWorld"
+   ],
+   "files": [
+    "src/helpers/Box3Helper.js"
+   ]
+  },
+  "BoxGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "buildPlane",
+    "copy",
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/BoxGeometry.js"
+   ]
+  },
+  "BoxHelper": {
+   "base": "LineSegments",
+   "methods": [
+    "copy",
+    "dispose",
+    "setFromObject",
+    "update"
+   ],
+   "files": [
+    "src/helpers/BoxHelper.js"
+   ]
+  },
+  "Buffer": {
+   "base": "Binding",
+   "methods": [
+    "addUpdateRange",
+    "buffer",
+    "byteLength",
+    "clearUpdateRanges",
+    "release",
+    "update",
+    "updateRanges"
+   ],
+   "files": [
+    "src/renderers/common/Buffer.js"
+   ]
+  },
+  "BufferAttribute": {
+   "base": "EventDispatcher",
+   "methods": [
+    "addUpdateRange",
+    "applyMatrix3",
+    "applyMatrix4",
+    "applyNormalMatrix",
+    "clearUpdateRanges",
+    "clone",
+    "copy",
+    "copyArray",
+    "copyAt",
+    "dispose",
+    "getComponent",
+    "getW",
+    "getX",
+    "getY",
+    "getZ",
+    "needsUpdate",
+    "onUpload",
+    "onUploadCallback",
+    "set",
+    "setComponent",
+    "setUsage",
+    "setW",
+    "setX",
+    "setXY",
+    "setXYZ",
+    "setXYZW",
+    "setY",
+    "setZ",
+    "toJSON",
+    "transformDirection"
+   ],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "BufferAttributeNode": {
+   "base": "InputNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "getHash",
+    "getInputType",
+    "setInstanced",
+    "setUsage",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/BufferAttributeNode.js"
+   ]
+  },
+  "BufferGeometry": {
+   "base": "EventDispatcher",
+   "methods": [
+    "addGroup",
+    "applyMatrix4",
+    "applyQuaternion",
+    "center",
+    "clearGroups",
+    "clone",
+    "computeBoundingBox",
+    "computeBoundingSphere",
+    "computeTangents",
+    "computeVertexNormals",
+    "copy",
+    "deleteAttribute",
+    "dispose",
+    "error",
+    "getAttribute",
+    "getIndex",
+    "getIndirect",
+    "handleTriangle",
+    "handleVertex",
+    "hasAttribute",
+    "lookAt",
+    "normalizeNormals",
+    "rotateX",
+    "rotateY",
+    "rotateZ",
+    "scale",
+    "setAttribute",
+    "setDrawRange",
+    "setFromPoints",
+    "setIndex",
+    "setIndirect",
+    "toJSON",
+    "toNonIndexed",
+    "translate",
+    "warn"
+   ],
+   "files": [
+    "src/core/BufferGeometry.js"
+   ]
+  },
+  "BufferGeometryLoader": {
+   "base": "Loader",
+   "methods": [
+    "error",
+    "load",
+    "onError",
+    "onLoad",
+    "parse"
+   ],
+   "files": [
+    "src/loaders/BufferGeometryLoader.js"
+   ]
+  },
+  "BufferNode": {
+   "base": "UniformNode",
+   "methods": [
+    "addUpdateRange",
+    "clearUpdateRanges",
+    "getElementType",
+    "getInputType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/BufferNode.js"
+   ]
+  },
+  "BuiltinNode": {
+   "base": "Node",
+   "methods": [
+    "generate"
+   ],
+   "files": [
+    "src/nodes/accessors/BuiltinNode.js"
+   ]
+  },
+  "BumpMapNode": {
+   "base": "TempNode",
+   "methods": [
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/display/BumpMapNode.js"
+   ]
+  },
+  "BundleGroup": {
+   "base": "Group",
+   "methods": [
+    "needsUpdate"
+   ],
+   "files": [
+    "src/renderers/common/BundleGroup.js"
+   ]
+  },
+  "BypassNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/BypassNode.js"
+   ]
+  },
+  "Camera": {
+   "base": "Object3D",
+   "methods": [
+    "clone",
+    "copy",
+    "getWorldDirection",
+    "reversedDepth",
+    "updateMatrixWorld",
+    "updateWorldMatrix"
+   ],
+   "files": [
+    "src/cameras/Camera.js"
+   ]
+  },
+  "CameraHelper": {
+   "base": "LineSegments",
+   "methods": [
+    "addLine",
+    "addPoint",
+    "dispose",
+    "setColors",
+    "setPoint",
+    "update"
+   ],
+   "files": [
+    "src/helpers/CameraHelper.js"
+   ]
+  },
+  "CanvasTarget": {
+   "base": "EventDispatcher",
+   "methods": [
+    "_dispatchResize",
+    "dispose",
+    "getDrawingBufferSize",
+    "getPixelRatio",
+    "getScissor",
+    "getScissorTest",
+    "getSize",
+    "getViewport",
+    "setDrawingBufferSize",
+    "setPixelRatio",
+    "setScissor",
+    "setScissorTest",
+    "setSize",
+    "setViewport"
+   ],
+   "files": [
+    "src/renderers/common/CanvasTarget.js"
+   ]
+  },
+  "CanvasTexture": {
+   "base": "Texture",
+   "methods": [],
+   "files": [
+    "src/textures/CanvasTexture.js"
+   ]
+  },
+  "CapsuleGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/CapsuleGeometry.js"
+   ]
+  },
+  "CatmullRomCurve3": {
+   "base": "Curve",
+   "methods": [
+    "copy",
+    "fromJSON",
+    "getPoint",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/curves/CatmullRomCurve3.js"
+   ]
+  },
+  "ChainMap": {
+   "base": null,
+   "methods": [
+    "_getWeakMap",
+    "get",
+    "set"
+   ],
+   "files": [
+    "src/renderers/common/ChainMap.js"
+   ]
+  },
+  "CircleGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/CircleGeometry.js"
+   ]
+  },
+  "ClippingContext": {
+   "base": null,
+   "methods": [
+    "getGroupContext",
+    "projectPlanes",
+    "unionClippingCount",
+    "update",
+    "updateGlobal"
+   ],
+   "files": [
+    "src/renderers/common/ClippingContext.js"
+   ]
+  },
+  "ClippingGroup": {
+   "base": "Group",
+   "methods": [],
+   "files": [
+    "src/objects/ClippingGroup.js"
+   ]
+  },
+  "ClippingNode": {
+   "base": "Node",
+   "methods": [
+    "Loop",
+    "setup",
+    "setupAlphaToCoverage",
+    "setupDefault",
+    "setupHardwareClipping",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/ClippingNode.js"
+   ]
+  },
+  "Clock": {
+   "base": null,
+   "methods": [
+    "getDelta",
+    "getElapsedTime",
+    "start",
+    "stop",
+    "warn"
+   ],
+   "files": [
+    "src/core/Clock.js"
+   ]
+  },
+  "CodeNode": {
+   "base": "Node",
+   "methods": [
+    "deserialize",
+    "generate",
+    "getIncludes",
+    "serialize",
+    "setIncludes",
+    "type"
+   ],
+   "files": [
+    "src/nodes/code/CodeNode.js"
+   ]
+  },
+  "Color": {
+   "base": null,
+   "methods": [
+    "add",
+    "addColors",
+    "addScalar",
+    "applyMatrix3",
+    "clone",
+    "convertLinearToSRGB",
+    "convertSRGBToLinear",
+    "copy",
+    "copyLinearToSRGB",
+    "copySRGBToLinear",
+    "equals",
+    "fromArray",
+    "fromBufferAttribute",
+    "getHSL",
+    "getHex",
+    "getHexString",
+    "getRGB",
+    "getStyle",
+    "handleAlpha",
+    "lerp",
+    "lerpColors",
+    "lerpHSL",
+    "multiply",
+    "multiplyScalar",
+    "offsetHSL",
+    "parseFloat",
+    "parseInt",
+    "set",
+    "setColorName",
+    "setFromVector3",
+    "setHSL",
+    "setHex",
+    "setRGB",
+    "setScalar",
+    "setStyle",
+    "sub",
+    "toArray",
+    "toJSON",
+    "warn"
+   ],
+   "files": [
+    "src/math/Color.js"
+   ]
+  },
+  "Color4": {
+   "base": "Color",
+   "methods": [
+    "clone",
+    "copy",
+    "set"
+   ],
+   "files": [
+    "src/renderers/common/Color4.js"
+   ]
+  },
+  "ColorKeyframeTrack": {
+   "base": "KeyframeTrack",
+   "methods": [],
+   "files": [
+    "src/animation/tracks/ColorKeyframeTrack.js"
+   ]
+  },
+  "ColorNodeUniform": {
+   "base": "ColorUniform",
+   "methods": [
+    "getType",
+    "getValue"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeUniform.js"
+   ]
+  },
+  "ColorSpaceNode": {
+   "base": "TempNode",
+   "methods": [
+    "mat3",
+    "resolveColorSpace",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/display/ColorSpaceNode.js"
+   ]
+  },
+  "ColorUniform": {
+   "base": "Uniform",
+   "methods": [],
+   "files": [
+    "src/renderers/common/Uniform.js"
+   ]
+  },
+  "Composite": {
+   "base": null,
+   "methods": [
+    "bind",
+    "getValue",
+    "setValue",
+    "unbind"
+   ],
+   "files": [
+    "src/animation/PropertyBinding.js"
+   ]
+  },
+  "CompressedArrayTexture": {
+   "base": "CompressedTexture",
+   "methods": [
+    "addLayerUpdate",
+    "clearLayerUpdates",
+    "copy"
+   ],
+   "files": [
+    "src/textures/CompressedArrayTexture.js"
+   ]
+  },
+  "CompressedCubeTexture": {
+   "base": "CompressedTexture",
+   "methods": [],
+   "files": [
+    "src/textures/CompressedCubeTexture.js"
+   ]
+  },
+  "CompressedTexture": {
+   "base": "Texture",
+   "methods": [],
+   "files": [
+    "src/textures/CompressedTexture.js"
+   ]
+  },
+  "CompressedTextureLoader": {
+   "base": "Loader",
+   "methods": [
+    "load",
+    "loadTexture"
+   ],
+   "files": [
+    "src/loaders/CompressedTextureLoader.js"
+   ]
+  },
+  "ComputeBuiltinNode": {
+   "base": "Node",
+   "methods": [
+    "deserialize",
+    "generate",
+    "generateNodeType",
+    "getBuiltinName",
+    "getHash",
+    "hasBuiltin",
+    "serialize",
+    "setBuiltinName",
+    "type",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/gpgpu/ComputeBuiltinNode.js"
+   ]
+  },
+  "ComputeNode": {
+   "base": "Node",
+   "methods": [
+    "error",
+    "generate",
+    "getUpdateBeforeType",
+    "label",
+    "onInit",
+    "setName",
+    "setup",
+    "type",
+    "updateBefore",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/gpgpu/ComputeNode.js"
+   ]
+  },
+  "ComputePipeline": {
+   "base": "Pipeline",
+   "methods": [],
+   "files": [
+    "src/renderers/common/ComputePipeline.js"
+   ]
+  },
+  "ConditionalNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "setup",
+    "type",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/math/ConditionalNode.js"
+   ]
+  },
+  "ConeGeometry": {
+   "base": "CylinderGeometry",
+   "methods": [
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/ConeGeometry.js"
+   ]
+  },
+  "ConstNode": {
+   "base": "InputNode",
+   "methods": [
+    "generate",
+    "generateConst",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/ConstNode.js"
+   ]
+  },
+  "ContextNode": {
+   "base": "Node",
+   "methods": [
+    "analyze",
+    "generate",
+    "generateNodeType",
+    "getFlowContextData",
+    "getMemberType",
+    "getScope",
+    "setup",
+    "type",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/core/ContextNode.js"
+   ]
+  },
+  "Controls": {
+   "base": "EventDispatcher",
+   "methods": [
+    "connect",
+    "disconnect",
+    "dispose",
+    "update"
+   ],
+   "files": [
+    "src/extras/Controls.js"
+   ]
+  },
+  "ConvertNode": {
+   "base": "Node",
+   "methods": [
+    "deserialize",
+    "generate",
+    "generateNodeType",
+    "serialize",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/ConvertNode.js"
+   ]
+  },
+  "CubeCamera": {
+   "base": "Object3D",
+   "methods": [
+    "update",
+    "updateCoordinateSystem"
+   ],
+   "files": [
+    "src/cameras/CubeCamera.js"
+   ]
+  },
+  "CubeDepthTexture": {
+   "base": "DepthTexture",
+   "methods": [
+    "images"
+   ],
+   "files": [
+    "src/textures/CubeDepthTexture.js"
+   ]
+  },
+  "CubeMapNode": {
+   "base": "TempNode",
+   "methods": [
+    "mapTextureMapping",
+    "setup",
+    "type",
+    "updateBefore"
+   ],
+   "files": [
+    "src/nodes/utils/CubeMapNode.js"
+   ]
+  },
+  "CubeRenderTarget": {
+   "base": "RenderTarget",
+   "methods": [
+    "clear",
+    "fromEquirectangularTexture"
+   ],
+   "files": [
+    "src/renderers/common/CubeRenderTarget.js"
+   ]
+  },
+  "CubeTexture": {
+   "base": "Texture",
+   "methods": [
+    "images"
+   ],
+   "files": [
+    "src/textures/CubeTexture.js"
+   ]
+  },
+  "CubeTextureLoader": {
+   "base": "Loader",
+   "methods": [
+    "load",
+    "loadTexture"
+   ],
+   "files": [
+    "src/loaders/CubeTextureLoader.js"
+   ]
+  },
+  "CubeTextureNode": {
+   "base": "TextureNode",
+   "methods": [
+    "error",
+    "generateUV",
+    "getDefaultUV",
+    "getInputType",
+    "setUpdateMatrix",
+    "setupUV",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/CubeTextureNode.js"
+   ]
+  },
+  "CubicBezierCurve": {
+   "base": "Curve",
+   "methods": [
+    "CubicBezier",
+    "copy",
+    "fromJSON",
+    "getPoint",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/curves/CubicBezierCurve.js"
+   ]
+  },
+  "CubicBezierCurve3": {
+   "base": "Curve",
+   "methods": [
+    "CubicBezier",
+    "copy",
+    "fromJSON",
+    "getPoint",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/curves/CubicBezierCurve3.js"
+   ]
+  },
+  "CubicInterpolant": {
+   "base": "Interpolant",
+   "methods": [
+    "interpolate_",
+    "intervalChanged_"
+   ],
+   "files": [
+    "src/math/interpolants/CubicInterpolant.js"
+   ]
+  },
+  "Curve": {
+   "base": null,
+   "methods": [
+    "clone",
+    "computeFrenetFrames",
+    "copy",
+    "fromJSON",
+    "getLength",
+    "getLengths",
+    "getPoint",
+    "getPointAt",
+    "getPoints",
+    "getSpacedPoints",
+    "getTangent",
+    "getTangentAt",
+    "getUtoTmapping",
+    "toJSON",
+    "updateArcLengths",
+    "warn"
+   ],
+   "files": [
+    "src/extras/core/Curve.js"
+   ]
+  },
+  "CurvePath": {
+   "base": "Curve",
+   "methods": [
+    "add",
+    "closePath",
+    "copy",
+    "fromJSON",
+    "getCurveLengths",
+    "getLength",
+    "getPoint",
+    "getPoints",
+    "getSpacedPoints",
+    "toJSON",
+    "updateArcLengths"
+   ],
+   "files": [
+    "src/extras/core/CurvePath.js"
+   ]
+  },
+  "CylinderGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "fromJSON",
+    "generateTorso"
+   ],
+   "files": [
+    "src/geometries/CylinderGeometry.js"
+   ]
+  },
+  "Cylindrical": {
+   "base": null,
+   "methods": [
+    "clone",
+    "copy",
+    "set",
+    "setFromCartesianCoords",
+    "setFromVector3"
+   ],
+   "files": [
+    "src/math/Cylindrical.js"
+   ]
+  },
+  "Data3DTexture": {
+   "base": "Texture",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/textures/Data3DTexture.js"
+   ]
+  },
+  "DataArrayTexture": {
+   "base": "Texture",
+   "methods": [
+    "addLayerUpdate",
+    "clearLayerUpdates",
+    "copy"
+   ],
+   "files": [
+    "src/textures/DataArrayTexture.js"
+   ]
+  },
+  "DataMap": {
+   "base": null,
+   "methods": [
+    "dispose",
+    "get",
+    "has"
+   ],
+   "files": [
+    "src/renderers/common/DataMap.js"
+   ]
+  },
+  "DataTexture": {
+   "base": "Texture",
+   "methods": [],
+   "files": [
+    "src/textures/DataTexture.js"
+   ]
+  },
+  "DataTextureLoader": {
+   "base": "Loader",
+   "methods": [
+    "_applyTexData",
+    "createDataTexture",
+    "error",
+    "load",
+    "onError"
+   ],
+   "files": [
+    "src/loaders/DataTextureLoader.js"
+   ]
+  },
+  "DataUtils": {
+   "base": null,
+   "methods": [
+    "fromHalfFloat",
+    "toHalfFloat"
+   ],
+   "files": [
+    "src/extras/DataUtils.js"
+   ]
+  },
+  "DebugNode": {
+   "base": "TempNode",
+   "methods": [
+    "analyze",
+    "callback",
+    "generate",
+    "generateNodeType",
+    "log",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/DebugNode.js"
+   ]
+  },
+  "DepthTexture": {
+   "base": "Texture",
+   "methods": [
+    "copy",
+    "toJSON"
+   ],
+   "files": [
+    "src/textures/DepthTexture.js"
+   ]
+  },
+  "DirectRenderPipeline": {
+   "base": "RenderPipeline",
+   "methods": [
+    "_getBackgroundNode",
+    "_update",
+    "_updateContext",
+    "render",
+    "renderOutput"
+   ],
+   "files": [
+    "src/renderers/common/DirectRenderPipeline.js"
+   ]
+  },
+  "DirectionalLight": {
+   "base": "Light",
+   "methods": [
+    "copy",
+    "dispose",
+    "toJSON"
+   ],
+   "files": [
+    "src/lights/DirectionalLight.js"
+   ]
+  },
+  "DirectionalLightHelper": {
+   "base": "Object3D",
+   "methods": [
+    "dispose",
+    "update"
+   ],
+   "files": [
+    "src/helpers/DirectionalLightHelper.js"
+   ]
+  },
+  "DirectionalLightNode": {
+   "base": "AnalyticLightNode",
+   "methods": [
+    "setupDirect",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/DirectionalLightNode.js"
+   ]
+  },
+  "DirectionalLightShadow": {
+   "base": "LightShadow",
+   "methods": [],
+   "files": [
+    "src/lights/DirectionalLightShadow.js"
+   ]
+  },
+  "DiscreteInterpolant": {
+   "base": "Interpolant",
+   "methods": [
+    "interpolate_"
+   ],
+   "files": [
+    "src/math/interpolants/DiscreteInterpolant.js"
+   ]
+  },
+  "DodecahedronGeometry": {
+   "base": "PolyhedronGeometry",
+   "methods": [
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/DodecahedronGeometry.js"
+   ]
+  },
+  "DualAttributeData": {
+   "base": null,
+   "methods": [
+    "bufferGPU",
+    "id",
+    "switchBuffers",
+    "transformBuffer"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/utils/WebGLAttributeUtils.js"
+   ]
+  },
+  "Earcut": {
+   "base": null,
+   "methods": [
+    "triangulate"
+   ],
+   "files": [
+    "src/extras/Earcut.js"
+   ]
+  },
+  "EdgesGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/geometries/EdgesGeometry.js"
+   ]
+  },
+  "EllipseCurve": {
+   "base": "Curve",
+   "methods": [
+    "copy",
+    "fromJSON",
+    "getPoint",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/curves/EllipseCurve.js"
+   ]
+  },
+  "EnvironmentNode": {
+   "base": "LightingNode",
+   "methods": [
+    "_getPMREMNodeCache",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/EnvironmentNode.js"
+   ]
+  },
+  "Euler": {
+   "base": null,
+   "methods": [
+    "_onChange",
+    "_onChangeCallback",
+    "clone",
+    "copy",
+    "equals",
+    "fromArray",
+    "order",
+    "reorder",
+    "set",
+    "setFromQuaternion",
+    "setFromRotationMatrix",
+    "setFromVector3",
+    "toArray",
+    "warn",
+    "x",
+    "y",
+    "z"
+   ],
+   "files": [
+    "src/math/Euler.js"
+   ]
+  },
+  "EventDispatcher": {
+   "base": null,
+   "methods": [
+    "addEventListener",
+    "dispatchEvent",
+    "hasEventListener",
+    "removeEventListener"
+   ],
+   "files": [
+    "src/core/EventDispatcher.js"
+   ]
+  },
+  "EventNode": {
+   "base": "Node",
+   "methods": [
+    "setup",
+    "type",
+    "update",
+    "updateAfter",
+    "updateBefore"
+   ],
+   "files": [
+    "src/nodes/utils/EventNode.js"
+   ]
+  },
+  "ExpressionNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "type"
+   ],
+   "files": [
+    "src/nodes/code/ExpressionNode.js"
+   ]
+  },
+  "ExternalTexture": {
+   "base": "Texture",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/textures/ExternalTexture.js"
+   ]
+  },
+  "ExtrudeGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "addShape",
+    "addUV",
+    "addVertex",
+    "buildLidFaces",
+    "buildSideFaces",
+    "copy",
+    "f3",
+    "f4",
+    "fromJSON",
+    "mergeOverlappingPoints",
+    "sidewalls",
+    "toJSON",
+    "v"
+   ],
+   "files": [
+    "src/geometries/ExtrudeGeometry.js"
+   ]
+  },
+  "FileLoader": {
+   "base": "Loader",
+   "methods": [
+    "abort",
+    "fetch",
+    "load",
+    "readData",
+    "setMimeType",
+    "setResponseType",
+    "setTimeout",
+    "start",
+    "warn"
+   ],
+   "files": [
+    "src/loaders/FileLoader.js"
+   ]
+  },
+  "FlipNode": {
+   "base": "TempNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/FlipNode.js"
+   ]
+  },
+  "Float16BufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [
+    "getW",
+    "getX",
+    "getY",
+    "getZ",
+    "setW",
+    "setX",
+    "setXY",
+    "setXYZ",
+    "setXYZW",
+    "setY",
+    "setZ"
+   ],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "Float32BufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "FnNode": {
+   "base": "Node",
+   "methods": [
+    "apply",
+    "call",
+    "error",
+    "generate",
+    "generateNodeType",
+    "get",
+    "once",
+    "set",
+    "setLayout"
+   ],
+   "files": [
+    "src/nodes/tsl/TSLCore.js"
+   ]
+  },
+  "Fog": {
+   "base": null,
+   "methods": [
+    "clone",
+    "toJSON"
+   ],
+   "files": [
+    "src/scenes/Fog.js"
+   ]
+  },
+  "FogExp2": {
+   "base": null,
+   "methods": [
+    "clone",
+    "toJSON"
+   ],
+   "files": [
+    "src/scenes/FogExp2.js"
+   ]
+  },
+  "FramebufferTexture": {
+   "base": "Texture",
+   "methods": [],
+   "files": [
+    "src/textures/FramebufferTexture.js"
+   ]
+  },
+  "FrontFacingNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "type",
+    "warnOnce"
+   ],
+   "files": [
+    "src/nodes/display/FrontFacingNode.js"
+   ]
+  },
+  "Frustum": {
+   "base": null,
+   "methods": [
+    "clone",
+    "containsPoint",
+    "copy",
+    "intersectsBox",
+    "intersectsObject",
+    "intersectsSphere",
+    "intersectsSprite",
+    "set",
+    "setFromProjectionMatrix"
+   ],
+   "files": [
+    "src/math/Frustum.js"
+   ]
+  },
+  "FrustumArray": {
+   "base": null,
+   "methods": [
+    "clone",
+    "containsPoint",
+    "copy",
+    "intersectsBox",
+    "intersectsObject",
+    "intersectsSphere",
+    "intersectsSprite",
+    "setFromArrayCamera"
+   ],
+   "files": [
+    "src/math/FrustumArray.js"
+   ]
+  },
+  "FunctionCallNode": {
+   "base": "TempNode",
+   "methods": [
+    "error",
+    "generate",
+    "generateNodeType",
+    "getMemberType",
+    "getParameters",
+    "setParameters",
+    "type"
+   ],
+   "files": [
+    "src/nodes/code/FunctionCallNode.js"
+   ]
+  },
+  "FunctionNode": {
+   "base": "CodeNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "getInputs",
+    "getMemberType",
+    "getNodeFunction",
+    "type"
+   ],
+   "files": [
+    "src/nodes/code/FunctionNode.js"
+   ]
+  },
+  "FunctionOverloadingNode": {
+   "base": "Node",
+   "methods": [
+    "generateNodeType",
+    "getCandidateFn",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/FunctionOverloadingNode.js"
+   ]
+  },
+  "GLBufferAttribute": {
+   "base": null,
+   "methods": [
+    "needsUpdate",
+    "setBuffer",
+    "setCount",
+    "setItemSize",
+    "setType"
+   ],
+   "files": [
+    "src/core/GLBufferAttribute.js"
+   ]
+  },
+  "GLSLNodeBuilder": {
+   "base": "NodeBuilder",
+   "methods": [
+    "_getGLSLFragmentCode",
+    "_getGLSLUniformStruct",
+    "_getGLSLVertexCode",
+    "_include",
+    "buildCode",
+    "buildFunctionCode",
+    "enableDualSourceBlending",
+    "enableExtension",
+    "enableHardwareClipping",
+    "enableMultiview",
+    "enableShaderF16",
+    "enableSubGroups",
+    "error",
+    "generatePBO",
+    "generateTexture",
+    "generateTextureBias",
+    "generateTextureCompare",
+    "generateTextureGather",
+    "generateTextureGatherCompare",
+    "generateTextureGrad",
+    "generateTextureLevel",
+    "generateTextureLoad",
+    "generateTextureSize",
+    "getAttributes",
+    "getBitcastMethod",
+    "getClipDistance",
+    "getDrawIndex",
+    "getExtensions",
+    "getFloatPackingMethod",
+    "getFloatUnpackingMethod",
+    "getFragCoord",
+    "getFragDepth",
+    "getFrontFacing",
+    "getInstanceIndex",
+    "getInvocationLocalIndex",
+    "getInvocationSubgroupIndex",
+    "getMethod",
+    "getOutputStructName",
+    "getPropertyName",
+    "getStructMembers",
+    "getStructs",
+    "getSubgroupIndex",
+    "getSubgroupSize",
+    "getTernary",
+    "getTransforms",
+    "getTypeFromAttribute",
+    "getUniformFromNode",
+    "getUniforms",
+    "getVaryings",
+    "getVertexIndex",
+    "isAvailable",
+    "isFlipY",
+    "isReservedKeyword",
+    "needsToWorkingColorSpace",
+    "registerTransform",
+    "setupPBO"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/nodes/GLSLNodeBuilder.js"
+   ]
+  },
+  "GLSLNodeFunction": {
+   "base": "NodeFunction",
+   "methods": [
+    "getCode"
+   ],
+   "files": [
+    "src/nodes/parsers/GLSLNodeFunction.js"
+   ]
+  },
+  "GLSLNodeParser": {
+   "base": "NodeParser",
+   "methods": [
+    "parseFunction"
+   ],
+   "files": [
+    "src/nodes/parsers/GLSLNodeParser.js"
+   ]
+  },
+  "GPUBindGroupDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUBindGroupDescriptor.js"
+   ]
+  },
+  "GPUBufferDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUBufferDescriptor.js"
+   ]
+  },
+  "GPUCommandEncoderDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUCommandEncoderDescriptor.js"
+   ]
+  },
+  "GPUComputePassDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUComputePassDescriptor.js"
+   ]
+  },
+  "GPUComputePipelineDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUComputePipelineDescriptor.js"
+   ]
+  },
+  "GPUCopyExternalImageDestInfo": {
+   "base": "GPUTexelCopyTextureInfo",
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUCopyExternalImageDestInfo.js"
+   ]
+  },
+  "GPUCopyExternalImageSourceInfo": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUCopyExternalImageSourceInfo.js"
+   ]
+  },
+  "GPUExtent3D": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUExtent3D.js"
+   ]
+  },
+  "GPUMultisampleState": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPURenderPipelineDescriptor.js"
+   ]
+  },
+  "GPUPipelineLayoutDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUPipelineLayoutDescriptor.js"
+   ]
+  },
+  "GPUQuerySetDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUQuerySetDescriptor.js"
+   ]
+  },
+  "GPURenderBundleEncoderDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPURenderBundleEncoderDescriptor.js"
+   ]
+  },
+  "GPURenderPassColorAttachment": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPURenderPassColorAttachment.js"
+   ]
+  },
+  "GPURenderPassDepthStencilAttachment": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPURenderPassDepthStencilAttachment.js"
+   ]
+  },
+  "GPURenderPassDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPURenderPassDescriptor.js"
+   ]
+  },
+  "GPURenderPassTimestampWrites": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPURenderPassTimestampWrites.js"
+   ]
+  },
+  "GPURenderPipelineDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPURenderPipelineDescriptor.js"
+   ]
+  },
+  "GPUSamplerDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUSamplerDescriptor.js"
+   ]
+  },
+  "GPUShaderModuleDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUShaderModuleDescriptor.js"
+   ]
+  },
+  "GPUTexelCopyBufferInfo": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUTexelCopyBufferInfo.js"
+   ]
+  },
+  "GPUTexelCopyBufferLayout": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUTexelCopyBufferLayout.js"
+   ]
+  },
+  "GPUTexelCopyTextureInfo": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUTexelCopyTextureInfo.js"
+   ]
+  },
+  "GPUTextureDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUTextureDescriptor.js"
+   ]
+  },
+  "GPUTextureViewDescriptor": {
+   "base": null,
+   "methods": [
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webgpu/descriptors/GPUTextureViewDescriptor.js"
+   ]
+  },
+  "Geometries": {
+   "base": "DataMap",
+   "methods": [
+    "dispose",
+    "getIndex",
+    "getIndirect",
+    "getIndirectOffset",
+    "has",
+    "initGeometry",
+    "updateAttribute",
+    "updateAttributes",
+    "updateForRender"
+   ],
+   "files": [
+    "src/renderers/common/Geometries.js"
+   ]
+  },
+  "GridHelper": {
+   "base": "LineSegments",
+   "methods": [
+    "dispose"
+   ],
+   "files": [
+    "src/helpers/GridHelper.js"
+   ]
+  },
+  "Group": {
+   "base": "Object3D",
+   "methods": [],
+   "files": [
+    "src/objects/Group.js"
+   ]
+  },
+  "HTMLTexture": {
+   "base": "Texture",
+   "methods": [
+    "dispose"
+   ],
+   "files": [
+    "src/textures/HTMLTexture.js"
+   ]
+  },
+  "HemisphereLight": {
+   "base": "Light",
+   "methods": [
+    "copy",
+    "toJSON"
+   ],
+   "files": [
+    "src/lights/HemisphereLight.js"
+   ]
+  },
+  "HemisphereLightHelper": {
+   "base": "Object3D",
+   "methods": [
+    "dispose",
+    "update"
+   ],
+   "files": [
+    "src/helpers/HemisphereLightHelper.js"
+   ]
+  },
+  "HemisphereLightNode": {
+   "base": "AnalyticLightNode",
+   "methods": [
+    "setup",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/lighting/HemisphereLightNode.js"
+   ]
+  },
+  "HttpError": {
+   "base": "Error",
+   "methods": [],
+   "files": [
+    "src/loaders/FileLoader.js"
+   ]
+  },
+  "IESSpotLight": {
+   "base": "SpotLight",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/lights/webgpu/IESSpotLight.js"
+   ]
+  },
+  "IESSpotLightNode": {
+   "base": "SpotLightNode",
+   "methods": [
+    "getSpotAttenuation",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/lighting/IESSpotLightNode.js"
+   ]
+  },
+  "IcosahedronGeometry": {
+   "base": "PolyhedronGeometry",
+   "methods": [
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/IcosahedronGeometry.js"
+   ]
+  },
+  "ImageBitmapLoader": {
+   "base": "Loader",
+   "methods": [
+    "abort",
+    "load",
+    "setOptions",
+    "setTimeout",
+    "warn"
+   ],
+   "files": [
+    "src/loaders/ImageBitmapLoader.js"
+   ]
+  },
+  "ImageLoader": {
+   "base": "Loader",
+   "methods": [
+    "load",
+    "removeEventListeners",
+    "setTimeout"
+   ],
+   "files": [
+    "src/loaders/ImageLoader.js"
+   ]
+  },
+  "ImageUtils": {
+   "base": null,
+   "methods": [
+    "getDataURL",
+    "sRGBToLinear",
+    "warn"
+   ],
+   "files": [
+    "src/extras/ImageUtils.js"
+   ]
+  },
+  "IndexNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/IndexNode.js"
+   ]
+  },
+  "IndirectStorageBufferAttribute": {
+   "base": "StorageBufferAttribute",
+   "methods": [],
+   "files": [
+    "src/renderers/common/IndirectStorageBufferAttribute.js"
+   ]
+  },
+  "Info": {
+   "base": null,
+   "methods": [
+    "_createAttribute",
+    "_getAttributeMemorySize",
+    "_getTextureMemorySize",
+    "createAttribute",
+    "createIndexAttribute",
+    "createIndirectStorageAttribute",
+    "createProgram",
+    "createReadbackBuffer",
+    "createStorageAttribute",
+    "createTexture",
+    "createUniformBuffer",
+    "destroyAttribute",
+    "destroyProgram",
+    "destroyReadbackBuffer",
+    "destroyTexture",
+    "destroyUniformBuffer",
+    "dispose",
+    "error",
+    "reset",
+    "update"
+   ],
+   "files": [
+    "src/renderers/common/Info.js"
+   ]
+  },
+  "InputNode": {
+   "base": "Node",
+   "methods": [
+    "deserialize",
+    "generate",
+    "generateNodeType",
+    "getInputType",
+    "serialize",
+    "setPrecision",
+    "type",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/core/InputNode.js"
+   ]
+  },
+  "InspectorBase": {
+   "base": "EventDispatcher",
+   "methods": [
+    "begin",
+    "beginCompute",
+    "beginRender",
+    "computeAsync",
+    "copyFramebufferToTexture",
+    "copyTextureToTexture",
+    "dispose",
+    "finish",
+    "finishCompute",
+    "finishRender",
+    "getRenderer",
+    "inspect",
+    "nodeFrame",
+    "setRenderer"
+   ],
+   "files": [
+    "src/renderers/common/InspectorBase.js"
+   ]
+  },
+  "InspectorNode": {
+   "base": "Node",
+   "methods": [
+    "generateNodeType",
+    "getName",
+    "setup",
+    "type",
+    "update",
+    "warnOnce"
+   ],
+   "files": [
+    "src/nodes/core/InspectorNode.js"
+   ]
+  },
+  "InstancedBufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [
+    "copy",
+    "toJSON"
+   ],
+   "files": [
+    "src/core/InstancedBufferAttribute.js"
+   ]
+  },
+  "InstancedBufferGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "toJSON"
+   ],
+   "files": [
+    "src/core/InstancedBufferGeometry.js"
+   ]
+  },
+  "InstancedInterleavedBuffer": {
+   "base": "InterleavedBuffer",
+   "methods": [
+    "clone",
+    "copy",
+    "toJSON"
+   ],
+   "files": [
+    "src/core/InstancedInterleavedBuffer.js"
+   ]
+  },
+  "InstancedMesh": {
+   "base": "Mesh",
+   "methods": [
+    "computeBoundingBox",
+    "computeBoundingSphere",
+    "copy",
+    "dispose",
+    "getColorAt",
+    "getMatrixAt",
+    "getMorphAt",
+    "raycast",
+    "setColorAt",
+    "setMatrixAt",
+    "setMorphAt",
+    "updateMorphTargets"
+   ],
+   "files": [
+    "src/objects/InstancedMesh.js"
+   ]
+  },
+  "Int16BufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "Int32BufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "Int8BufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "InterleavedBuffer": {
+   "base": null,
+   "methods": [
+    "addUpdateRange",
+    "clearUpdateRanges",
+    "clone",
+    "copy",
+    "copyAt",
+    "needsUpdate",
+    "onUpload",
+    "onUploadCallback",
+    "set",
+    "setUsage",
+    "toJSON"
+   ],
+   "files": [
+    "src/core/InterleavedBuffer.js"
+   ]
+  },
+  "InterleavedBufferAttribute": {
+   "base": null,
+   "methods": [
+    "applyMatrix4",
+    "applyNormalMatrix",
+    "array",
+    "clone",
+    "count",
+    "getComponent",
+    "getW",
+    "getX",
+    "getY",
+    "getZ",
+    "log",
+    "needsUpdate",
+    "setComponent",
+    "setW",
+    "setX",
+    "setXY",
+    "setXYZ",
+    "setXYZW",
+    "setY",
+    "setZ",
+    "toJSON",
+    "transformDirection"
+   ],
+   "files": [
+    "src/core/InterleavedBufferAttribute.js"
+   ]
+  },
+  "Interpolant": {
+   "base": null,
+   "methods": [
+    "copySampleValue_",
+    "evaluate",
+    "getSettings_",
+    "interpolate_",
+    "intervalChanged_"
+   ],
+   "files": [
+    "src/math/Interpolant.js"
+   ]
+  },
+  "IrradianceNode": {
+   "base": "LightingNode",
+   "methods": [
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/IrradianceNode.js"
+   ]
+  },
+  "IsolateNode": {
+   "base": "Node",
+   "methods": [
+    "build",
+    "generateNodeType",
+    "getParent",
+    "setParent",
+    "type",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/core/IsolateNode.js"
+   ]
+  },
+  "JoinNode": {
+   "base": "TempNode",
+   "methods": [
+    "error",
+    "generate",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/JoinNode.js"
+   ]
+  },
+  "KeyframeTrack": {
+   "base": null,
+   "methods": [
+    "InterpolantFactoryMethodBezier",
+    "InterpolantFactoryMethodDiscrete",
+    "InterpolantFactoryMethodLinear",
+    "InterpolantFactoryMethodSmooth",
+    "clone",
+    "error",
+    "getInterpolation",
+    "getValueSize",
+    "optimize",
+    "scale",
+    "scaleTangentTimes",
+    "setInterpolation",
+    "shift",
+    "toJSON",
+    "trim",
+    "validate",
+    "warn"
+   ],
+   "files": [
+    "src/animation/KeyframeTrack.js"
+   ]
+  },
+  "LOD": {
+   "base": "Object3D",
+   "methods": [
+    "addLevel",
+    "copy",
+    "getCurrentLevel",
+    "getObjectForDistance",
+    "raycast",
+    "removeLevel",
+    "toJSON",
+    "update"
+   ],
+   "files": [
+    "src/objects/LOD.js"
+   ]
+  },
+  "LatheGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/LatheGeometry.js"
+   ]
+  },
+  "Layers": {
+   "base": null,
+   "methods": [
+    "disable",
+    "disableAll",
+    "enable",
+    "enableAll",
+    "isEnabled",
+    "set",
+    "test",
+    "toggle"
+   ],
+   "files": [
+    "src/core/Layers.js"
+   ]
+  },
+  "Light": {
+   "base": "Object3D",
+   "methods": [
+    "copy",
+    "toJSON"
+   ],
+   "files": [
+    "src/lights/Light.js"
+   ]
+  },
+  "LightProbe": {
+   "base": "Light",
+   "methods": [
+    "copy",
+    "toJSON"
+   ],
+   "files": [
+    "src/lights/LightProbe.js"
+   ]
+  },
+  "LightProbeNode": {
+   "base": "AnalyticLightNode",
+   "methods": [
+    "setup",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/lighting/LightProbeNode.js"
+   ]
+  },
+  "LightShadow": {
+   "base": null,
+   "methods": [
+    "_updateMatrix",
+    "clone",
+    "copy",
+    "dispose",
+    "getCamera",
+    "getFrameExtents",
+    "getFrustum",
+    "getViewport",
+    "getViewportCount",
+    "toJSON",
+    "updateMatrices"
+   ],
+   "files": [
+    "src/lights/LightShadow.js"
+   ]
+  },
+  "Lighting": {
+   "base": null,
+   "methods": [
+    "beginRender",
+    "createNode",
+    "finishRender",
+    "getNode"
+   ],
+   "files": [
+    "src/renderers/common/Lighting.js"
+   ]
+  },
+  "LightingContextNode": {
+   "base": "ContextNode",
+   "methods": [
+    "getContext",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/LightingContextNode.js"
+   ]
+  },
+  "LightingModel": {
+   "base": null,
+   "methods": [
+    "ambientOcclusion",
+    "direct",
+    "directRectArea",
+    "finish",
+    "indirect",
+    "start"
+   ],
+   "files": [
+    "src/nodes/core/LightingModel.js"
+   ]
+  },
+  "LightingNode": {
+   "base": "Node",
+   "methods": [
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/LightingNode.js"
+   ]
+  },
+  "LightsNode": {
+   "base": "Node",
+   "methods": [
+    "customCacheKey",
+    "getBuiltinLights",
+    "getHash",
+    "getLightNodes",
+    "getLights",
+    "hasLights",
+    "setLights",
+    "setup",
+    "setupDirectLight",
+    "setupDirectRectAreaLight",
+    "setupLights",
+    "setupLightsNode",
+    "type",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/lighting/LightsNode.js"
+   ]
+  },
+  "Line": {
+   "base": "Object3D",
+   "methods": [
+    "computeLineDistances",
+    "copy",
+    "intersectsFrustum",
+    "raycast",
+    "updateMorphTargets",
+    "warn"
+   ],
+   "files": [
+    "src/objects/Line.js"
+   ]
+  },
+  "Line2NodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "alphaToCoverage",
+    "dashed",
+    "lineColorNode",
+    "setupDiffuseColor",
+    "setupPosition",
+    "type",
+    "warnOnce",
+    "worldUnits"
+   ],
+   "files": [
+    "src/materials/nodes/Line2NodeMaterial.js"
+   ]
+  },
+  "Line3": {
+   "base": null,
+   "methods": [
+    "applyMatrix4",
+    "at",
+    "clone",
+    "closestPointToPoint",
+    "closestPointToPointParameter",
+    "copy",
+    "delta",
+    "distance",
+    "distanceSq",
+    "distanceSqToLine3",
+    "equals",
+    "getCenter",
+    "set"
+   ],
+   "files": [
+    "src/math/Line3.js"
+   ]
+  },
+  "LineBasicMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/LineBasicMaterial.js"
+   ]
+  },
+  "LineBasicNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/LineBasicNodeMaterial.js"
+   ]
+  },
+  "LineCurve": {
+   "base": "Curve",
+   "methods": [
+    "copy",
+    "fromJSON",
+    "getPoint",
+    "getPointAt",
+    "getTangent",
+    "getTangentAt",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/curves/LineCurve.js"
+   ]
+  },
+  "LineCurve3": {
+   "base": "Curve",
+   "methods": [
+    "copy",
+    "fromJSON",
+    "getPoint",
+    "getPointAt",
+    "getTangent",
+    "getTangentAt",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/curves/LineCurve3.js"
+   ]
+  },
+  "LineDashedMaterial": {
+   "base": "LineBasicMaterial",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/LineDashedMaterial.js"
+   ]
+  },
+  "LineDashedNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupVariants",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/LineDashedNodeMaterial.js"
+   ]
+  },
+  "LineLoop": {
+   "base": "Line",
+   "methods": [],
+   "files": [
+    "src/objects/LineLoop.js"
+   ]
+  },
+  "LineSegments": {
+   "base": "Line",
+   "methods": [
+    "computeLineDistances",
+    "warn"
+   ],
+   "files": [
+    "src/objects/LineSegments.js"
+   ]
+  },
+  "LinearInterpolant": {
+   "base": "Interpolant",
+   "methods": [
+    "interpolate_"
+   ],
+   "files": [
+    "src/math/interpolants/LinearInterpolant.js"
+   ]
+  },
+  "Loader": {
+   "base": null,
+   "methods": [
+    "abort",
+    "load",
+    "loadAsync",
+    "parse",
+    "setCrossOrigin",
+    "setPath",
+    "setRequestHeader",
+    "setResourcePath",
+    "setWithCredentials"
+   ],
+   "files": [
+    "src/loaders/Loader.js"
+   ]
+  },
+  "LoaderUtils": {
+   "base": null,
+   "methods": [
+    "extractUrlBase",
+    "resolveURL"
+   ],
+   "files": [
+    "src/loaders/LoaderUtils.js"
+   ]
+  },
+  "LoadingManager": {
+   "base": null,
+   "methods": [
+    "abortController"
+   ],
+   "files": [
+    "src/loaders/LoadingManager.js"
+   ]
+  },
+  "LoopNode": {
+   "base": "Node",
+   "methods": [
+    "_getInternalParams",
+    "error",
+    "generate",
+    "getProperties",
+    "getVarName",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/LoopNode.js"
+   ]
+  },
+  "MRTNode": {
+   "base": "OutputStructNode",
+   "methods": [
+    "get",
+    "getBlendMode",
+    "getClearColor",
+    "has",
+    "merge",
+    "setBlendMode",
+    "setClearColor",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/MRTNode.js"
+   ]
+  },
+  "Material": {
+   "base": "EventDispatcher",
+   "methods": [
+    "alphaTest",
+    "clone",
+    "copy",
+    "customProgramCacheKey",
+    "dispose",
+    "fromJSON",
+    "needsUpdate",
+    "onBeforeCompile",
+    "onBeforeRender",
+    "setValues",
+    "toJSON",
+    "warn"
+   ],
+   "files": [
+    "src/materials/Material.js"
+   ]
+  },
+  "MaterialLoader": {
+   "base": "Loader",
+   "methods": [
+    "createMaterialFromType",
+    "error",
+    "load",
+    "onError",
+    "onLoad",
+    "parse",
+    "registerMaterial",
+    "setTextures",
+    "warnOnce"
+   ],
+   "files": [
+    "src/loaders/MaterialLoader.js"
+   ]
+  },
+  "MaterialNode": {
+   "base": "Node",
+   "methods": [
+    "getCache",
+    "getColor",
+    "getFloat",
+    "getTexture",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/MaterialNode.js"
+   ]
+  },
+  "MaterialReferenceNode": {
+   "base": "ReferenceNode",
+   "methods": [
+    "type",
+    "updateReference"
+   ],
+   "files": [
+    "src/nodes/accessors/MaterialReferenceNode.js"
+   ]
+  },
+  "MathNode": {
+   "base": "TempNode",
+   "methods": [
+    "deserialize",
+    "error",
+    "generate",
+    "generateNodeType",
+    "getInputType",
+    "serialize",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/math/MathNode.js"
+   ]
+  },
+  "Matrix2": {
+   "base": null,
+   "methods": [
+    "fromArray",
+    "identity",
+    "set"
+   ],
+   "files": [
+    "src/math/Matrix2.js"
+   ]
+  },
+  "Matrix2NodeUniform": {
+   "base": "Matrix2Uniform",
+   "methods": [
+    "getType",
+    "getValue"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeUniform.js"
+   ]
+  },
+  "Matrix2Uniform": {
+   "base": "Uniform",
+   "methods": [],
+   "files": [
+    "src/renderers/common/Uniform.js"
+   ]
+  },
+  "Matrix3": {
+   "base": null,
+   "methods": [
+    "clone",
+    "copy",
+    "determinant",
+    "equals",
+    "extractBasis",
+    "fromArray",
+    "getNormalMatrix",
+    "identity",
+    "invert",
+    "makeRotation",
+    "makeScale",
+    "makeTranslation",
+    "multiply",
+    "multiplyMatrices",
+    "multiplyScalar",
+    "premultiply",
+    "rotate",
+    "scale",
+    "set",
+    "setFromMatrix4",
+    "setUvTransform",
+    "toArray",
+    "translate",
+    "transpose",
+    "transposeIntoArray",
+    "warnOnce"
+   ],
+   "files": [
+    "src/math/Matrix3.js"
+   ]
+  },
+  "Matrix3NodeUniform": {
+   "base": "Matrix3Uniform",
+   "methods": [
+    "getType",
+    "getValue"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeUniform.js"
+   ]
+  },
+  "Matrix3Uniform": {
+   "base": "Uniform",
+   "methods": [],
+   "files": [
+    "src/renderers/common/Uniform.js"
+   ]
+  },
+  "Matrix4": {
+   "base": null,
+   "methods": [
+    "clone",
+    "compose",
+    "copy",
+    "copyPosition",
+    "decompose",
+    "determinant",
+    "determinantAffine",
+    "equals",
+    "extractBasis",
+    "extractRotation",
+    "fromArray",
+    "getMaxScaleOnAxis",
+    "identity",
+    "invert",
+    "lookAt",
+    "makeBasis",
+    "makeOrthographic",
+    "makePerspective",
+    "makeRotationAxis",
+    "makeRotationFromEuler",
+    "makeRotationFromQuaternion",
+    "makeRotationX",
+    "makeRotationY",
+    "makeRotationZ",
+    "makeScale",
+    "makeShear",
+    "makeTranslation",
+    "multiply",
+    "multiplyMatrices",
+    "multiplyScalar",
+    "premultiply",
+    "scale",
+    "set",
+    "setFromMatrix3",
+    "setPosition",
+    "toArray",
+    "transpose"
+   ],
+   "files": [
+    "src/math/Matrix4.js"
+   ]
+  },
+  "Matrix4NodeUniform": {
+   "base": "Matrix4Uniform",
+   "methods": [
+    "getType",
+    "getValue"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeUniform.js"
+   ]
+  },
+  "Matrix4Uniform": {
+   "base": "Uniform",
+   "methods": [],
+   "files": [
+    "src/renderers/common/Uniform.js"
+   ]
+  },
+  "MaxMipLevelNode": {
+   "base": "UniformNode",
+   "methods": [
+    "texture",
+    "textureNode",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/utils/MaxMipLevelNode.js"
+   ]
+  },
+  "MemberNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "getMemberType",
+    "hasMember",
+    "type",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/utils/MemberNode.js"
+   ]
+  },
+  "Mesh": {
+   "base": "Object3D",
+   "methods": [
+    "_computeIntersections",
+    "copy",
+    "getVertexPosition",
+    "intersectsFrustum",
+    "raycast",
+    "updateMorphTargets"
+   ],
+   "files": [
+    "src/objects/Mesh.js"
+   ]
+  },
+  "MeshBasicMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/MeshBasicMaterial.js"
+   ]
+  },
+  "MeshBasicNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupEnvironment",
+    "setupLightMap",
+    "setupLightingModel",
+    "setupNormal",
+    "setupOutgoingLight",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/MeshBasicNodeMaterial.js"
+   ]
+  },
+  "MeshDepthMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/MeshDepthMaterial.js"
+   ]
+  },
+  "MeshDistanceMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/MeshDistanceMaterial.js"
+   ]
+  },
+  "MeshLambertMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/MeshLambertMaterial.js"
+   ]
+  },
+  "MeshLambertNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupEnvironment",
+    "setupLightingModel",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/MeshLambertNodeMaterial.js"
+   ]
+  },
+  "MeshMatcapMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/MeshMatcapMaterial.js"
+   ]
+  },
+  "MeshMatcapNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupVariants",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/MeshMatcapNodeMaterial.js"
+   ]
+  },
+  "MeshNormalMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/MeshNormalMaterial.js"
+   ]
+  },
+  "MeshNormalNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupDiffuseColor",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/MeshNormalNodeMaterial.js"
+   ]
+  },
+  "MeshPhongMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/MeshPhongMaterial.js"
+   ]
+  },
+  "MeshPhongNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupEnvironment",
+    "setupLightingModel",
+    "setupVariants",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/MeshPhongNodeMaterial.js"
+   ]
+  },
+  "MeshPhysicalMaterial": {
+   "base": "MeshStandardMaterial",
+   "methods": [
+    "anisotropy",
+    "clearcoat",
+    "copy",
+    "diffuseRoughness",
+    "dispersion",
+    "iridescence",
+    "retroreflectivity",
+    "sheen",
+    "transmission"
+   ],
+   "files": [
+    "src/materials/MeshPhysicalMaterial.js"
+   ]
+  },
+  "MeshPhysicalNodeMaterial": {
+   "base": "MeshStandardNodeMaterial",
+   "methods": [
+    "If",
+    "setup",
+    "setupClearcoatNormal",
+    "setupLightingModel",
+    "setupSpecular",
+    "setupVariants",
+    "type",
+    "useAnisotropy",
+    "useClearcoat",
+    "useDiffuseRoughness",
+    "useDispersion",
+    "useIridescence",
+    "useRetroreflection",
+    "useSheen",
+    "useTransmission"
+   ],
+   "files": [
+    "src/materials/nodes/MeshPhysicalNodeMaterial.js"
+   ]
+  },
+  "MeshSSSNodeMaterial": {
+   "base": "MeshPhysicalNodeMaterial",
+   "methods": [
+    "setupLightingModel",
+    "type",
+    "useSSS"
+   ],
+   "files": [
+    "src/materials/nodes/MeshSSSNodeMaterial.js"
+   ]
+  },
+  "MeshStandardMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/MeshStandardMaterial.js"
+   ]
+  },
+  "MeshStandardNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupEnvironment",
+    "setupLightingModel",
+    "setupSpecular",
+    "setupVariants",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/MeshStandardNodeMaterial.js"
+   ]
+  },
+  "MeshToonMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/MeshToonMaterial.js"
+   ]
+  },
+  "MeshToonNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupLightingModel",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/MeshToonNodeMaterial.js"
+   ]
+  },
+  "ModelNode": {
+   "base": "Object3DNode",
+   "methods": [
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/accessors/ModelNode.js"
+   ]
+  },
+  "MultiDrawRenderList": {
+   "base": null,
+   "methods": [
+    "push",
+    "reset"
+   ],
+   "files": [
+    "src/objects/BatchedMesh.js"
+   ]
+  },
+  "Node": {
+   "base": "EventDispatcher",
+   "methods": [
+    "_getChildren",
+    "analyze",
+    "before",
+    "build",
+    "callback",
+    "customCacheKey",
+    "deserialize",
+    "dispose",
+    "error",
+    "generate",
+    "generateNodeType",
+    "getArrayCount",
+    "getCacheKey",
+    "getElementType",
+    "getHash",
+    "getMemberType",
+    "getNodeType",
+    "getScope",
+    "getSerializeChildren",
+    "getShared",
+    "getUpdateAfterType",
+    "getUpdateBeforeType",
+    "getUpdateType",
+    "isGlobal",
+    "needsUpdate",
+    "onFrameUpdate",
+    "onObjectUpdate",
+    "onReference",
+    "onRenderUpdate",
+    "onUpdate",
+    "serialize",
+    "setup",
+    "toJSON",
+    "traverse",
+    "type",
+    "update",
+    "updateAfter",
+    "updateBefore",
+    "updateReference",
+    "uuid",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/core/Node.js"
+   ]
+  },
+  "NodeAttribute": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/nodes/core/NodeAttribute.js"
+   ]
+  },
+  "NodeBuilder": {
+   "base": null,
+   "methods": [
+    "_getBindGroup",
+    "addChain",
+    "addContext",
+    "addFlow",
+    "addFlowCode",
+    "addFlowCodeHierarchy",
+    "addFlowTab",
+    "addInclude",
+    "addLineFlowCode",
+    "addLineFlowCodeBlock",
+    "addNode",
+    "addSequentialNode",
+    "addStack",
+    "buildFunctionNode",
+    "buildUpdateNodes",
+    "changeComponentType",
+    "createCubeRenderTarget",
+    "createRenderTarget",
+    "currentNode",
+    "enableDualSourceBlending",
+    "enableShaderF16",
+    "enableSubGroups",
+    "flowBuildStage",
+    "flowNode",
+    "flowShaderNode",
+    "flowStagesNode",
+    "generateArray",
+    "generateArrayDeclaration",
+    "generateConst",
+    "generateStruct",
+    "generateTexture",
+    "generateTextureLod",
+    "generateTextureSize",
+    "getActiveStack",
+    "getAttribute",
+    "getBaseStack",
+    "getBindGroupArray",
+    "getBindings",
+    "getBufferAttributeFromNode",
+    "getCache",
+    "getCacheFromNode",
+    "getCodeFromNode",
+    "getComponentType",
+    "getComponentTypeFromTexture",
+    "getContext",
+    "getDataFromNode",
+    "getDrawIndex",
+    "getElementType",
+    "getFlowData",
+    "getFragCoord",
+    "getFrontFacing",
+    "getFunctionOperator",
+    "getInstanceIndex",
+    "getIntegerType",
+    "getInvocationSubgroupIndex",
+    "getMethod",
+    "getNodeFromHash",
+    "getNodeProperties",
+    "getOutputStructName",
+    "getOutputStructTypeFromNode",
+    "getOutputType",
+    "getPropertyName",
+    "getSharedContext",
+    "getStructTypeFromNode",
+    "getStructTypeNode",
+    "getSubgroupIndex",
+    "getSubgroupSize",
+    "getTernary",
+    "getType",
+    "getTypeFromArray",
+    "getTypeFromAttribute",
+    "getTypeFromLength",
+    "getTypeLength",
+    "getUniformBufferLimit",
+    "getUniformFromNode",
+    "getVarFromNode",
+    "getVaryingFromNode",
+    "getVectorFromMatrix",
+    "getVectorType",
+    "getVertexIndex",
+    "hasGeometryAttribute",
+    "hasWriteUsage",
+    "includes",
+    "increaseUsage",
+    "isAvailable",
+    "isContextAssign",
+    "isDeterministic",
+    "isFilteredTexture",
+    "isFlatShading",
+    "isFlipY",
+    "isInteger",
+    "isMatrix",
+    "isOpaque",
+    "isReference",
+    "isReservedKeyword",
+    "isVector",
+    "needsToWorkingColorSpace",
+    "registerDeclaration",
+    "removeActiveStack",
+    "removeChain",
+    "removeFlowTab",
+    "removeStack",
+    "renderPipeline",
+    "setActiveStack",
+    "setCache",
+    "setContext",
+    "setCurrentStack",
+    "setHashNode",
+    "sortBindingGroups",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/core/NodeBuilder.js"
+   ]
+  },
+  "NodeBuilderState": {
+   "base": null,
+   "methods": [
+    "createBindings"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeBuilderState.js"
+   ]
+  },
+  "NodeCache": {
+   "base": null,
+   "methods": [
+    "getData",
+    "setData"
+   ],
+   "files": [
+    "src/nodes/core/NodeCache.js"
+   ]
+  },
+  "NodeCode": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/nodes/core/NodeCode.js"
+   ]
+  },
+  "NodeError": {
+   "base": "Error",
+   "methods": [],
+   "files": [
+    "src/nodes/core/NodeError.js"
+   ]
+  },
+  "NodeFrame": {
+   "base": null,
+   "methods": [
+    "_getMaps",
+    "update",
+    "updateAfterNode",
+    "updateBeforeNode",
+    "updateNode"
+   ],
+   "files": [
+    "src/nodes/core/NodeFrame.js"
+   ]
+  },
+  "NodeFunction": {
+   "base": null,
+   "methods": [
+    "getCode",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/core/NodeFunction.js"
+   ]
+  },
+  "NodeFunctionInput": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/nodes/core/NodeFunctionInput.js"
+   ]
+  },
+  "NodeLibrary": {
+   "base": null,
+   "methods": [
+    "addClass",
+    "addLight",
+    "addMaterial",
+    "addToneMapping",
+    "addType",
+    "fromMaterial",
+    "getLightNodeClass",
+    "getMaterialNodeClass",
+    "getToneMappingFunction",
+    "warn"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeLibrary.js"
+   ]
+  },
+  "NodeLoader": {
+   "base": "Loader",
+   "methods": [
+    "createNodeFromType",
+    "error",
+    "load",
+    "onError",
+    "onLoad",
+    "parse",
+    "parseNodes",
+    "setNodes",
+    "setTextures"
+   ],
+   "files": [
+    "src/loaders/nodes/NodeLoader.js"
+   ]
+  },
+  "NodeManager": {
+   "base": "DataMap",
+   "methods": [
+    "_createNodeBuilder",
+    "_createNodeBuilderState",
+    "_processBuildQueue",
+    "buildFn",
+    "dispose",
+    "error",
+    "getBackgroundNode",
+    "getCacheKey",
+    "getCacheNode",
+    "getEnvironmentNode",
+    "getFogNode",
+    "getForCompute",
+    "getForComputeAsync",
+    "getForRender",
+    "getForRenderAsync",
+    "getForRenderCacheKey",
+    "getForRenderDeferred",
+    "getNodeFrame",
+    "getNodeFrameForCompute",
+    "getNodeFrameForRender",
+    "getOutputCacheKey",
+    "getOutputNode",
+    "isToneMappingState",
+    "needsRefresh",
+    "setOutputLayerIndex",
+    "updateAfter",
+    "updateAfterForCompute",
+    "updateBackground",
+    "updateBefore",
+    "updateBeforeForCompute",
+    "updateEnvironment",
+    "updateFog",
+    "updateForCompute",
+    "updateForRender",
+    "updateGroup"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeManager.js"
+   ]
+  },
+  "NodeMaterial": {
+   "base": "Material",
+   "methods": [
+    "_getNodeChildren",
+    "batch",
+    "bool",
+    "build",
+    "copy",
+    "customProgramCacheKey",
+    "instancedMesh",
+    "morphReference",
+    "setDefaultValues",
+    "setup",
+    "setupAmbientOcclusion",
+    "setupClipping",
+    "setupDepth",
+    "setupDiffuseColor",
+    "setupEnvironment",
+    "setupFog",
+    "setupHardwareClipping",
+    "setupLightMap",
+    "setupLighting",
+    "setupLightingModel",
+    "setupMaterialLightings",
+    "setupModelViewProjection",
+    "setupNormal",
+    "setupObserver",
+    "setupOutgoingLight",
+    "setupOutput",
+    "setupPosition",
+    "setupPositionView",
+    "setupPremultipliedAlpha",
+    "setupVariants",
+    "setupVertex",
+    "skinning",
+    "toJSON",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/NodeMaterial.js"
+   ]
+  },
+  "NodeMaterialLoader": {
+   "base": "MaterialLoader",
+   "methods": [
+    "createMaterialFromType",
+    "parse",
+    "setNodeMaterials",
+    "setNodes"
+   ],
+   "files": [
+    "src/loaders/nodes/NodeMaterialLoader.js"
+   ]
+  },
+  "NodeMaterialObserver": {
+   "base": null,
+   "methods": [
+    "containsNode",
+    "equals",
+    "firstInitialization",
+    "getAttributesData",
+    "getGeometryData",
+    "getLights",
+    "getLightsData",
+    "getMaterialData",
+    "getRenderObjectData",
+    "getTextureData",
+    "hasDynamicInstancing",
+    "needsRefresh",
+    "needsVelocity"
+   ],
+   "files": [
+    "src/materials/nodes/manager/NodeMaterialObserver.js"
+   ]
+  },
+  "NodeObjectLoader": {
+   "base": "ObjectLoader",
+   "methods": [
+    "parse",
+    "parseAsync",
+    "parseMaterials",
+    "parseNodes",
+    "setNodeMaterials",
+    "setNodes"
+   ],
+   "files": [
+    "src/loaders/nodes/NodeObjectLoader.js"
+   ]
+  },
+  "NodeParser": {
+   "base": null,
+   "methods": [
+    "parseFunction",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/core/NodeParser.js"
+   ]
+  },
+  "NodeSampledCubeTexture": {
+   "base": "NodeSampledTexture",
+   "methods": [],
+   "files": [
+    "src/renderers/common/nodes/NodeSampledTexture.js"
+   ]
+  },
+  "NodeSampledTexture": {
+   "base": "SampledTexture",
+   "methods": [
+    "update"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeSampledTexture.js"
+   ]
+  },
+  "NodeSampledTexture3D": {
+   "base": "NodeSampledTexture",
+   "methods": [],
+   "files": [
+    "src/renderers/common/nodes/NodeSampledTexture.js"
+   ]
+  },
+  "NodeSampler": {
+   "base": "Sampler",
+   "methods": [
+    "update"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeSampler.js"
+   ]
+  },
+  "NodeStorageBuffer": {
+   "base": "StorageBuffer",
+   "methods": [
+    "attribute",
+    "buffer"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeStorageBuffer.js"
+   ]
+  },
+  "NodeUniform": {
+   "base": null,
+   "methods": [
+    "groupNode",
+    "id",
+    "value"
+   ],
+   "files": [
+    "src/nodes/core/NodeUniform.js"
+   ]
+  },
+  "NodeUniformBuffer": {
+   "base": "UniformBuffer",
+   "methods": [
+    "addUpdateRange",
+    "buffer",
+    "byteLength",
+    "clearUpdateRanges",
+    "updateRanges"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeUniformBuffer.js"
+   ]
+  },
+  "NodeUniformsGroup": {
+   "base": "UniformsGroup",
+   "methods": [],
+   "files": [
+    "src/renderers/common/nodes/NodeUniformsGroup.js"
+   ]
+  },
+  "NodeVar": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/nodes/core/NodeVar.js"
+   ]
+  },
+  "NodeVarying": {
+   "base": "NodeVar",
+   "methods": [],
+   "files": [
+    "src/nodes/core/NodeVarying.js"
+   ]
+  },
+  "NormalMapNode": {
+   "base": "TempNode",
+   "methods": [
+    "error",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/display/NormalMapNode.js"
+   ]
+  },
+  "NumberKeyframeTrack": {
+   "base": "KeyframeTrack",
+   "methods": [],
+   "files": [
+    "src/animation/tracks/NumberKeyframeTrack.js"
+   ]
+  },
+  "NumberNodeUniform": {
+   "base": "NumberUniform",
+   "methods": [
+    "getType",
+    "getValue"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeUniform.js"
+   ]
+  },
+  "NumberUniform": {
+   "base": "Uniform",
+   "methods": [],
+   "files": [
+    "src/renderers/common/Uniform.js"
+   ]
+  },
+  "Object3D": {
+   "base": "EventDispatcher",
+   "methods": [
+    "add",
+    "applyMatrix4",
+    "applyQuaternion",
+    "attach",
+    "callback",
+    "clear",
+    "clone",
+    "copy",
+    "dispose",
+    "error",
+    "getObjectById",
+    "getObjectByName",
+    "getObjectByProperty",
+    "getObjectsByProperty",
+    "getWorldDirection",
+    "getWorldPosition",
+    "getWorldQuaternion",
+    "getWorldScale",
+    "intersectsFrustum",
+    "localToWorld",
+    "lookAt",
+    "onAfterRender",
+    "onAfterShadow",
+    "onBeforeRender",
+    "onBeforeShadow",
+    "raycast",
+    "remove",
+    "removeFromParent",
+    "rotateOnAxis",
+    "rotateOnWorldAxis",
+    "rotateX",
+    "rotateY",
+    "rotateZ",
+    "serialize",
+    "setRotationFromAxisAngle",
+    "setRotationFromEuler",
+    "setRotationFromMatrix",
+    "setRotationFromQuaternion",
+    "toJSON",
+    "translateOnAxis",
+    "translateX",
+    "translateY",
+    "translateZ",
+    "traverse",
+    "traverseAncestors",
+    "traverseVisible",
+    "updateMatrix",
+    "updateMatrixWorld",
+    "updateWorldMatrix",
+    "worldToLocal"
+   ],
+   "files": [
+    "src/core/Object3D.js"
+   ]
+  },
+  "Object3DNode": {
+   "base": "Node",
+   "methods": [
+    "deserialize",
+    "generate",
+    "generateNodeType",
+    "serialize",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/accessors/Object3DNode.js"
+   ]
+  },
+  "ObjectLoader": {
+   "base": "Loader",
+   "methods": [
+    "bindLightTargets",
+    "bindSkeletons",
+    "error",
+    "load",
+    "loadAsync",
+    "parse",
+    "parseAnimations",
+    "parseAsync",
+    "parseGeometries",
+    "parseImages",
+    "parseImagesAsync",
+    "parseMaterials",
+    "parseObject",
+    "parseShapes",
+    "parseSkeletons",
+    "parseTextures",
+    "registerGeometry",
+    "warn"
+   ],
+   "files": [
+    "src/loaders/ObjectLoader.js"
+   ]
+  },
+  "OctahedronGeometry": {
+   "base": "PolyhedronGeometry",
+   "methods": [
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/OctahedronGeometry.js"
+   ]
+  },
+  "OperatorNode": {
+   "base": "TempNode",
+   "methods": [
+    "deserialize",
+    "generate",
+    "generateNodeType",
+    "getOperatorMethod",
+    "serialize",
+    "type"
+   ],
+   "files": [
+    "src/nodes/math/OperatorNode.js"
+   ]
+  },
+  "OrthographicCamera": {
+   "base": "Camera",
+   "methods": [
+    "clearViewOffset",
+    "copy",
+    "setViewOffset",
+    "toJSON",
+    "updateProjectionMatrix"
+   ],
+   "files": [
+    "src/cameras/OrthographicCamera.js"
+   ]
+  },
+  "OutputStructNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/OutputStructNode.js"
+   ]
+  },
+  "OverrideContextNode": {
+   "base": "ContextNode",
+   "methods": [
+    "getFlowContextData",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/OverrideContextNode.js"
+   ]
+  },
+  "PMREMGenerator": {
+   "base": null,
+   "methods": [
+    "_allocateTarget",
+    "_allocateTargets",
+    "_applyGGXFilter",
+    "_applyPMREM",
+    "_blur",
+    "_blurPass",
+    "_cleanup",
+    "_compileMaterial",
+    "_dispose",
+    "_fromTexture",
+    "_hasInitialized",
+    "_init",
+    "_sceneToCubeUV",
+    "_setSize",
+    "_setSizeFromTexture",
+    "_setViewport",
+    "_textureToCubeUV",
+    "compileCubemapShader",
+    "compileEquirectangularShader",
+    "dispose",
+    "fromCubemap",
+    "fromCubemapAsync",
+    "fromEquirectangular",
+    "fromEquirectangularAsync",
+    "fromScene",
+    "fromSceneAsync",
+    "warnOnce"
+   ],
+   "files": [
+    "src/extras/PMREMGenerator.js",
+    "src/renderers/common/extras/PMREMGenerator.js"
+   ]
+  },
+  "PMREMNode": {
+   "base": "TempNode",
+   "methods": [
+    "dispose",
+    "setup",
+    "type",
+    "updateBefore",
+    "updateFromTexture",
+    "value"
+   ],
+   "files": [
+    "src/nodes/pmrem/PMREMNode.js"
+   ]
+  },
+  "PackFloatNode": {
+   "base": "TempNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/math/PackFloatNode.js"
+   ]
+  },
+  "Packed4x8IntegerNode": {
+   "base": "TempNode",
+   "methods": [
+    "DOT4_I8_PACKED",
+    "DOT4_U8_PACKED",
+    "PACK4X_I8",
+    "PACK4X_I8_CLAMP",
+    "PACK4X_U8",
+    "PACK4X_U8_CLAMP",
+    "UNPACK4X_I8",
+    "UNPACK4X_U8",
+    "_getEmulatedFn",
+    "deserialize",
+    "generate",
+    "generateNodeType",
+    "getInputType",
+    "serialize",
+    "setup",
+    "signExtendByte",
+    "type"
+   ],
+   "files": [
+    "src/nodes/math/Packed4x8IntegerNode.js"
+   ]
+  },
+  "ParameterNode": {
+   "base": "PropertyNode",
+   "methods": [
+    "error",
+    "generate",
+    "getHash",
+    "getMemberType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/ParameterNode.js"
+   ]
+  },
+  "PassMultipleTextureNode": {
+   "base": "PassTextureNode",
+   "methods": [
+    "clone",
+    "setup",
+    "type",
+    "updateTexture"
+   ],
+   "files": [
+    "src/nodes/display/PassNode.js"
+   ]
+  },
+  "PassNode": {
+   "base": "TempNode",
+   "methods": [
+    "COLOR",
+    "DEPTH",
+    "compileAsync",
+    "dispose",
+    "getLayers",
+    "getLinearDepthNode",
+    "getMRT",
+    "getPreviousTexture",
+    "getPreviousTextureNode",
+    "getResolution",
+    "getResolutionScale",
+    "getTexture",
+    "getTextureNode",
+    "getViewZNode",
+    "setLayers",
+    "setMRT",
+    "setResolution",
+    "setResolutionScale",
+    "setScissor",
+    "setSize",
+    "setViewport",
+    "setup",
+    "toggleTexture",
+    "type",
+    "updateBefore",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/display/PassNode.js"
+   ]
+  },
+  "PassTextureNode": {
+   "base": "TextureNode",
+   "methods": [
+    "clone",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/display/PassNode.js"
+   ]
+  },
+  "Path": {
+   "base": "CurvePath",
+   "methods": [
+    "absarc",
+    "absellipse",
+    "arc",
+    "bezierCurveTo",
+    "copy",
+    "ellipse",
+    "fromJSON",
+    "lineTo",
+    "moveTo",
+    "quadraticCurveTo",
+    "setFromPoints",
+    "splineThru",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/core/Path.js"
+   ]
+  },
+  "PerspectiveCamera": {
+   "base": "Camera",
+   "methods": [
+    "clearViewOffset",
+    "copy",
+    "getEffectiveFOV",
+    "getFilmHeight",
+    "getFilmWidth",
+    "getFocalLength",
+    "getViewBounds",
+    "getViewSize",
+    "setFocalLength",
+    "setViewOffset",
+    "toJSON",
+    "updateProjectionMatrix"
+   ],
+   "files": [
+    "src/cameras/PerspectiveCamera.js"
+   ]
+  },
+  "PhongLightingModel": {
+   "base": "BasicLightingModel",
+   "methods": [
+    "direct",
+    "indirect"
+   ],
+   "files": [
+    "src/nodes/functions/PhongLightingModel.js"
+   ]
+  },
+  "PhysicalLightingModel": {
+   "base": "LightingModel",
+   "methods": [
+    "IBLSheenBRDF",
+    "ambientOcclusion",
+    "computeMultiscattering",
+    "direct",
+    "directRectArea",
+    "finish",
+    "indirect",
+    "indirectDiffuse",
+    "indirectSpecular",
+    "start",
+    "vec3"
+   ],
+   "files": [
+    "src/nodes/functions/PhysicalLightingModel.js"
+   ]
+  },
+  "Pipeline": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/renderers/common/Pipeline.js"
+   ]
+  },
+  "Pipelines": {
+   "base": "DataMap",
+   "methods": [
+    "_getComputeCacheKey",
+    "_getComputePipeline",
+    "_getRenderCacheKey",
+    "_getRenderPipeline",
+    "_needsComputeUpdate",
+    "_needsRenderUpdate",
+    "_releasePipeline",
+    "_releaseProgram",
+    "dispose",
+    "getForCompute",
+    "getForRender",
+    "isReady",
+    "updateForRender"
+   ],
+   "files": [
+    "src/renderers/common/Pipelines.js"
+   ]
+  },
+  "Plane": {
+   "base": null,
+   "methods": [
+    "applyMatrix4",
+    "clone",
+    "coplanarPoint",
+    "copy",
+    "distanceToPoint",
+    "distanceToSphere",
+    "equals",
+    "fromJSON",
+    "intersectLine",
+    "intersectsBox",
+    "intersectsLine",
+    "intersectsSphere",
+    "negate",
+    "normalize",
+    "projectPoint",
+    "set",
+    "setComponents",
+    "setFromCoplanarPoints",
+    "setFromNormalAndCoplanarPoint",
+    "toJSON",
+    "translate"
+   ],
+   "files": [
+    "src/math/Plane.js"
+   ]
+  },
+  "PlaneGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/PlaneGeometry.js"
+   ]
+  },
+  "PlaneHelper": {
+   "base": "Line",
+   "methods": [
+    "dispose",
+    "updateMatrixWorld"
+   ],
+   "files": [
+    "src/helpers/PlaneHelper.js"
+   ]
+  },
+  "PointLight": {
+   "base": "Light",
+   "methods": [
+    "copy",
+    "dispose",
+    "power",
+    "toJSON"
+   ],
+   "files": [
+    "src/lights/PointLight.js"
+   ]
+  },
+  "PointLightHelper": {
+   "base": "Mesh",
+   "methods": [
+    "dispose",
+    "update"
+   ],
+   "files": [
+    "src/helpers/PointLightHelper.js"
+   ]
+  },
+  "PointLightNode": {
+   "base": "AnalyticLightNode",
+   "methods": [
+    "setupDirect",
+    "setupShadowNode",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/lighting/PointLightNode.js"
+   ]
+  },
+  "PointLightShadow": {
+   "base": "LightShadow",
+   "methods": [],
+   "files": [
+    "src/lights/PointLightShadow.js"
+   ]
+  },
+  "PointShadowNode": {
+   "base": "ShadowNode",
+   "methods": [
+    "getShadowFilterFn",
+    "renderShadow",
+    "setupRenderTarget",
+    "setupShadowCoord",
+    "setupShadowFilter",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/PointShadowNode.js"
+   ]
+  },
+  "PointUVNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/PointUVNode.js"
+   ]
+  },
+  "Points": {
+   "base": "Object3D",
+   "methods": [
+    "copy",
+    "intersectsFrustum",
+    "raycast",
+    "testPoint",
+    "updateMorphTargets"
+   ],
+   "files": [
+    "src/objects/Points.js"
+   ]
+  },
+  "PointsMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/PointsMaterial.js"
+   ]
+  },
+  "PointsNodeMaterial": {
+   "base": "SpriteNodeMaterial",
+   "methods": [
+    "alphaToCoverage",
+    "setupPositionView",
+    "setupVertex",
+    "setupVertexSprite",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/PointsNodeMaterial.js"
+   ]
+  },
+  "PolarGridHelper": {
+   "base": "LineSegments",
+   "methods": [
+    "dispose"
+   ],
+   "files": [
+    "src/helpers/PolarGridHelper.js"
+   ]
+  },
+  "PolyhedronGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "applyRadius",
+    "copy",
+    "correctSeam",
+    "correctUV",
+    "correctUVs",
+    "fromJSON",
+    "generateUVs",
+    "getVertexByIndex",
+    "pushVertex",
+    "subdivide",
+    "subdivideFace"
+   ],
+   "files": [
+    "src/geometries/PolyhedronGeometry.js"
+   ]
+  },
+  "PositionalAudio": {
+   "base": "Audio",
+   "methods": [
+    "connect",
+    "disconnect",
+    "getDistanceModel",
+    "getMaxDistance",
+    "getOutput",
+    "getRefDistance",
+    "getRolloffFactor",
+    "setDirectionalCone",
+    "setDistanceModel",
+    "setMaxDistance",
+    "setRefDistance",
+    "setRolloffFactor",
+    "updateMatrixWorld"
+   ],
+   "files": [
+    "src/audio/PositionalAudio.js"
+   ]
+  },
+  "PostProcessing": {
+   "base": "RenderPipeline",
+   "methods": [
+    "warnOnce"
+   ],
+   "files": [
+    "src/renderers/common/PostProcessing.js"
+   ]
+  },
+  "ProgrammableStage": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/renderers/common/ProgrammableStage.js"
+   ]
+  },
+  "ProjectorLight": {
+   "base": "SpotLight",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/lights/webgpu/ProjectorLight.js"
+   ]
+  },
+  "ProjectorLightNode": {
+   "base": "SpotLightNode",
+   "methods": [
+    "If",
+    "getSpotAttenuation",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/lighting/ProjectorLightNode.js"
+   ]
+  },
+  "PropertyBinding": {
+   "base": null,
+   "methods": [
+    "_getValue_array",
+    "_getValue_arrayElement",
+    "_getValue_direct",
+    "_getValue_toArray",
+    "_getValue_unavailable",
+    "_getValue_unbound",
+    "_setValue_array",
+    "_setValue_arrayElement",
+    "_setValue_arrayElement_setMatrixWorldNeedsUpdate",
+    "_setValue_arrayElement_setNeedsUpdate",
+    "_setValue_array_setMatrixWorldNeedsUpdate",
+    "_setValue_array_setNeedsUpdate",
+    "_setValue_direct",
+    "_setValue_direct_setMatrixWorldNeedsUpdate",
+    "_setValue_direct_setNeedsUpdate",
+    "_setValue_fromArray",
+    "_setValue_fromArray_setMatrixWorldNeedsUpdate",
+    "_setValue_fromArray_setNeedsUpdate",
+    "_setValue_unavailable",
+    "_setValue_unbound",
+    "bind",
+    "create",
+    "error",
+    "findNode",
+    "parseTrackName",
+    "sanitizeNodeName",
+    "unbind",
+    "warn"
+   ],
+   "files": [
+    "src/animation/PropertyBinding.js"
+   ]
+  },
+  "PropertyMixer": {
+   "base": null,
+   "methods": [
+    "_lerp",
+    "_lerpAdditive",
+    "_select",
+    "_setAdditiveIdentityNumeric",
+    "_setAdditiveIdentityOther",
+    "_setAdditiveIdentityQuaternion",
+    "_slerp",
+    "_slerpAdditive",
+    "accumulate",
+    "accumulateAdditive",
+    "apply",
+    "restoreOriginalState",
+    "saveOriginalState"
+   ],
+   "files": [
+    "src/animation/PropertyMixer.js"
+   ]
+  },
+  "PropertyNode": {
+   "base": "Node",
+   "methods": [
+    "customCacheKey",
+    "generate",
+    "getHash",
+    "getNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/PropertyNode.js"
+   ]
+  },
+  "PureArrayUniform": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/renderers/webgl/WebGLUniforms.js"
+   ]
+  },
+  "QuadGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "array"
+   ],
+   "files": [
+    "src/renderers/common/QuadMesh.js"
+   ]
+  },
+  "QuadMesh": {
+   "base": "Mesh",
+   "methods": [
+    "render",
+    "renderAsync",
+    "warnOnce"
+   ],
+   "files": [
+    "src/renderers/common/QuadMesh.js"
+   ]
+  },
+  "QuadraticBezierCurve": {
+   "base": "Curve",
+   "methods": [
+    "QuadraticBezier",
+    "copy",
+    "fromJSON",
+    "getPoint",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/curves/QuadraticBezierCurve.js"
+   ]
+  },
+  "QuadraticBezierCurve3": {
+   "base": "Curve",
+   "methods": [
+    "QuadraticBezier",
+    "copy",
+    "fromJSON",
+    "getPoint",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/curves/QuadraticBezierCurve3.js"
+   ]
+  },
+  "Quaternion": {
+   "base": null,
+   "methods": [
+    "_onChange",
+    "_onChangeCallback",
+    "angleTo",
+    "clone",
+    "conjugate",
+    "copy",
+    "dot",
+    "equals",
+    "fromArray",
+    "fromBufferAttribute",
+    "identity",
+    "invert",
+    "length",
+    "lengthSq",
+    "multiply",
+    "multiplyQuaternions",
+    "multiplyQuaternionsFlat",
+    "normalize",
+    "premultiply",
+    "random",
+    "rotateTowards",
+    "set",
+    "setFromAxisAngle",
+    "setFromEuler",
+    "setFromRotationMatrix",
+    "setFromUnitVectors",
+    "slerp",
+    "slerpFlat",
+    "slerpQuaternions",
+    "toArray",
+    "toJSON",
+    "w",
+    "warn",
+    "x",
+    "y",
+    "z"
+   ],
+   "files": [
+    "src/math/Quaternion.js"
+   ]
+  },
+  "QuaternionKeyframeTrack": {
+   "base": "KeyframeTrack",
+   "methods": [
+    "InterpolantFactoryMethodLinear"
+   ],
+   "files": [
+    "src/animation/tracks/QuaternionKeyframeTrack.js"
+   ]
+  },
+  "QuaternionLinearInterpolant": {
+   "base": "Interpolant",
+   "methods": [
+    "interpolate_"
+   ],
+   "files": [
+    "src/math/interpolants/QuaternionLinearInterpolant.js"
+   ]
+  },
+  "RTTNode": {
+   "base": "TextureNode",
+   "methods": [
+    "autoResize",
+    "clone",
+    "dispose",
+    "error",
+    "getResolutionScale",
+    "resetRendererState",
+    "restoreRendererState",
+    "setResolutionScale",
+    "setSize",
+    "setup",
+    "type",
+    "updateBefore",
+    "value"
+   ],
+   "files": [
+    "src/nodes/utils/RTTNode.js"
+   ]
+  },
+  "RangeNode": {
+   "base": "Node",
+   "methods": [
+    "generateNodeType",
+    "getConstNode",
+    "getVectorLength",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/geometry/RangeNode.js"
+   ]
+  },
+  "RawShaderMaterial": {
+   "base": "ShaderMaterial",
+   "methods": [],
+   "files": [
+    "src/materials/RawShaderMaterial.js"
+   ]
+  },
+  "Ray": {
+   "base": null,
+   "methods": [
+    "applyMatrix4",
+    "at",
+    "clone",
+    "closestPointToPoint",
+    "copy",
+    "distanceSqToPoint",
+    "distanceSqToSegment",
+    "distanceToPlane",
+    "distanceToPoint",
+    "equals",
+    "intersectBox",
+    "intersectPlane",
+    "intersectSphere",
+    "intersectTriangle",
+    "intersectsBox",
+    "intersectsPlane",
+    "intersectsSphere",
+    "lookAt",
+    "recast",
+    "set"
+   ],
+   "files": [
+    "src/math/Ray.js"
+   ]
+  },
+  "Raycaster": {
+   "base": null,
+   "methods": [
+    "error",
+    "intersect",
+    "intersectObject",
+    "intersectObjects",
+    "set",
+    "setFromCamera",
+    "setFromXRController"
+   ],
+   "files": [
+    "src/core/Raycaster.js"
+   ]
+  },
+  "ReadbackBuffer": {
+   "base": "EventDispatcher",
+   "methods": [
+    "dispose",
+    "release"
+   ],
+   "files": [
+    "src/renderers/common/ReadbackBuffer.js"
+   ]
+  },
+  "RectAreaLight": {
+   "base": "Light",
+   "methods": [
+    "copy",
+    "power",
+    "toJSON"
+   ],
+   "files": [
+    "src/lights/RectAreaLight.js"
+   ]
+  },
+  "RectAreaLightNode": {
+   "base": "AnalyticLightNode",
+   "methods": [
+    "setLTC",
+    "setupDirectRectArea",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/lighting/RectAreaLightNode.js"
+   ]
+  },
+  "ReferenceBaseNode": {
+   "base": "Node",
+   "methods": [
+    "element",
+    "generateNodeType",
+    "getValueFromReference",
+    "setGroup",
+    "setNodeType",
+    "setup",
+    "type",
+    "update",
+    "updateReference",
+    "updateValue"
+   ],
+   "files": [
+    "src/nodes/accessors/ReferenceBaseNode.js"
+   ]
+  },
+  "ReferenceElementNode": {
+   "base": "ArrayElementNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/ReferenceElementNode.js"
+   ]
+  },
+  "ReferenceNode": {
+   "base": "Node",
+   "methods": [
+    "element",
+    "generateNodeType",
+    "getValueFromReference",
+    "label",
+    "setGroup",
+    "setName",
+    "setNodeType",
+    "setup",
+    "type",
+    "update",
+    "updateReference",
+    "updateValue",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/accessors/ReferenceNode.js"
+   ]
+  },
+  "ReflectorBaseNode": {
+   "base": "Node",
+   "methods": [
+    "_updateResolution",
+    "dispose",
+    "getRenderTarget",
+    "getVirtualCamera",
+    "resolution",
+    "setup",
+    "type",
+    "updateBefore",
+    "warnOnce"
+   ],
+   "files": [
+    "src/nodes/utils/ReflectorNode.js"
+   ]
+  },
+  "ReflectorNode": {
+   "base": "TextureNode",
+   "methods": [
+    "clone",
+    "dispose",
+    "getDepthNode",
+    "reflector",
+    "setup",
+    "target",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/ReflectorNode.js"
+   ]
+  },
+  "RenderBundle": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/renderers/common/RenderBundle.js"
+   ]
+  },
+  "RenderBundles": {
+   "base": null,
+   "methods": [
+    "dispose",
+    "get"
+   ],
+   "files": [
+    "src/renderers/common/RenderBundles.js"
+   ]
+  },
+  "RenderContext": {
+   "base": null,
+   "methods": [
+    "getCacheKey"
+   ],
+   "files": [
+    "src/renderers/common/RenderContext.js"
+   ]
+  },
+  "RenderContexts": {
+   "base": null,
+   "methods": [
+    "dispose",
+    "get"
+   ],
+   "files": [
+    "src/renderers/common/RenderContexts.js"
+   ]
+  },
+  "RenderList": {
+   "base": null,
+   "methods": [
+    "begin",
+    "clear",
+    "finish",
+    "getNextRenderItem",
+    "push",
+    "pushBundle",
+    "pushLight",
+    "resetRenderItem",
+    "sort",
+    "unshift"
+   ],
+   "files": [
+    "src/renderers/common/RenderList.js"
+   ]
+  },
+  "RenderLists": {
+   "base": null,
+   "methods": [
+    "dispose",
+    "get",
+    "update"
+   ],
+   "files": [
+    "src/renderers/common/RenderLists.js"
+   ]
+  },
+  "RenderObject": {
+   "base": null,
+   "methods": [
+    "clippingNeedsUpdate",
+    "dispose",
+    "getAttributes",
+    "getBindingGroup",
+    "getBindings",
+    "getCacheKey",
+    "getChainArray",
+    "getDrawParameters",
+    "getDynamicCacheKey",
+    "getGeometryCacheKey",
+    "getIndex",
+    "getIndirect",
+    "getIndirectOffset",
+    "getMaterialCacheKey",
+    "getMonitor",
+    "getNodeBuilderState",
+    "getVertexBuffers",
+    "hardwareClippingPlanes",
+    "needsGeometryUpdate",
+    "needsUpdate",
+    "setGeometry",
+    "updateClipping"
+   ],
+   "files": [
+    "src/renderers/common/RenderObject.js"
+   ]
+  },
+  "RenderObjectPipeline": {
+   "base": "Pipeline",
+   "methods": [],
+   "files": [
+    "src/renderers/common/RenderObjectPipeline.js"
+   ]
+  },
+  "RenderObjects": {
+   "base": null,
+   "methods": [
+    "createRenderObject",
+    "dispose",
+    "get",
+    "getChainMap"
+   ],
+   "files": [
+    "src/renderers/common/RenderObjects.js"
+   ]
+  },
+  "RenderOutputNode": {
+   "base": "TempNode",
+   "methods": [
+    "getToneMapping",
+    "setToneMapping",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/display/RenderOutputNode.js"
+   ]
+  },
+  "RenderPipeline": {
+   "base": null,
+   "methods": [
+    "_update",
+    "_updateContext",
+    "dispose",
+    "render",
+    "renderAsync",
+    "warnOnce"
+   ],
+   "files": [
+    "src/renderers/common/RenderPipeline.js"
+   ]
+  },
+  "RenderTarget": {
+   "base": "EventDispatcher",
+   "methods": [
+    "_setTextureOptions",
+    "clone",
+    "copy",
+    "depthTexture",
+    "dispose",
+    "setSize",
+    "texture"
+   ],
+   "files": [
+    "src/core/RenderTarget.js"
+   ]
+  },
+  "RenderTarget3D": {
+   "base": "RenderTarget",
+   "methods": [],
+   "files": [
+    "src/core/RenderTarget3D.js"
+   ]
+  },
+  "Renderer": {
+   "base": null,
+   "methods": [
+    "_beginPreCompile",
+    "_bundleNeedsUpdate",
+    "_finishPreCompile",
+    "_getFrameBufferTarget",
+    "_onDeviceLost",
+    "_onError",
+    "_renderBundle",
+    "_renderOutput",
+    "_renderOutputLayers",
+    "_renderScene",
+    "_setXRLayerSize",
+    "compileAsync",
+    "compileComputeAsync",
+    "coordinateSystem",
+    "domElement",
+    "error",
+    "getActiveCubeFace",
+    "getActiveMipmapLevel",
+    "getAnimationLoop",
+    "getArrayBufferAsync",
+    "getColorBufferType",
+    "getContext",
+    "getDrawingBufferSize",
+    "getMRT",
+    "getMaxAnisotropy",
+    "getOutputBufferType",
+    "getPixelRatio",
+    "getScissor",
+    "getScissorTest",
+    "getSize",
+    "highPrecision",
+    "init",
+    "initialized",
+    "inspector",
+    "onProgress",
+    "reject",
+    "render",
+    "renderAsync",
+    "resolve",
+    "setAnimationLoop",
+    "setDrawingBufferSize",
+    "setMRT",
+    "setOpaqueSort",
+    "setPixelRatio",
+    "setScissor",
+    "setSize",
+    "setTransparentSort",
+    "waitForGPU",
+    "warn",
+    "warnOnce"
+   ],
+   "files": [
+    "src/renderers/common/Renderer.js"
+   ]
+  },
+  "RendererReferenceNode": {
+   "base": "ReferenceBaseNode",
+   "methods": [
+    "type",
+    "updateReference"
+   ],
+   "files": [
+    "src/nodes/accessors/RendererReferenceNode.js"
+   ]
+  },
+  "RingGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/RingGeometry.js"
+   ]
+  },
+  "RotateNode": {
+   "base": "TempNode",
+   "methods": [
+    "customCacheKey",
+    "deserialize",
+    "generateNodeType",
+    "getOrder",
+    "serialize",
+    "setOrder",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/RotateNode.js"
+   ]
+  },
+  "SSSLightingModel": {
+   "base": "PhysicalLightingModel",
+   "methods": [
+    "direct"
+   ],
+   "files": [
+    "src/materials/nodes/MeshSSSNodeMaterial.js"
+   ]
+  },
+  "SampleNode": {
+   "base": "Node",
+   "methods": [
+    "sample",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/SampleNode.js"
+   ]
+  },
+  "Sampled3DTexture": {
+   "base": "SampledTexture",
+   "methods": [],
+   "files": [
+    "src/renderers/common/SampledTexture.js"
+   ]
+  },
+  "SampledArrayTexture": {
+   "base": "SampledTexture",
+   "methods": [],
+   "files": [
+    "src/renderers/common/SampledTexture.js"
+   ]
+  },
+  "SampledCubeTexture": {
+   "base": "SampledTexture",
+   "methods": [],
+   "files": [
+    "src/renderers/common/SampledTexture.js"
+   ]
+  },
+  "SampledTexture": {
+   "base": "Sampler",
+   "methods": [],
+   "files": [
+    "src/renderers/common/SampledTexture.js"
+   ]
+  },
+  "Sampler": {
+   "base": "Binding",
+   "methods": [
+    "release",
+    "reset",
+    "texture",
+    "update"
+   ],
+   "files": [
+    "src/renderers/common/Sampler.js"
+   ]
+  },
+  "Scene": {
+   "base": "Object3D",
+   "methods": [
+    "copy",
+    "toJSON"
+   ],
+   "files": [
+    "src/scenes/Scene.js"
+   ]
+  },
+  "ScreenNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "setup",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/display/ScreenNode.js"
+   ]
+  },
+  "SetNode": {
+   "base": "TempNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/SetNode.js"
+   ]
+  },
+  "ShaderCallNodeInternal": {
+   "base": "Node",
+   "methods": [
+    "build",
+    "call",
+    "generateNodeType",
+    "getElementType",
+    "getMemberType",
+    "getOutputNode",
+    "nodeObjects",
+    "setupOutput"
+   ],
+   "files": [
+    "src/nodes/tsl/TSLCore.js"
+   ]
+  },
+  "ShaderMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy",
+    "fromJSON",
+    "toJSON"
+   ],
+   "files": [
+    "src/materials/ShaderMaterial.js"
+   ]
+  },
+  "ShaderNodeInternal": {
+   "base": "Node",
+   "methods": [
+    "call",
+    "error",
+    "get",
+    "getLayout",
+    "set",
+    "setLayout",
+    "setup"
+   ],
+   "files": [
+    "src/nodes/tsl/TSLCore.js"
+   ]
+  },
+  "ShadowBaseNode": {
+   "base": "Node",
+   "methods": [
+    "_disposeShadowMaterial",
+    "disposeShadowMaterial",
+    "getShadowMaterial",
+    "getShadowRenderObjectFunction",
+    "setupShadowPosition",
+    "type"
+   ],
+   "files": [
+    "src/nodes/lighting/ShadowBaseNode.js"
+   ]
+  },
+  "ShadowMaskModel": {
+   "base": "LightingModel",
+   "methods": [
+    "direct",
+    "finish"
+   ],
+   "files": [
+    "src/nodes/functions/ShadowMaskModel.js"
+   ]
+  },
+  "ShadowMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/ShadowMaterial.js"
+   ]
+  },
+  "ShadowNode": {
+   "base": "ShadowBaseNode",
+   "methods": [
+    "_reset",
+    "dispose",
+    "getShadowFilterFn",
+    "renderShadow",
+    "restoreRendererAndSceneState",
+    "setup",
+    "setupRenderTarget",
+    "setupShadow",
+    "setupShadowCoord",
+    "setupShadowFilter",
+    "type",
+    "updateBefore",
+    "updateShadow",
+    "vsmPass"
+   ],
+   "files": [
+    "src/nodes/lighting/ShadowNode.js"
+   ]
+  },
+  "ShadowNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupLightingModel",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/ShadowNodeMaterial.js"
+   ]
+  },
+  "Shape": {
+   "base": "Path",
+   "methods": [
+    "copy",
+    "extractPoints",
+    "fromJSON",
+    "getPointsHoles",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/core/Shape.js"
+   ]
+  },
+  "ShapeGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "addShape",
+    "copy",
+    "fromJSON",
+    "toJSON"
+   ],
+   "files": [
+    "src/geometries/ShapeGeometry.js"
+   ]
+  },
+  "ShapePath": {
+   "base": null,
+   "methods": [
+    "bezierCurveTo",
+    "lineTo",
+    "moveTo",
+    "quadraticCurveTo",
+    "splineThru",
+    "toShapes",
+    "warn"
+   ],
+   "files": [
+    "src/extras/core/ShapePath.js"
+   ]
+  },
+  "ShapeUtils": {
+   "base": null,
+   "methods": [
+    "addContour",
+    "area",
+    "isClockWise",
+    "removeDupEndPts",
+    "triangulateShape"
+   ],
+   "files": [
+    "src/extras/ShapeUtils.js"
+   ]
+  },
+  "SingleUniform": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/renderers/webgl/WebGLUniforms.js"
+   ]
+  },
+  "Skeleton": {
+   "base": null,
+   "methods": [
+    "calculateInverses",
+    "clone",
+    "computeBoneTexture",
+    "dispose",
+    "fromJSON",
+    "getBoneByName",
+    "init",
+    "pose",
+    "toJSON",
+    "update",
+    "warn"
+   ],
+   "files": [
+    "src/objects/Skeleton.js"
+   ]
+  },
+  "SkeletonHelper": {
+   "base": "LineSegments",
+   "methods": [
+    "dispose",
+    "setColors",
+    "updateMatrixWorld"
+   ],
+   "files": [
+    "src/helpers/SkeletonHelper.js"
+   ]
+  },
+  "SkinnedMesh": {
+   "base": "Mesh",
+   "methods": [
+    "applyBoneTransform",
+    "bind",
+    "computeBoundingBox",
+    "computeBoundingSphere",
+    "copy",
+    "getVertexPosition",
+    "normalizeSkinWeights",
+    "pose",
+    "raycast",
+    "updateMatrixWorld",
+    "warn"
+   ],
+   "files": [
+    "src/objects/SkinnedMesh.js"
+   ]
+  },
+  "Source": {
+   "base": "TextureSource",
+   "methods": [
+    "warnOnce"
+   ],
+   "files": [
+    "src/textures/TextureSource.js"
+   ]
+  },
+  "Sphere": {
+   "base": null,
+   "methods": [
+    "applyMatrix4",
+    "clampPoint",
+    "clone",
+    "containsPoint",
+    "copy",
+    "distanceToPoint",
+    "equals",
+    "expandByPoint",
+    "fromJSON",
+    "getBoundingBox",
+    "intersectsBox",
+    "intersectsPlane",
+    "intersectsSphere",
+    "isEmpty",
+    "makeEmpty",
+    "set",
+    "setFromPoints",
+    "toJSON",
+    "translate",
+    "union"
+   ],
+   "files": [
+    "src/math/Sphere.js"
+   ]
+  },
+  "SphereGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/SphereGeometry.js"
+   ]
+  },
+  "Spherical": {
+   "base": null,
+   "methods": [
+    "clone",
+    "copy",
+    "makeSafe",
+    "set",
+    "setFromCartesianCoords",
+    "setFromVector3"
+   ],
+   "files": [
+    "src/math/Spherical.js"
+   ]
+  },
+  "SphericalHarmonics3": {
+   "base": null,
+   "methods": [
+    "add",
+    "addScaledSH",
+    "clone",
+    "copy",
+    "equals",
+    "fromArray",
+    "getAt",
+    "getBasisAt",
+    "getIrradianceAt",
+    "lerp",
+    "scale",
+    "set",
+    "toArray",
+    "zero"
+   ],
+   "files": [
+    "src/math/SphericalHarmonics3.js"
+   ]
+  },
+  "SplineCurve": {
+   "base": "Curve",
+   "methods": [
+    "CatmullRom",
+    "copy",
+    "fromJSON",
+    "getPoint",
+    "toJSON"
+   ],
+   "files": [
+    "src/extras/curves/SplineCurve.js"
+   ]
+  },
+  "SplitNode": {
+   "base": "Node",
+   "methods": [
+    "deserialize",
+    "generate",
+    "generateNodeType",
+    "getComponentType",
+    "getScope",
+    "getVectorLength",
+    "serialize",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/SplitNode.js"
+   ]
+  },
+  "SpotLight": {
+   "base": "Light",
+   "methods": [
+    "copy",
+    "dispose",
+    "power",
+    "toJSON"
+   ],
+   "files": [
+    "src/lights/SpotLight.js"
+   ]
+  },
+  "SpotLightHelper": {
+   "base": "Object3D",
+   "methods": [
+    "dispose",
+    "update"
+   ],
+   "files": [
+    "src/helpers/SpotLightHelper.js"
+   ]
+  },
+  "SpotLightNode": {
+   "base": "AnalyticLightNode",
+   "methods": [
+    "getLightCoord",
+    "getSpotAttenuation",
+    "setupDirect",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/lighting/SpotLightNode.js"
+   ]
+  },
+  "SpotLightShadow": {
+   "base": "LightShadow",
+   "methods": [
+    "copy",
+    "toJSON",
+    "updateMatrices"
+   ],
+   "files": [
+    "src/lights/SpotLightShadow.js"
+   ]
+  },
+  "Sprite": {
+   "base": "Object3D",
+   "methods": [
+    "copy",
+    "error",
+    "intersectsFrustum",
+    "raycast",
+    "transformVertex"
+   ],
+   "files": [
+    "src/objects/Sprite.js"
+   ]
+  },
+  "SpriteMaterial": {
+   "base": "Material",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/materials/SpriteMaterial.js"
+   ]
+  },
+  "SpriteNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupPositionView",
+    "sizeAttenuation",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/SpriteNodeMaterial.js"
+   ]
+  },
+  "StackNode": {
+   "base": "Node",
+   "methods": [
+    "Case",
+    "Default",
+    "Else",
+    "ElseIf",
+    "If",
+    "Switch",
+    "addToStack",
+    "addToStackBefore",
+    "build",
+    "error",
+    "generateNodeType",
+    "getElementType",
+    "getMemberType",
+    "setCurrentStack",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/StackNode.js"
+   ]
+  },
+  "StackTrace": {
+   "base": null,
+   "methods": [
+    "getError",
+    "getLocation"
+   ],
+   "files": [
+    "src/nodes/core/StackTrace.js"
+   ]
+  },
+  "StandardNodeLibrary": {
+   "base": "NodeLibrary",
+   "methods": [],
+   "files": [
+    "src/renderers/webgpu/nodes/StandardNodeLibrary.js"
+   ]
+  },
+  "StereoCamera": {
+   "base": null,
+   "methods": [
+    "update"
+   ],
+   "files": [
+    "src/cameras/StereoCamera.js"
+   ]
+  },
+  "Storage3DTexture": {
+   "base": "Texture",
+   "methods": [
+    "copy",
+    "setSize"
+   ],
+   "files": [
+    "src/renderers/common/Storage3DTexture.js"
+   ]
+  },
+  "StorageArrayElementNode": {
+   "base": "ArrayElementNode",
+   "methods": [
+    "generate",
+    "getMemberType",
+    "setup",
+    "storageBufferNode",
+    "type"
+   ],
+   "files": [
+    "src/nodes/utils/StorageArrayElementNode.js"
+   ]
+  },
+  "StorageArrayTexture": {
+   "base": "Texture",
+   "methods": [
+    "setSize"
+   ],
+   "files": [
+    "src/renderers/common/StorageArrayTexture.js"
+   ]
+  },
+  "StorageBuffer": {
+   "base": "Buffer",
+   "methods": [
+    "attribute"
+   ],
+   "files": [
+    "src/renderers/common/StorageBuffer.js"
+   ]
+  },
+  "StorageBufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [],
+   "files": [
+    "src/renderers/common/StorageBufferAttribute.js"
+   ]
+  },
+  "StorageBufferNode": {
+   "base": "BufferNode",
+   "methods": [
+    "element",
+    "generate",
+    "generateNodeType",
+    "getAttributeData",
+    "getHash",
+    "getInputType",
+    "getMemberType",
+    "getPBO",
+    "setAccess",
+    "setAtomic",
+    "setPBO",
+    "toAtomic",
+    "toReadOnly",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/StorageBufferNode.js"
+   ]
+  },
+  "StorageInstancedBufferAttribute": {
+   "base": "InstancedBufferAttribute",
+   "methods": [],
+   "files": [
+    "src/renderers/common/StorageInstancedBufferAttribute.js"
+   ]
+  },
+  "StorageTexture": {
+   "base": "Texture",
+   "methods": [
+    "setSize"
+   ],
+   "files": [
+    "src/renderers/common/StorageTexture.js"
+   ]
+  },
+  "StorageTexture3DNode": {
+   "base": "StorageTextureNode",
+   "methods": [
+    "generateOffset",
+    "generateUV",
+    "getDefaultUV",
+    "setUpdateMatrix",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/StorageTexture3DNode.js"
+   ]
+  },
+  "StorageTextureNode": {
+   "base": "TextureNode",
+   "methods": [
+    "clone",
+    "generate",
+    "generateSnippet",
+    "generateStore",
+    "getInputType",
+    "getTransformedUV",
+    "setAccess",
+    "setMipLevel",
+    "setup",
+    "store",
+    "toReadOnly",
+    "toReadWrite",
+    "toWriteOnly",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/StorageTextureNode.js"
+   ]
+  },
+  "StringKeyframeTrack": {
+   "base": "KeyframeTrack",
+   "methods": [],
+   "files": [
+    "src/animation/tracks/StringKeyframeTrack.js"
+   ]
+  },
+  "StructNode": {
+   "base": "Node",
+   "methods": [
+    "_getChildren",
+    "generate",
+    "generateNodeType",
+    "getMemberType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/StructNode.js"
+   ]
+  },
+  "StructType": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/nodes/core/StructType.js"
+   ]
+  },
+  "StructTypeNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "getLength",
+    "getMemberType",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/StructTypeNode.js"
+   ]
+  },
+  "StructuredUniform": {
+   "base": null,
+   "methods": [
+    "addUniform",
+    "setValue"
+   ],
+   "files": [
+    "src/renderers/webgl/WebGLUniforms.js"
+   ]
+  },
+  "SubBuildNode": {
+   "base": "Node",
+   "methods": [
+    "build",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/SubBuildNode.js"
+   ]
+  },
+  "SubgroupFunctionNode": {
+   "base": "TempNode",
+   "methods": [
+    "QUAD_BROADCAST",
+    "QUAD_SWAP_DIAGONAL",
+    "QUAD_SWAP_X",
+    "QUAD_SWAP_Y",
+    "SUBGROUP_ADD",
+    "SUBGROUP_ALL",
+    "SUBGROUP_AND",
+    "SUBGROUP_ANY",
+    "SUBGROUP_BALLOT",
+    "SUBGROUP_BROADCAST",
+    "SUBGROUP_BROADCAST_FIRST",
+    "SUBGROUP_ELECT",
+    "SUBGROUP_EXCLUSIVE_ADD",
+    "SUBGROUP_EXCLUSIVE_MUL",
+    "SUBGROUP_INCLUSIVE_ADD",
+    "SUBGROUP_INCLUSIVE_MUL",
+    "SUBGROUP_MAX",
+    "SUBGROUP_MIN",
+    "SUBGROUP_MUL",
+    "SUBGROUP_OR",
+    "SUBGROUP_SHUFFLE",
+    "SUBGROUP_SHUFFLE_DOWN",
+    "SUBGROUP_SHUFFLE_UP",
+    "SUBGROUP_SHUFFLE_XOR",
+    "SUBGROUP_XOR",
+    "deserialize",
+    "error",
+    "generate",
+    "generateNodeType",
+    "getInputType",
+    "serialize",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/gpgpu/SubgroupFunctionNode.js"
+   ]
+  },
+  "TempNode": {
+   "base": "Node",
+   "methods": [
+    "build",
+    "hasDependencies",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/TempNode.js"
+   ]
+  },
+  "TetrahedronGeometry": {
+   "base": "PolyhedronGeometry",
+   "methods": [
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/TetrahedronGeometry.js"
+   ]
+  },
+  "Texture": {
+   "base": "EventDispatcher",
+   "methods": [
+    "addUpdateRange",
+    "clearUpdateRanges",
+    "clone",
+    "copy",
+    "depth",
+    "dispose",
+    "height",
+    "image",
+    "needsPMREMUpdate",
+    "needsUpdate",
+    "setValues",
+    "toJSON",
+    "transformUv",
+    "updateMatrix",
+    "warn",
+    "width"
+   ],
+   "files": [
+    "src/textures/Texture.js"
+   ]
+  },
+  "Texture3DNode": {
+   "base": "TextureNode",
+   "methods": [
+    "generateOffset",
+    "generateUV",
+    "getDefaultUV",
+    "getInputType",
+    "normal",
+    "setUpdateMatrix",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/Texture3DNode.js"
+   ]
+  },
+  "TextureLoader": {
+   "base": "Loader",
+   "methods": [
+    "load",
+    "onLoad"
+   ],
+   "files": [
+    "src/loaders/TextureLoader.js"
+   ]
+  },
+  "TextureNode": {
+   "base": "UniformNode",
+   "methods": [
+    "bias",
+    "blur",
+    "clone",
+    "compare",
+    "depth",
+    "deserialize",
+    "gather",
+    "generate",
+    "generateNodeType",
+    "generateOffset",
+    "generateSnippet",
+    "generateUV",
+    "getBase",
+    "getDefaultUV",
+    "getInputType",
+    "getSampler",
+    "getTransformedUV",
+    "getUniformHash",
+    "grad",
+    "isSampleCompare",
+    "level",
+    "load",
+    "offset",
+    "sample",
+    "serialize",
+    "setSampler",
+    "setUpdateMatrix",
+    "setup",
+    "setupUV",
+    "size",
+    "type",
+    "updateReference",
+    "value",
+    "warn",
+    "warnOnce"
+   ],
+   "files": [
+    "src/nodes/accessors/TextureNode.js"
+   ]
+  },
+  "TextureSizeNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/TextureSizeNode.js"
+   ]
+  },
+  "TextureSource": {
+   "base": null,
+   "methods": [
+    "getSize",
+    "needsUpdate",
+    "toJSON",
+    "warn"
+   ],
+   "files": [
+    "src/textures/TextureSource.js"
+   ]
+  },
+  "TextureUtils": {
+   "base": null,
+   "methods": [
+    "contain",
+    "cover",
+    "fill",
+    "getByteLength"
+   ],
+   "files": [
+    "src/extras/TextureUtils.js"
+   ]
+  },
+  "Textures": {
+   "base": "DataMap",
+   "methods": [
+    "_destroyRenderTarget",
+    "_destroyTexture",
+    "dispose",
+    "getMipLevels",
+    "getSize",
+    "needsMipmaps",
+    "updateRenderTarget",
+    "updateSampler",
+    "updateTexture",
+    "warn"
+   ],
+   "files": [
+    "src/renderers/common/Textures.js"
+   ]
+  },
+  "Timer": {
+   "base": null,
+   "methods": [
+    "connect",
+    "disconnect",
+    "dispose",
+    "getDelta",
+    "getElapsed",
+    "getTimescale",
+    "reset",
+    "setTimescale",
+    "update"
+   ],
+   "files": [
+    "src/core/Timer.js"
+   ]
+  },
+  "TimestampQueryPool": {
+   "base": null,
+   "methods": [
+    "allocateQueriesForContext",
+    "dispose",
+    "getTimestamp",
+    "getTimestampFrames",
+    "hasTimestampQuery",
+    "resolveQueriesAsync",
+    "warn"
+   ],
+   "files": [
+    "src/renderers/common/TimestampQueryPool.js"
+   ]
+  },
+  "ToneMappingNode": {
+   "base": "TempNode",
+   "methods": [
+    "customCacheKey",
+    "error",
+    "getToneMapping",
+    "setToneMapping",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/display/ToneMappingNode.js"
+   ]
+  },
+  "ToonLightingModel": {
+   "base": "LightingModel",
+   "methods": [
+    "direct",
+    "indirect"
+   ],
+   "files": [
+    "src/nodes/functions/ToonLightingModel.js"
+   ]
+  },
+  "ToonOutlinePassNode": {
+   "base": "PassNode",
+   "methods": [
+    "_createMaterial",
+    "_getOutlineMaterial",
+    "type",
+    "updateBefore"
+   ],
+   "files": [
+    "src/nodes/display/ToonOutlinePassNode.js"
+   ]
+  },
+  "TorusGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/TorusGeometry.js"
+   ]
+  },
+  "TorusKnotGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "calculatePositionOnCurve",
+    "copy",
+    "fromJSON"
+   ],
+   "files": [
+    "src/geometries/TorusKnotGeometry.js"
+   ]
+  },
+  "Triangle": {
+   "base": null,
+   "methods": [
+    "clone",
+    "closestPointToPoint",
+    "containsPoint",
+    "copy",
+    "equals",
+    "getArea",
+    "getBarycoord",
+    "getInterpolatedAttribute",
+    "getInterpolation",
+    "getMidpoint",
+    "getNormal",
+    "getPlane",
+    "intersectsBox",
+    "isFrontFacing",
+    "set",
+    "setFromAttributeAndIndices",
+    "setFromPointsAndIndices"
+   ],
+   "files": [
+    "src/math/Triangle.js"
+   ]
+  },
+  "TubeGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy",
+    "fromJSON",
+    "generateBufferData",
+    "generateIndices",
+    "generateSegment",
+    "generateUVs",
+    "toJSON"
+   ],
+   "files": [
+    "src/geometries/TubeGeometry.js"
+   ]
+  },
+  "Uint16BufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "Uint32BufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "Uint8BufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "Uint8ClampedBufferAttribute": {
+   "base": "BufferAttribute",
+   "methods": [],
+   "files": [
+    "src/core/BufferAttribute.js"
+   ]
+  },
+  "Uniform": {
+   "base": null,
+   "methods": [
+    "clone",
+    "getValue",
+    "setValue"
+   ],
+   "files": [
+    "src/core/Uniform.js",
+    "src/renderers/common/Uniform.js"
+   ]
+  },
+  "UniformArrayElementNode": {
+   "base": "ArrayElementNode",
+   "methods": [
+    "generate",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/UniformArrayNode.js"
+   ]
+  },
+  "UniformArrayNode": {
+   "base": "BufferNode",
+   "methods": [
+    "callback",
+    "element",
+    "generateNodeType",
+    "getElementType",
+    "getPaddedType",
+    "onUpdate",
+    "setup",
+    "type",
+    "update",
+    "updateBuffer"
+   ],
+   "files": [
+    "src/nodes/accessors/UniformArrayNode.js"
+   ]
+  },
+  "UniformBuffer": {
+   "base": "Buffer",
+   "methods": [],
+   "files": [
+    "src/renderers/common/UniformBuffer.js"
+   ]
+  },
+  "UniformGroupNode": {
+   "base": "Node",
+   "methods": [
+    "deserialize",
+    "serialize",
+    "type",
+    "update"
+   ],
+   "files": [
+    "src/nodes/core/UniformGroupNode.js"
+   ]
+  },
+  "UniformNode": {
+   "base": "InputNode",
+   "methods": [
+    "generate",
+    "getGroup",
+    "getInputType",
+    "getSharedNode",
+    "getUniformHash",
+    "label",
+    "onUpdate",
+    "setGroup",
+    "setName",
+    "type",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/core/UniformNode.js"
+   ]
+  },
+  "UniformsGroup": {
+   "base": "EventDispatcher",
+   "methods": [
+    "_getBufferForType",
+    "add",
+    "addUniform",
+    "addUniformUpdateRange",
+    "buffer",
+    "byteLength",
+    "clearUpdateRanges",
+    "clone",
+    "copy",
+    "dispose",
+    "error",
+    "release",
+    "remove",
+    "removeUniform",
+    "setArray",
+    "setName",
+    "setUsage",
+    "update",
+    "updateByType",
+    "updateColor",
+    "updateMatrix3",
+    "updateMatrix4",
+    "updateNumber",
+    "updateVector2",
+    "updateVector3",
+    "updateVector4",
+    "values"
+   ],
+   "files": [
+    "src/core/UniformsGroup.js",
+    "src/renderers/common/UniformsGroup.js"
+   ]
+  },
+  "UnpackFloatNode": {
+   "base": "TempNode",
+   "methods": [
+    "generate",
+    "generateNodeType",
+    "type"
+   ],
+   "files": [
+    "src/nodes/math/UnpackFloatNode.js"
+   ]
+  },
+  "UserDataNode": {
+   "base": "ReferenceNode",
+   "methods": [
+    "type",
+    "updateReference"
+   ],
+   "files": [
+    "src/nodes/accessors/UserDataNode.js"
+   ]
+  },
+  "VarNode": {
+   "base": "Node",
+   "methods": [
+    "_hasStack",
+    "build",
+    "error",
+    "generate",
+    "generateNodeType",
+    "getArrayCount",
+    "getElementType",
+    "getIntent",
+    "getMemberType",
+    "isAssign",
+    "isIntent",
+    "setIntent",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/VarNode.js"
+   ]
+  },
+  "VaryingNode": {
+   "base": "Node",
+   "methods": [
+    "analyze",
+    "generate",
+    "generateNodeType",
+    "getHash",
+    "setInterpolation",
+    "setup",
+    "setupVarying",
+    "type"
+   ],
+   "files": [
+    "src/nodes/core/VaryingNode.js"
+   ]
+  },
+  "Vector2": {
+   "base": null,
+   "methods": [
+    "add",
+    "addScalar",
+    "addScaledVector",
+    "addVectors",
+    "angle",
+    "angleTo",
+    "applyMatrix3",
+    "ceil",
+    "clamp",
+    "clampLength",
+    "clampScalar",
+    "clone",
+    "copy",
+    "cross",
+    "distanceTo",
+    "distanceToSquared",
+    "divide",
+    "divideScalar",
+    "dot",
+    "equals",
+    "floor",
+    "fromArray",
+    "fromBufferAttribute",
+    "getComponent",
+    "height",
+    "length",
+    "lengthSq",
+    "lerp",
+    "lerpVectors",
+    "manhattanDistanceTo",
+    "manhattanLength",
+    "max",
+    "min",
+    "multiply",
+    "multiplyScalar",
+    "negate",
+    "normalize",
+    "random",
+    "rotateAround",
+    "round",
+    "roundToZero",
+    "set",
+    "setComponent",
+    "setLength",
+    "setScalar",
+    "setX",
+    "setY",
+    "sub",
+    "subScalar",
+    "subVectors",
+    "toArray",
+    "width"
+   ],
+   "files": [
+    "src/math/Vector2.js"
+   ]
+  },
+  "Vector2NodeUniform": {
+   "base": "Vector2Uniform",
+   "methods": [
+    "getType",
+    "getValue"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeUniform.js"
+   ]
+  },
+  "Vector2Uniform": {
+   "base": "Uniform",
+   "methods": [],
+   "files": [
+    "src/renderers/common/Uniform.js"
+   ]
+  },
+  "Vector3": {
+   "base": null,
+   "methods": [
+    "add",
+    "addScalar",
+    "addScaledVector",
+    "addVectors",
+    "angleTo",
+    "applyAxisAngle",
+    "applyEuler",
+    "applyMatrix3",
+    "applyMatrix4",
+    "applyNormalMatrix",
+    "applyQuaternion",
+    "ceil",
+    "clamp",
+    "clampLength",
+    "clampScalar",
+    "clone",
+    "copy",
+    "cross",
+    "crossVectors",
+    "distanceTo",
+    "distanceToSquared",
+    "divide",
+    "divideScalar",
+    "dot",
+    "equals",
+    "floor",
+    "fromArray",
+    "fromBufferAttribute",
+    "getComponent",
+    "length",
+    "lengthSq",
+    "lerp",
+    "lerpVectors",
+    "manhattanDistanceTo",
+    "manhattanLength",
+    "max",
+    "min",
+    "multiply",
+    "multiplyScalar",
+    "multiplyVectors",
+    "negate",
+    "normalize",
+    "project",
+    "projectOnPlane",
+    "projectOnVector",
+    "random",
+    "randomDirection",
+    "reflect",
+    "round",
+    "roundToZero",
+    "set",
+    "setComponent",
+    "setFromColor",
+    "setFromCylindrical",
+    "setFromCylindricalCoords",
+    "setFromEuler",
+    "setFromMatrix3Column",
+    "setFromMatrixColumn",
+    "setFromMatrixPosition",
+    "setFromMatrixScale",
+    "setFromSpherical",
+    "setFromSphericalCoords",
+    "setLength",
+    "setScalar",
+    "setX",
+    "setY",
+    "setZ",
+    "sub",
+    "subScalar",
+    "subVectors",
+    "toArray",
+    "transformDirection",
+    "unproject"
+   ],
+   "files": [
+    "src/math/Vector3.js"
+   ]
+  },
+  "Vector3NodeUniform": {
+   "base": "Vector3Uniform",
+   "methods": [
+    "getType",
+    "getValue"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeUniform.js"
+   ]
+  },
+  "Vector3Uniform": {
+   "base": "Uniform",
+   "methods": [],
+   "files": [
+    "src/renderers/common/Uniform.js"
+   ]
+  },
+  "Vector4": {
+   "base": null,
+   "methods": [
+    "add",
+    "addScalar",
+    "addScaledVector",
+    "addVectors",
+    "applyMatrix4",
+    "ceil",
+    "clamp",
+    "clampLength",
+    "clampScalar",
+    "clone",
+    "copy",
+    "divide",
+    "divideScalar",
+    "dot",
+    "equals",
+    "floor",
+    "fromArray",
+    "fromBufferAttribute",
+    "getComponent",
+    "height",
+    "length",
+    "lengthSq",
+    "lerp",
+    "lerpVectors",
+    "manhattanLength",
+    "max",
+    "min",
+    "multiply",
+    "multiplyScalar",
+    "negate",
+    "normalize",
+    "random",
+    "round",
+    "roundToZero",
+    "set",
+    "setAxisAngleFromQuaternion",
+    "setAxisAngleFromRotationMatrix",
+    "setComponent",
+    "setFromMatrixPosition",
+    "setLength",
+    "setScalar",
+    "setW",
+    "setX",
+    "setY",
+    "setZ",
+    "sub",
+    "subScalar",
+    "subVectors",
+    "toArray",
+    "width"
+   ],
+   "files": [
+    "src/math/Vector4.js"
+   ]
+  },
+  "Vector4NodeUniform": {
+   "base": "Vector4Uniform",
+   "methods": [
+    "getType",
+    "getValue"
+   ],
+   "files": [
+    "src/renderers/common/nodes/NodeUniform.js"
+   ]
+  },
+  "Vector4Uniform": {
+   "base": "Uniform",
+   "methods": [],
+   "files": [
+    "src/renderers/common/Uniform.js"
+   ]
+  },
+  "VectorKeyframeTrack": {
+   "base": "KeyframeTrack",
+   "methods": [],
+   "files": [
+    "src/animation/tracks/VectorKeyframeTrack.js"
+   ]
+  },
+  "VelocityNode": {
+   "base": "TempNode",
+   "methods": [
+    "getPreviousMatrix",
+    "setProjectionMatrix",
+    "setup",
+    "type",
+    "update",
+    "updateAfter"
+   ],
+   "files": [
+    "src/nodes/accessors/VelocityNode.js"
+   ]
+  },
+  "VertexColorNode": {
+   "base": "AttributeNode",
+   "methods": [
+    "deserialize",
+    "generate",
+    "getAttributeName",
+    "serialize",
+    "type"
+   ],
+   "files": [
+    "src/nodes/accessors/VertexColorNode.js"
+   ]
+  },
+  "VideoFrameTexture": {
+   "base": "VideoTexture",
+   "methods": [
+    "clone",
+    "setFrame",
+    "update"
+   ],
+   "files": [
+    "src/textures/VideoFrameTexture.js"
+   ]
+  },
+  "VideoTexture": {
+   "base": "Texture",
+   "methods": [
+    "clone",
+    "dispose",
+    "update"
+   ],
+   "files": [
+    "src/textures/VideoTexture.js"
+   ]
+  },
+  "ViewportDepthNode": {
+   "base": "Node",
+   "methods": [
+    "generate",
+    "setup",
+    "type"
+   ],
+   "files": [
+    "src/nodes/display/ViewportDepthNode.js"
+   ]
+  },
+  "ViewportDepthTextureNode": {
+   "base": "ViewportTextureNode",
+   "methods": [
+    "type"
+   ],
+   "files": [
+    "src/nodes/display/ViewportDepthTextureNode.js"
+   ]
+  },
+  "ViewportSharedTextureNode": {
+   "base": "ViewportTextureNode",
+   "methods": [
+    "getTextureForReference",
+    "type",
+    "updateReference"
+   ],
+   "files": [
+    "src/nodes/display/ViewportSharedTextureNode.js"
+   ]
+  },
+  "ViewportTextureNode": {
+   "base": "TextureNode",
+   "methods": [
+    "clone",
+    "getTextureForReference",
+    "type",
+    "updateBefore",
+    "updateReference"
+   ],
+   "files": [
+    "src/nodes/display/ViewportTextureNode.js"
+   ]
+  },
+  "VolumeNodeMaterial": {
+   "base": "NodeMaterial",
+   "methods": [
+    "setupLightingModel",
+    "type"
+   ],
+   "files": [
+    "src/materials/nodes/VolumeNodeMaterial.js"
+   ]
+  },
+  "VolumetricLightingModel": {
+   "base": "LightingModel",
+   "methods": [
+    "If",
+    "Loop",
+    "direct",
+    "directRectArea",
+    "finish",
+    "scatteringLight",
+    "start"
+   ],
+   "files": [
+    "src/nodes/functions/VolumetricLightingModel.js"
+   ]
+  },
+  "WGSLNodeBuilder": {
+   "base": "NodeBuilder",
+   "methods": [
+    "_generateTextureSample",
+    "addWrapSnippet",
+    "buildFunctionCode",
+    "enableClipDistances",
+    "enableDirective",
+    "enableDualSourceBlending",
+    "enableHardwareClipping",
+    "enableShaderF16",
+    "enableSubGroups",
+    "error",
+    "generateArrayDeclaration",
+    "generateFilteredTexture",
+    "generateStorageTextureLoad",
+    "generateTexture",
+    "generateTextureBias",
+    "generateTextureCompare",
+    "generateTextureDimension",
+    "generateTextureGather",
+    "generateTextureGatherCompare",
+    "generateTextureGrad",
+    "generateTextureLevel",
+    "generateTextureLoad",
+    "generateTextureLod",
+    "generateTextureSampleLevel",
+    "generateTextureSize",
+    "generateTextureStore",
+    "generateWrapFunction",
+    "getAttributes",
+    "getBuiltin",
+    "getBuiltins",
+    "getClipDistance",
+    "getDirectives",
+    "getDrawIndex",
+    "getFragCoord",
+    "getFragDepth",
+    "getFrontFacing",
+    "getFunctionOperator",
+    "getInstanceIndex",
+    "getInvocationLocalIndex",
+    "getInvocationSubgroupIndex",
+    "getNodeAccess",
+    "getOutputStructName",
+    "getPropertyName",
+    "getScopedArray",
+    "getScopedArrays",
+    "getStorageAccess",
+    "getStructMembers",
+    "getStructs",
+    "getSubgroupIndex",
+    "getSubgroupSize",
+    "getUniformFromNode",
+    "getUniforms",
+    "getVar",
+    "getVars",
+    "getVaryings",
+    "getVertexIndex",
+    "hasBuiltin",
+    "isCustomStruct",
+    "isFlipY",
+    "isReservedKeyword",
+    "isSampleCompare",
+    "isUnfilterable",
+    "warn"
+   ],
+   "files": [
+    "src/renderers/webgpu/nodes/WGSLNodeBuilder.js"
+   ]
+  },
+  "WGSLNodeFunction": {
+   "base": "NodeFunction",
+   "methods": [
+    "getCode"
+   ],
+   "files": [
+    "src/renderers/webgpu/nodes/WGSLNodeFunction.js"
+   ]
+  },
+  "WGSLNodeParser": {
+   "base": "NodeParser",
+   "methods": [
+    "parseFunction"
+   ],
+   "files": [
+    "src/renderers/webgpu/nodes/WGSLNodeParser.js"
+   ]
+  },
+  "WebGL3DRenderTarget": {
+   "base": "WebGLRenderTarget",
+   "methods": [],
+   "files": [
+    "src/renderers/WebGL3DRenderTarget.js"
+   ]
+  },
+  "WebGLArrayRenderTarget": {
+   "base": "WebGLRenderTarget",
+   "methods": [],
+   "files": [
+    "src/renderers/WebGLArrayRenderTarget.js"
+   ]
+  },
+  "WebGLAttributeUtils": {
+   "base": null,
+   "methods": [
+    "_createBuffer",
+    "createAttribute",
+    "destroyAttribute",
+    "getArrayBufferAsync",
+    "updateAttribute"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/utils/WebGLAttributeUtils.js"
+   ]
+  },
+  "WebGLBackend": {
+   "base": "Backend",
+   "methods": [
+    "_completeCompile",
+    "_completeComputeCompile",
+    "_draw",
+    "_getShaderErrors",
+    "_handleSource",
+    "_isRenderCameraDepthArray",
+    "_logProgramError",
+    "_setFramebuffer",
+    "beginCompute",
+    "beginRender",
+    "check",
+    "checkStatus",
+    "clear",
+    "compute",
+    "coordinateSystem",
+    "copyFramebufferToTexture",
+    "copyTextureToBuffer",
+    "copyTextureToTexture",
+    "createAttribute",
+    "createBindings",
+    "createComputePipeline",
+    "createDefaultTexture",
+    "createIndexAttribute",
+    "createNodeBuilder",
+    "createProgram",
+    "createRenderPipeline",
+    "createStorageAttribute",
+    "createTexture",
+    "createUniformBuffer",
+    "destroyAttribute",
+    "destroyProgram",
+    "destroyTexture",
+    "destroyUniformBuffer",
+    "draw",
+    "error",
+    "finishCompute",
+    "finishRender",
+    "generateMipmaps",
+    "getArrayBufferAsync",
+    "getClearColor",
+    "getContext",
+    "getRenderCacheKey",
+    "hasCompatibility",
+    "hasFeature",
+    "hasTimestamp",
+    "init",
+    "initRenderTarget",
+    "initTimestampQuery",
+    "isOccluded",
+    "makeXRCompatible",
+    "needsRenderUpdate",
+    "prepareTimestampBuffer",
+    "requestAnimationFrame",
+    "resetState",
+    "resolve",
+    "resolveOccludedAsync",
+    "setScissorTest",
+    "setXRRenderTargetTextures",
+    "setXRTarget",
+    "updateAttribute",
+    "updateBinding",
+    "updateBindings",
+    "updateSampler",
+    "updateScissor",
+    "updateTexture",
+    "updateViewport",
+    "warn",
+    "warnOnce"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/WebGLBackend.js"
+   ]
+  },
+  "WebGLBufferRenderer": {
+   "base": null,
+   "methods": [
+    "render",
+    "renderInstances",
+    "renderMultiDraw"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/WebGLBufferRenderer.js"
+   ]
+  },
+  "WebGLCapabilities": {
+   "base": null,
+   "methods": [
+    "getMaxAnisotropy",
+    "getUniformBufferLimit"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/utils/WebGLCapabilities.js"
+   ]
+  },
+  "WebGLCubeRenderTarget": {
+   "base": "WebGLRenderTarget",
+   "methods": [
+    "clear",
+    "fromEquirectangularTexture"
+   ],
+   "files": [
+    "src/renderers/WebGLCubeRenderTarget.js"
+   ]
+  },
+  "WebGLExtensions": {
+   "base": null,
+   "methods": [
+    "get",
+    "has"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/utils/WebGLExtensions.js"
+   ]
+  },
+  "WebGLRenderTarget": {
+   "base": "RenderTarget",
+   "methods": [],
+   "files": [
+    "src/renderers/WebGLRenderTarget.js"
+   ]
+  },
+  "WebGLRenderer": {
+   "base": null,
+   "methods": [
+    "checkMaterialsReady",
+    "deallocateMaterial",
+    "error",
+    "getProgram",
+    "initGLContext",
+    "log",
+    "prepareMaterial",
+    "projectObject",
+    "releaseMaterialProgramReferences",
+    "renderObject",
+    "renderObjects",
+    "renderScene",
+    "renderTransmissionPass",
+    "resolve",
+    "setTimeout",
+    "updateCommonMaterialProperties",
+    "warn"
+   ],
+   "files": [
+    "src/renderers/WebGLRenderer.js"
+   ]
+  },
+  "WebGLShaderCache": {
+   "base": null,
+   "methods": [
+    "_getShaderCacheForMaterial",
+    "_getShaderStage",
+    "dispose",
+    "getFragmentShaderStage",
+    "getVertexShaderStage",
+    "remove",
+    "update"
+   ],
+   "files": [
+    "src/renderers/webgl/WebGLShaderCache.js"
+   ]
+  },
+  "WebGLShaderStage": {
+   "base": null,
+   "methods": [],
+   "files": [
+    "src/renderers/webgl/WebGLShaderCache.js"
+   ]
+  },
+  "WebGLState": {
+   "base": null,
+   "methods": [
+    "_init",
+    "_setMRTBlendingIndex",
+    "activeTexture",
+    "bindBufferBase",
+    "bindFramebuffer",
+    "bindTexture",
+    "disable",
+    "drawBuffers",
+    "enable",
+    "error",
+    "getParameter",
+    "pixelStorei",
+    "reset",
+    "resetVertexState",
+    "scissor",
+    "setBlending",
+    "setColorMask",
+    "setCullFace",
+    "setDepthFunc",
+    "setDepthMask",
+    "setDepthTest",
+    "setFlipSided",
+    "setLineWidth",
+    "setMRTBlending",
+    "setMaterial",
+    "setPolygonOffset",
+    "setReversedDepth",
+    "setScissorTest",
+    "setStencilFunc",
+    "setStencilMask",
+    "setStencilOp",
+    "setStencilTest",
+    "setVertexState",
+    "unbindTexture",
+    "useProgram",
+    "viewport",
+    "warnOnce"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/utils/WebGLState.js"
+   ]
+  },
+  "WebGLTextureUtils": {
+   "base": null,
+   "methods": [
+    "_getBytesPerTexel",
+    "_getTypedArrayType",
+    "_init",
+    "copyBufferToTexture",
+    "copyFramebufferToTexture",
+    "copyTextureToBuffer",
+    "copyTextureToTexture",
+    "createDefaultTexture",
+    "createTexture",
+    "deallocateRenderBuffers",
+    "destroyTexture",
+    "dispose",
+    "generateMipmaps",
+    "getGLTextureType",
+    "getInternalFormat",
+    "setTextureParameters",
+    "setupRenderBufferStorage",
+    "updateTexture",
+    "warn"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/utils/WebGLTextureUtils.js"
+   ]
+  },
+  "WebGLTimestampQueryPool": {
+   "base": "TimestampQueryPool",
+   "methods": [
+    "allocateQueriesForContext",
+    "beginQuery",
+    "checkQuery",
+    "cleanup",
+    "clearTimeout",
+    "dispose",
+    "endQuery",
+    "error",
+    "finalizeResolution",
+    "resolve",
+    "resolveQueriesAsync",
+    "resolveQuery",
+    "warn"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/utils/WebGLTimestampQueryPool.js"
+   ]
+  },
+  "WebGLUniforms": {
+   "base": null,
+   "methods": [
+    "parseUniform",
+    "seqWithValue",
+    "setOptional",
+    "setValue",
+    "upload"
+   ],
+   "files": [
+    "src/renderers/webgl/WebGLUniforms.js"
+   ]
+  },
+  "WebGLUtils": {
+   "base": null,
+   "methods": [
+    "_clientWaitAsync",
+    "convert",
+    "reject",
+    "requestAnimationFrame",
+    "resolve",
+    "test"
+   ],
+   "files": [
+    "src/renderers/webgl-fallback/utils/WebGLUtils.js"
+   ]
+  },
+  "WebGPUAttributeUtils": {
+   "base": null,
+   "methods": [
+    "_getBufferAttribute",
+    "_getVertexFormat",
+    "createAttribute",
+    "createShaderVertexBuffers",
+    "destroyAttribute",
+    "error",
+    "getArrayBufferAsync",
+    "submit",
+    "updateAttribute"
+   ],
+   "files": [
+    "src/renderers/webgpu/utils/WebGPUAttributeUtils.js"
+   ]
+  },
+  "WebGPUBackend": {
+   "base": "Backend",
+   "methods": [
+    "_createArrayCameraBundleEncoders",
+    "_createArrayCameraLayerDescriptors",
+    "_createExternalTextureViews",
+    "_draw",
+    "_finishArrayCameraBundleEncoders",
+    "_getDefaultRenderPassDescriptor",
+    "_getExternalMSAATextures",
+    "_getRenderPassDescriptor",
+    "_hasExternalTexture",
+    "_isRenderCameraDepthArray",
+    "_resetRenderContextData",
+    "_updateArrayCameraLayerDescriptors",
+    "beginCompute",
+    "beginRender",
+    "clear",
+    "compute",
+    "context",
+    "coordinateSystem",
+    "finishCompute",
+    "finishRender",
+    "getArrayBufferAsync",
+    "getClearColor",
+    "getContext",
+    "hasTimestamp",
+    "init",
+    "isOccluded",
+    "resolveOccludedAsync",
+    "setXRRenderTargetTextures",
+    "submit",
+    "updateScissor",
+    "updateViewport"
+   ],
+   "files": [
+    "src/renderers/webgpu/WebGPUBackend.js"
+   ]
+  },
+  "WebGPUBindingUtils": {
+   "base": null,
+   "methods": [
+    "_createLayoutEntries",
+    "createBindGroup",
+    "createBindGroupIndex",
+    "createBindings",
+    "createBindingsLayout",
+    "deleteBindGroupData",
+    "dispose",
+    "error",
+    "updateBinding"
+   ],
+   "files": [
+    "src/renderers/webgpu/utils/WebGPUBindingUtils.js"
+   ]
+  },
+  "WebGPUCapabilities": {
+   "base": null,
+   "methods": [
+    "getMaxAnisotropy",
+    "getUniformBufferLimit"
+   ],
+   "files": [
+    "src/renderers/webgpu/utils/WebGPUCapabilities.js"
+   ]
+  },
+  "WebGPUPipelineUtils": {
+   "base": null,
+   "methods": [
+    "_getBlendFactor",
+    "_getBlendOperation",
+    "_getBlending",
+    "_getColorWriteMask",
+    "_getDepthCompare",
+    "_getPrimitiveState",
+    "_getSampleCount",
+    "_getStencilCompare",
+    "_getStencilOperation",
+    "_reportShaderDiagnostics",
+    "createBundleEncoder",
+    "createComputePipeline",
+    "createRenderPipeline",
+    "error",
+    "resolve",
+    "setBlend",
+    "warnOnce"
+   ],
+   "files": [
+    "src/renderers/webgpu/utils/WebGPUPipelineUtils.js"
+   ]
+  },
+  "WebGPURenderer": {
+   "base": "Renderer",
+   "methods": [
+    "warn"
+   ],
+   "files": [
+    "src/renderers/webgpu/WebGPURenderer.Nodes.js",
+    "src/renderers/webgpu/WebGPURenderer.js"
+   ]
+  },
+  "WebGPUTexturePassUtils": {
+   "base": "DataMap",
+   "methods": [
+    "_mipmapCreateBundles",
+    "_mipmapRunBundles",
+    "flipY",
+    "generateMipmaps",
+    "getTransferPipeline",
+    "mat3x3f",
+    "pass",
+    "submit",
+    "vec2f"
+   ],
+   "files": [
+    "src/renderers/webgpu/utils/WebGPUTexturePassUtils.js"
+   ]
+  },
+  "WebGPUTextureUtils": {
+   "base": null,
+   "methods": [
+    "_convertAddressMode",
+    "_convertFilterMode",
+    "_convertMipmapFilterMode",
+    "_copyBufferToTexture",
+    "_copyCompressedBufferToTexture",
+    "_copyCubeMapToTexture",
+    "_copyImageToTexture",
+    "_flipY",
+    "_generateMipmaps",
+    "_getBlockData",
+    "_getBytesPerTexel",
+    "_getDefaultCubeTextureGPU",
+    "_getDefaultTextureGPU",
+    "_getDimension",
+    "_getPassUtils",
+    "_getTypedArrayType",
+    "_releaseSampler",
+    "copyTextureToBuffer",
+    "createDefaultTexture",
+    "createTexture",
+    "destroySampler",
+    "destroyTexture",
+    "dispose",
+    "error",
+    "generateMipmaps",
+    "getColorBuffer",
+    "getDepthBuffer",
+    "submit",
+    "updateSampler",
+    "updateTexture",
+    "warn",
+    "writeTextureLayer"
+   ],
+   "files": [
+    "src/renderers/webgpu/utils/WebGPUTextureUtils.js"
+   ]
+  },
+  "WebGPUTimestampQueryPool": {
+   "base": "TimestampQueryPool",
+   "methods": [
+    "_resolveQueries",
+    "allocateQueriesForContext",
+    "dispose",
+    "error",
+    "resolveQueriesAsync",
+    "submit"
+   ],
+   "files": [
+    "src/renderers/webgpu/utils/WebGPUTimestampQueryPool.js"
+   ]
+  },
+  "WebGPUUtils": {
+   "base": null,
+   "methods": [
+    "getCurrentColorFormat",
+    "getCurrentColorFormats",
+    "getCurrentColorSpace",
+    "getCurrentDepthStencilFormat",
+    "getPreferredCanvasFormat",
+    "getPrimitiveTopology",
+    "getSampleCount",
+    "getSampleCountRenderContext",
+    "getTextureFormatGPU",
+    "getTextureSampleData"
+   ],
+   "files": [
+    "src/renderers/webgpu/utils/WebGPUUtils.js"
+   ]
+  },
+  "WebXRController": {
+   "base": null,
+   "methods": [
+    "_getHandJoint",
+    "connect",
+    "disconnect",
+    "dispatchEvent",
+    "getGripSpace",
+    "getHandSpace",
+    "getTargetRaySpace",
+    "update"
+   ],
+   "files": [
+    "src/renderers/webxr/WebXRController.js"
+   ]
+  },
+  "WebXRDepthSensing": {
+   "base": null,
+   "methods": [
+    "getDepthTexture",
+    "getMesh",
+    "init",
+    "reset"
+   ],
+   "files": [
+    "src/renderers/webxr/WebXRDepthSensing.js"
+   ]
+  },
+  "WebXRManager": {
+   "base": "EventDispatcher",
+   "methods": [
+    "updateCamera",
+    "updateUserCamera",
+    "warn"
+   ],
+   "files": [
+    "src/renderers/webxr/WebXRManager.js"
+   ]
+  },
+  "WireframeGeometry": {
+   "base": "BufferGeometry",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/geometries/WireframeGeometry.js"
+   ]
+  },
+  "WorkgroupInfoElementNode": {
+   "base": "ArrayElementNode",
+   "methods": [
+    "generate"
+   ],
+   "files": [
+    "src/nodes/gpgpu/WorkgroupInfoNode.js"
+   ]
+  },
+  "WorkgroupInfoNode": {
+   "base": "Node",
+   "methods": [
+    "element",
+    "error",
+    "generate",
+    "getElementType",
+    "getInputType",
+    "label",
+    "setAtomic",
+    "setName",
+    "setScope",
+    "toAtomic",
+    "warn"
+   ],
+   "files": [
+    "src/nodes/gpgpu/WorkgroupInfoNode.js"
+   ]
+  },
+  "XRManager": {
+   "base": "EventDispatcher",
+   "methods": [
+    "_disposeWebGPUSession",
+    "_getController",
+    "_getWebGPUViewData",
+    "_initWebGPUSession",
+    "_isWebGPUSession",
+    "_validateWebGPUSession",
+    "createCylinderLayer",
+    "createQuadLayer",
+    "foveateBoundTexture",
+    "getBaseLayer",
+    "getBinding",
+    "getCamera",
+    "getController",
+    "getControllerGrip",
+    "getEnvironmentBlendMode",
+    "getFoveation",
+    "getFrame",
+    "getFramebufferScaleFactor",
+    "getHand",
+    "getReferenceSpace",
+    "getReferenceSpaceType",
+    "getSession",
+    "getWebGPUBinding",
+    "renderLayers",
+    "setFoveation",
+    "setFramebufferScaleFactor",
+    "setReferenceSpace",
+    "setReferenceSpaceType",
+    "setSession",
+    "updateCamera",
+    "updateUserCamera",
+    "useMultiview",
+    "warn",
+    "warnOnce"
+   ],
+   "files": [
+    "src/renderers/common/XRManager.js"
+   ]
+  },
+  "XRRenderTarget": {
+   "base": "RenderTarget",
+   "methods": [
+    "copy"
+   ],
+   "files": [
+    "src/renderers/common/XRRenderTarget.js"
+   ]
+  }
+ },
+ "globals": [
+  "ACESFilmicToneMapping",
+  "AddEquation",
+  "AddOperation",
+  "AdditiveAnimationBlendMode",
+  "AdditiveBlending",
+  "AgXToneMapping",
+  "AlphaFormat",
+  "AlwaysCompare",
+  "AlwaysDepth",
+  "AlwaysStencilFunc",
+  "AttachedBindMode",
+  "AttributeType",
+  "BRDF_EON",
+  "BRDF_GGX",
+  "BRDF_Lambert",
+  "BRDF_Sheen",
+  "BackSide",
+  "BasicDepthPacking",
+  "BasicPointShadowFilter",
+  "BasicShadowFilter",
+  "BasicShadowMap",
+  "Break",
+  "ByteType",
+  "CineonToneMapping",
+  "ClampToEdgeWrapping",
+  "ColorManagement",
+  "Compatibility",
+  "Const",
+  "ConstantAlphaFactor",
+  "ConstantColorFactor",
+  "Continue",
+  "CubeReflectionMapping",
+  "CubeRefractionMapping",
+  "CubeUVReflectionMapping",
+  "CullFaceBack",
+  "CullFaceFront",
+  "CullFaceFrontBack",
+  "CullFaceNone",
+  "CustomBlending",
+  "CustomToneMapping",
+  "DFGLUT",
+  "D_GGX",
+  "D_GGX_Anisotropic",
+  "DecrementStencilOp",
+  "DecrementWrapStencilOp",
+  "DepthFormat",
+  "DepthStencilFormat",
+  "DetachedBindMode",
+  "Discard",
+  "DoubleSide",
+  "DstAlphaFactor",
+  "DstColorFactor",
+  "DynamicCopyUsage",
+  "DynamicDrawUsage",
+  "DynamicReadUsage",
+  "EON_DirectionalAlbedo",
+  "EPSILON",
+  "EnvironmentBRDF",
+  "EqualCompare",
+  "EqualDepth",
+  "EqualStencilFunc",
+  "EquirectangularReflectionMapping",
+  "EquirectangularRefractionMapping",
+  "F_Schlick",
+  "FloatType",
+  "Fn",
+  "FrontSide",
+  "GLFeatureName",
+  "GLSL1",
+  "GLSL3",
+  "GPUAddressMode",
+  "GPUBlendFactor",
+  "GPUBlendOperation",
+  "GPUBufferBindingType",
+  "GPUColorWriteFlags",
+  "GPUCompareFunction",
+  "GPUCullMode",
+  "GPUFeatureMap",
+  "GPUFeatureName",
+  "GPUFilterMode",
+  "GPUFrontFace",
+  "GPUIndexFormat",
+  "GPUInputStepMode",
+  "GPULoadOp",
+  "GPUPrimitiveTopology",
+  "GPUSamplerBindingType",
+  "GPUShaderStage",
+  "GPUStencilOperation",
+  "GPUStorageTextureAccess",
+  "GPUStoreOp",
+  "GPUTextureAspect",
+  "GPUTextureDimension",
+  "GPUTextureFormat",
+  "GPUTextureSampleType",
+  "GPUTextureViewDimension",
+  "GPUVertexFormat",
+  "GPU_CHUNK_BYTES",
+  "GreaterCompare",
+  "GreaterDepth",
+  "GreaterEqualCompare",
+  "GreaterEqualDepth",
+  "GreaterEqualStencilFunc",
+  "GreaterStencilFunc",
+  "HALF_PI",
+  "HalfFloatType",
+  "INFINITY",
+  "If",
+  "IncrementStencilOp",
+  "IncrementWrapStencilOp",
+  "IntType",
+  "InterpolateBezier",
+  "InterpolateDiscrete",
+  "InterpolateLinear",
+  "InterpolateSmooth",
+  "InterpolationSamplingMode",
+  "InterpolationSamplingType",
+  "InvertStencilOp",
+  "KeepStencilOp",
+  "LTC_Evaluate",
+  "LTC_Evaluate_Volume",
+  "LTC_Uv",
+  "LessCompare",
+  "LessDepth",
+  "LessEqualCompare",
+  "LessEqualDepth",
+  "LessEqualStencilFunc",
+  "LessStencilFunc",
+  "LinearFilter",
+  "LinearMipMapLinearFilter",
+  "LinearMipMapNearestFilter",
+  "LinearMipmapLinearFilter",
+  "LinearMipmapNearestFilter",
+  "LinearSRGBColorSpace",
+  "LinearToSRGB",
+  "LinearToneMapping",
+  "LinearTransfer",
+  "Loop",
+  "LoopOnce",
+  "LoopPingPong",
+  "LoopRepeat",
+  "MOUSE",
+  "MaterialBlending",
+  "MaxEquation",
+  "MinEquation",
+  "MirroredRepeatWrapping",
+  "MixOperation",
+  "MultiplyBlending",
+  "MultiplyOperation",
+  "NearestFilter",
+  "NearestMipMapLinearFilter",
+  "NearestMipMapNearestFilter",
+  "NearestMipmapLinearFilter",
+  "NearestMipmapNearestFilter",
+  "NeutralToneMapping",
+  "NeverCompare",
+  "NeverDepth",
+  "NeverStencilFunc",
+  "NoBlending",
+  "NoColorSpace",
+  "NoNormalPacking",
+  "NoToneMapping",
+  "NodeAccess",
+  "NodeShaderStage",
+  "NodeType",
+  "NodeUpdateType",
+  "NormalAnimationBlendMode",
+  "NormalBlending",
+  "NormalGAPacking",
+  "NormalRGPacking",
+  "NotEqualCompare",
+  "NotEqualDepth",
+  "NotEqualStencilFunc",
+  "ObjectSpaceNormalMap",
+  "OnAfterObjectUpdate",
+  "OnAfterRenderPipeline",
+  "OnBeforeFrameUpdate",
+  "OnBeforeMaterialUpdate",
+  "OnBeforeObjectUpdate",
+  "OnBeforeRenderPipeline",
+  "OnFrameUpdate",
+  "OnMaterialUpdate",
+  "OnObjectUpdate",
+  "OneFactor",
+  "OneMinusConstantAlphaFactor",
+  "OneMinusConstantColorFactor",
+  "OneMinusDstAlphaFactor",
+  "OneMinusDstColorFactor",
+  "OneMinusSrcAlphaFactor",
+  "OneMinusSrcColorFactor",
+  "PCFShadowFilter",
+  "PCFShadowMap",
+  "PCFSoftShadowMap",
+  "PI",
+  "PI2",
+  "PointShadowFilter",
+  "R11_EAC_Format",
+  "RED_GREEN_RGTC2_Format",
+  "RED_RGTC1_Format",
+  "REVISION",
+  "RG11_EAC_Format",
+  "RGBADepthPacking",
+  "RGBAFormat",
+  "RGBAIntegerFormat",
+  "RGBA_ASTC_10x10_Format",
+  "RGBA_ASTC_10x5_Format",
+  "RGBA_ASTC_10x6_Format",
+  "RGBA_ASTC_10x8_Format",
+  "RGBA_ASTC_12x10_Format",
+  "RGBA_ASTC_12x12_Format",
+  "RGBA_ASTC_4x4_Format",
+  "RGBA_ASTC_5x4_Format",
+  "RGBA_ASTC_5x5_Format",
+  "RGBA_ASTC_6x5_Format",
+  "RGBA_ASTC_6x6_Format",
+  "RGBA_ASTC_8x5_Format",
+  "RGBA_ASTC_8x6_Format",
+  "RGBA_ASTC_8x8_Format",
+  "RGBA_BPTC_Format",
+  "RGBA_ETC2_EAC_Format",
+  "RGBA_PVRTC_2BPPV1_Format",
+  "RGBA_PVRTC_4BPPV1_Format",
+  "RGBA_S3TC_DXT1_Format",
+  "RGBA_S3TC_DXT3_Format",
+  "RGBA_S3TC_DXT5_Format",
+  "RGBDepthPacking",
+  "RGBFormat",
+  "RGBIntegerFormat",
+  "RGB_BPTC_SIGNED_Format",
+  "RGB_BPTC_UNSIGNED_Format",
+  "RGB_ETC1_Format",
+  "RGB_ETC2_Format",
+  "RGB_PVRTC_2BPPV1_Format",
+  "RGB_PVRTC_4BPPV1_Format",
+  "RGB_S3TC_DXT1_Format",
+  "RGDepthPacking",
+  "RGFormat",
+  "RGIntegerFormat",
+  "RedFormat",
+  "RedIntegerFormat",
+  "ReinhardToneMapping",
+  "RenderObjectRefreshType",
+  "RepeatWrapping",
+  "ReplaceStencilOp",
+  "Return",
+  "ReverseSubtractEquation",
+  "SIGNED_R11_EAC_Format",
+  "SIGNED_RED_GREEN_RGTC2_Format",
+  "SIGNED_RED_RGTC1_Format",
+  "SIGNED_RG11_EAC_Format",
+  "SRGBColorSpace",
+  "SRGBToLinear",
+  "SRGBTransfer",
+  "Schlick_to_F0",
+  "ShaderChunk",
+  "ShaderNode",
+  "ShortType",
+  "SrcAlphaFactor",
+  "SrcAlphaSaturateFactor",
+  "SrcColorFactor",
+  "Stack",
+  "StaticCopyUsage",
+  "StaticDrawUsage",
+  "StaticReadUsage",
+  "StreamCopyUsage",
+  "StreamDrawUsage",
+  "StreamReadUsage",
+  "SubtractEquation",
+  "SubtractiveBlending",
+  "Switch",
+  "TBNViewMatrix",
+  "TOUCH",
+  "TWO_PI",
+  "TangentSpaceNormalMap",
+  "TimestampQuery",
+  "TriangleFanDrawMode",
+  "TriangleStripDrawMode",
+  "TrianglesDrawMode",
+  "UVMapping",
+  "UnsignedByteType",
+  "UnsignedInt101111Type",
+  "UnsignedInt248Type",
+  "UnsignedInt5999Type",
+  "UnsignedIntType",
+  "UnsignedShort4444Type",
+  "UnsignedShort5551Type",
+  "UnsignedShortType",
+  "VSMShadowFilter",
+  "VSMShadowMap",
+  "V_GGX_SmithCorrelated",
+  "V_GGX_SmithCorrelated_Anisotropic",
+  "Var",
+  "VarIntent",
+  "WebGLCoordinateSystem",
+  "WebGPUCoordinateSystem",
+  "WrapAroundEnding",
+  "ZeroCurvatureEnding",
+  "ZeroFactor",
+  "ZeroSlopeEnding",
+  "ZeroStencilOp",
+  "abs",
+  "acesFilmicToneMapping",
+  "acos",
+  "acosh",
+  "add",
+  "addMethodChaining",
+  "addNodeElement",
+  "agxToneMapping",
+  "all",
+  "alphaT",
+  "ambientOcclusion",
+  "and",
+  "anisotropy",
+  "anisotropyB",
+  "anisotropyT",
+  "any",
+  "array",
+  "arrayBufferToBase64",
+  "asin",
+  "asinh",
+  "assign",
+  "atan",
+  "atanh",
+  "atomicAdd",
+  "atomicAnd",
+  "atomicFunc",
+  "atomicLoad",
+  "atomicMax",
+  "atomicMin",
+  "atomicOr",
+  "atomicStore",
+  "atomicSub",
+  "atomicXor",
+  "attenuationColor",
+  "attenuationDistance",
+  "attribute",
+  "attributeArray",
+  "backgroundBlurriness",
+  "backgroundIntensity",
+  "backgroundRotation",
+  "base64ToArrayBuffer",
+  "batch",
+  "batchColor",
+  "batchIndirectIndex",
+  "bentNormalView",
+  "billboarding",
+  "bitAnd",
+  "bitNot",
+  "bitOr",
+  "bitXor",
+  "bitangentGeometry",
+  "bitangentLocal",
+  "bitangentView",
+  "bitangentViewFrame",
+  "bitangentWorld",
+  "bitcast",
+  "blendBurn",
+  "blendColor",
+  "blendDodge",
+  "blendOverlay",
+  "blendScreen",
+  "bool",
+  "buffer",
+  "bufferAttribute",
+  "builtin",
+  "builtinAOContext",
+  "builtinGIContext",
+  "builtinShadowContext",
+  "bumpMap",
+  "bvec2",
+  "bvec3",
+  "bvec4",
+  "bypass",
+  "cache",
+  "call",
+  "cameraFar",
+  "cameraIndex",
+  "cameraNear",
+  "cameraNormalMatrix",
+  "cameraPosition",
+  "cameraProjectionMatrix",
+  "cameraProjectionMatrixInverse",
+  "cameraViewMatrix",
+  "cameraViewport",
+  "cameraWorldMatrix",
+  "cbrt",
+  "cdl",
+  "ceil",
+  "checker",
+  "cineonToneMapping",
+  "clamp",
+  "clearcoat",
+  "clearcoatNormalView",
+  "clearcoatRoughness",
+  "clipSpace",
+  "clipping",
+  "clippingAlpha",
+  "cloneUniforms",
+  "cloneUniformsGroups",
+  "code",
+  "color",
+  "colorSpaceToWorking",
+  "colorToDirection",
+  "compute",
+  "computeKernel",
+  "computeSkinning",
+  "context",
+  "convert",
+  "convertColorSpace",
+  "convertToTexture",
+  "cos",
+  "cosh",
+  "countLeadingZeros",
+  "countOneBits",
+  "countTrailingZeros",
+  "cross",
+  "cubeMapNode",
+  "cubeTexture",
+  "cubeTextureBase",
+  "dFdx",
+  "dFdy",
+  "dashSize",
+  "debug",
+  "decrement",
+  "decrementBefore",
+  "defaultBuildStages",
+  "defaultShaderStages",
+  "defined",
+  "degrees",
+  "deltaTime",
+  "densityFogFactor",
+  "depth",
+  "depthPass",
+  "determinant",
+  "deviation",
+  "difference",
+  "diffuseColor",
+  "diffuseContribution",
+  "diffuseRoughness",
+  "directPointLight",
+  "directionToColor",
+  "directionToFaceDirection",
+  "dispersion",
+  "distance",
+  "div",
+  "dot",
+  "dot4I8Packed",
+  "dot4U8Packed",
+  "drawIndex",
+  "dynamicBufferAttribute",
+  "earcut",
+  "element",
+  "emissive",
+  "equal",
+  "equirectDirection",
+  "equirectUV",
+  "exp",
+  "exp2",
+  "exponentialHeightFogFactor",
+  "expression",
+  "faceDirection",
+  "faceForward",
+  "faceforward",
+  "flatten",
+  "float",
+  "floatBitsToInt",
+  "floatBitsToUint",
+  "floor",
+  "fog",
+  "fract",
+  "fragment",
+  "frameGroup",
+  "frameId",
+  "frontFacing",
+  "fwidth",
+  "gain",
+  "gapSize",
+  "getAlignmentFromType",
+  "getCacheKey",
+  "getConstNodeType",
+  "getCurrentStack",
+  "getDFGLUT",
+  "getDataFromObject",
+  "getDistanceAttenuation",
+  "getFormat",
+  "getGeometryRoughness",
+  "getLengthFromType",
+  "getMemoryLengthFromType",
+  "getNormalFromDepth",
+  "getParallaxCorrectNormal",
+  "getRoughness",
+  "getScreenPosition",
+  "getScreenPositionFromClip",
+  "getShIrradianceAt",
+  "getTextureIndex",
+  "getTextureType",
+  "getTypeFromLength",
+  "getTypedArrayFromType",
+  "getUnlitUniformColorSpace",
+  "getValueFromType",
+  "getValueType",
+  "getViewPosition",
+  "ggxConvolution",
+  "globalId",
+  "glsl",
+  "glslFn",
+  "grayscale",
+  "greaterThan",
+  "greaterThanEqual",
+  "hardwareClipping",
+  "hash",
+  "hashArray",
+  "hashString",
+  "highpModelNormalViewMatrix",
+  "highpModelViewMatrix",
+  "hue",
+  "increment",
+  "incrementBefore",
+  "inspect",
+  "instance",
+  "instanceColor",
+  "instanceIndex",
+  "instancedArray",
+  "instancedBufferAttribute",
+  "instancedDynamicBufferAttribute",
+  "instancedMesh",
+  "int",
+  "intBitsToFloat",
+  "interleavedGradientNoise",
+  "inverse",
+  "inverseSqrt",
+  "inversesqrt",
+  "invocationLocalIndex",
+  "invocationSubgroupIndex",
+  "ior",
+  "iridescence",
+  "iridescenceIOR",
+  "iridescenceThickness",
+  "isArrayAsParameter",
+  "isolate",
+  "ivec2",
+  "ivec3",
+  "ivec4",
+  "js",
+  "label",
+  "length",
+  "lengthSq",
+  "lessThan",
+  "lessThanEqual",
+  "lightPosition",
+  "lightProjectionUV",
+  "lightShadowMatrix",
+  "lightTargetDirection",
+  "lightTargetPosition",
+  "lightViewPosition",
+  "lightingContext",
+  "lights",
+  "linearDepth",
+  "linearToneMapping",
+  "localId",
+  "log",
+  "log2",
+  "logarithmicDepthToViewZ",
+  "luminance",
+  "mat2",
+  "mat3",
+  "mat4",
+  "matcapUV",
+  "materialAO",
+  "materialAlphaTest",
+  "materialAnisotropy",
+  "materialAnisotropyVector",
+  "materialAttenuationColor",
+  "materialAttenuationDistance",
+  "materialClearcoat",
+  "materialClearcoatNormal",
+  "materialClearcoatRoughness",
+  "materialColor",
+  "materialDiffuseRoughness",
+  "materialDispersion",
+  "materialEmissive",
+  "materialEnvIntensity",
+  "materialEnvRotation",
+  "materialIOR",
+  "materialIridescence",
+  "materialIridescenceIOR",
+  "materialIridescenceThickness",
+  "materialLightMap",
+  "materialLineDashOffset",
+  "materialLineDashSize",
+  "materialLineGapSize",
+  "materialLineScale",
+  "materialLineWidth",
+  "materialMetalness",
+  "materialNormal",
+  "materialOpacity",
+  "materialPointSize",
+  "materialReference",
+  "materialReflectivity",
+  "materialRefractionRatio",
+  "materialRetroreflectivity",
+  "materialRotation",
+  "materialRoughness",
+  "materialSheen",
+  "materialSheenRoughness",
+  "materialShininess",
+  "materialSpecular",
+  "materialSpecularColor",
+  "materialSpecularIntensity",
+  "materialSpecularStrength",
+  "materialThickness",
+  "materialTransmission",
+  "max",
+  "maxMipLevel",
+  "mediumpModelViewMatrix",
+  "mergeUniforms",
+  "metalness",
+  "min",
+  "mix",
+  "mixElement",
+  "mod",
+  "modelDirection",
+  "modelNormalMatrix",
+  "modelPosition",
+  "modelRadius",
+  "modelScale",
+  "modelViewMatrix",
+  "modelViewPosition",
+  "modelViewProjection",
+  "modelWorldMatrix",
+  "modelWorldMatrixInverse",
+  "morphReference",
+  "mrt",
+  "mul",
+  "mx_aastep",
+  "mx_add",
+  "mx_atan2",
+  "mx_bilerp",
+  "mx_bilerp_0",
+  "mx_bilerp_1",
+  "mx_bits_to_01",
+  "mx_bjfinal",
+  "mx_bjmix",
+  "mx_cell_noise_float",
+  "mx_cell_noise_float_0",
+  "mx_cell_noise_float_1",
+  "mx_cell_noise_float_2",
+  "mx_cell_noise_float_3",
+  "mx_cell_noise_vec3",
+  "mx_cell_noise_vec3_0",
+  "mx_cell_noise_vec3_1",
+  "mx_cell_noise_vec3_2",
+  "mx_cell_noise_vec3_3",
+  "mx_contrast",
+  "mx_divide",
+  "mx_fade",
+  "mx_floor",
+  "mx_floorfrac",
+  "mx_fractal_noise_float",
+  "mx_fractal_noise_float_2d",
+  "mx_fractal_noise_vec2",
+  "mx_fractal_noise_vec3",
+  "mx_fractal_noise_vec4",
+  "mx_frame",
+  "mx_gradient_float",
+  "mx_gradient_float_0",
+  "mx_gradient_float_1",
+  "mx_gradient_scale2d",
+  "mx_gradient_scale2d_0",
+  "mx_gradient_scale2d_1",
+  "mx_gradient_scale3d",
+  "mx_gradient_scale3d_0",
+  "mx_gradient_scale3d_1",
+  "mx_gradient_vec3",
+  "mx_gradient_vec3_0",
+  "mx_gradient_vec3_1",
+  "mx_hash_int",
+  "mx_hash_int_0",
+  "mx_hash_int_1",
+  "mx_hash_int_2",
+  "mx_hash_int_3",
+  "mx_hash_int_4",
+  "mx_hash_vec3",
+  "mx_hash_vec3_0",
+  "mx_hash_vec3_1",
+  "mx_heighttonormal",
+  "mx_hsvtorgb",
+  "mx_ifequal",
+  "mx_ifgreater",
+  "mx_ifgreatereq",
+  "mx_invert",
+  "mx_modulo",
+  "mx_multiply",
+  "mx_negate_if",
+  "mx_noise_float",
+  "mx_noise_vec3",
+  "mx_noise_vec4",
+  "mx_perlin_noise_float",
+  "mx_perlin_noise_float_0",
+  "mx_perlin_noise_float_1",
+  "mx_perlin_noise_vec3",
+  "mx_perlin_noise_vec3_0",
+  "mx_perlin_noise_vec3_1",
+  "mx_place2d",
+  "mx_power",
+  "mx_ramp4",
+  "mx_ramplr",
+  "mx_ramptb",
+  "mx_rgbtohsv",
+  "mx_rotate2d",
+  "mx_rotate3d",
+  "mx_rotl32",
+  "mx_safepower",
+  "mx_select",
+  "mx_separate",
+  "mx_smoothstep",
+  "mx_splitlr",
+  "mx_splittb",
+  "mx_srgb_texture_to_lin_rec709",
+  "mx_subtract",
+  "mx_timer",
+  "mx_transform_uv",
+  "mx_trilerp",
+  "mx_trilerp_0",
+  "mx_trilerp_1",
+  "mx_unifiednoise2d",
+  "mx_unifiednoise3d",
+  "mx_worley_distance",
+  "mx_worley_distance_0",
+  "mx_worley_distance_1",
+  "mx_worley_noise_float",
+  "mx_worley_noise_float_2d",
+  "mx_worley_noise_float_3d",
+  "mx_worley_noise_vec2",
+  "mx_worley_noise_vec2_0",
+  "mx_worley_noise_vec2_1",
+  "mx_worley_noise_vec3",
+  "mx_worley_noise_vec3_0",
+  "mx_worley_noise_vec3_1",
+  "mx_worley_noise_vec3_style",
+  "mx_worley_noise_vec3_style_0",
+  "mx_worley_noise_vec3_style_1",
+  "negate",
+  "negateOnBackSide",
+  "neutralToneMapping",
+  "nodeArray",
+  "nodeImmutable",
+  "nodeObject",
+  "nodeObjectIntent",
+  "nodeObjects",
+  "nodeProxy",
+  "nodeProxyConstructor",
+  "nodeProxyIntent",
+  "normalFlat",
+  "normalGeometry",
+  "normalLocal",
+  "normalMap",
+  "normalView",
+  "normalViewGeometry",
+  "normalWorld",
+  "normalWorldGeometry",
+  "normalize",
+  "not",
+  "notEqual",
+  "numWorkgroups",
+  "objectDirection",
+  "objectGroup",
+  "objectPosition",
+  "objectRadius",
+  "objectScale",
+  "objectViewPosition",
+  "objectWorldMatrix",
+  "oneMinus",
+  "or",
+  "orthographicDepthToViewZ",
+  "oscSawtooth",
+  "oscSine",
+  "oscSquare",
+  "oscTriangle",
+  "output",
+  "outputStruct",
+  "overloadingFn",
+  "overrideNode",
+  "overrideNodes",
+  "pack4xI8",
+  "pack4xI8Clamp",
+  "pack4xU8",
+  "pack4xU8Clamp",
+  "packHalf2x16",
+  "packNormalToRGB",
+  "packSnorm2x16",
+  "packSnorm4x8",
+  "packUnorm2x16",
+  "packUnorm4x8",
+  "parabola",
+  "parallaxDirection",
+  "parallaxUV",
+  "parameter",
+  "pass",
+  "passTexture",
+  "pcurve",
+  "perspectiveDepthToViewZ",
+  "pmremTexture",
+  "pointShadow",
+  "pointUV",
+  "pointWidth",
+  "positionGeometry",
+  "positionLocal",
+  "positionPrevious",
+  "positionView",
+  "positionViewDirection",
+  "positionWorld",
+  "positionWorldDirection",
+  "posterize",
+  "pow",
+  "pow2",
+  "pow3",
+  "pow4",
+  "premultiplyAlpha",
+  "property",
+  "quadBroadcast",
+  "quadSwapDiagonal",
+  "quadSwapX",
+  "quadSwapY",
+  "radians",
+  "rand",
+  "range",
+  "rangeFogFactor",
+  "reciprocal",
+  "reference",
+  "referenceBuffer",
+  "reflect",
+  "reflectVector",
+  "reflectView",
+  "reflector",
+  "refract",
+  "refractVector",
+  "refractView",
+  "reinhardToneMapping",
+  "remap",
+  "remapClamp",
+  "renderGroup",
+  "renderOutput",
+  "rendererReference",
+  "replaceDefaultUV",
+  "resetRendererAndSceneState",
+  "resetRendererState",
+  "resetSceneState",
+  "restoreRendererAndSceneState",
+  "restoreRendererState",
+  "restoreSceneState",
+  "retroreflectivity",
+  "rotate",
+  "rotateUV",
+  "roughness",
+  "round",
+  "rtt",
+  "sRGBTransferEOTF",
+  "sRGBTransferOETF",
+  "sample",
+  "sampler",
+  "samplerComparison",
+  "saturate",
+  "saturation",
+  "saveRendererAndSceneState",
+  "saveRendererState",
+  "saveSceneState",
+  "screenCoordinate",
+  "screenDPR",
+  "screenSize",
+  "screenUV",
+  "select",
+  "setCurrentStack",
+  "setName",
+  "shaderStages",
+  "shadow",
+  "shadowPositionWorld",
+  "shapeCircle",
+  "sharedUniformGroup",
+  "sheen",
+  "sheenRoughness",
+  "shiftLeft",
+  "shiftRight",
+  "shininess",
+  "sign",
+  "sin",
+  "sinc",
+  "sinh",
+  "skinning",
+  "smoothstep",
+  "smoothstepElement",
+  "specularColor",
+  "specularColorBlended",
+  "specularF90",
+  "sphericalGaussianBlur",
+  "spherizeUV",
+  "split",
+  "spritesheetUV",
+  "sqrt",
+  "stack",
+  "step",
+  "stepElement",
+  "storage",
+  "storageBarrier",
+  "storageElement",
+  "storageTexture",
+  "storageTexture3D",
+  "struct",
+  "sub",
+  "subBuild",
+  "subgroupAdd",
+  "subgroupAll",
+  "subgroupAnd",
+  "subgroupAny",
+  "subgroupBallot",
+  "subgroupBroadcast",
+  "subgroupBroadcastFirst",
+  "subgroupElect",
+  "subgroupExclusiveAdd",
+  "subgroupExclusiveMul",
+  "subgroupInclusiveAdd",
+  "subgroupInclusiveMul",
+  "subgroupIndex",
+  "subgroupMax",
+  "subgroupMin",
+  "subgroupMul",
+  "subgroupOr",
+  "subgroupShuffle",
+  "subgroupShuffleDown",
+  "subgroupShuffleUp",
+  "subgroupShuffleXor",
+  "subgroupSize",
+  "subgroupXor",
+  "submit",
+  "tan",
+  "tangentGeometry",
+  "tangentLocal",
+  "tangentView",
+  "tangentViewFrame",
+  "tangentWorld",
+  "tanh",
+  "texture",
+  "texture3D",
+  "texture3DLevel",
+  "texture3DLoad",
+  "textureBarrier",
+  "textureBicubic",
+  "textureBicubicLevel",
+  "textureCubeUV",
+  "textureLevel",
+  "textureLoad",
+  "textureSize",
+  "textureStore",
+  "thickness",
+  "time",
+  "toneMapping",
+  "toneMappingExposure",
+  "toonOutlinePass",
+  "transformDirection",
+  "transformNormal",
+  "transformNormalByInverseViewMatrix",
+  "transformNormalByViewMatrix",
+  "transformNormalToView",
+  "transmission",
+  "transpose",
+  "triNoise3D",
+  "triplanarTexture",
+  "triplanarTextures",
+  "trunc",
+  "uint",
+  "uintBitsToFloat",
+  "uniform",
+  "uniformArray",
+  "uniformCubeTexture",
+  "uniformFlow",
+  "uniformGroup",
+  "uniformTexture",
+  "unpack4xI8",
+  "unpack4xU8",
+  "unpackHalf2x16",
+  "unpackNormal",
+  "unpackRGBToNormal",
+  "unpackSnorm2x16",
+  "unpackSnorm4x8",
+  "unpackUnorm2x16",
+  "unpackUnorm4x8",
+  "unpremultiplyAlpha",
+  "userData",
+  "uv",
+  "uvec2",
+  "uvec3",
+  "uvec4",
+  "varying",
+  "varyingProperty",
+  "vec2",
+  "vec3",
+  "vec4",
+  "vectorComponents",
+  "velocity",
+  "vertex",
+  "vertexColor",
+  "vertexIndex",
+  "vertexStage",
+  "vibrance",
+  "viewZToLogarithmicDepth",
+  "viewZToOrthographicDepth",
+  "viewZToPerspectiveDepth",
+  "viewZToReversedOrthographicDepth",
+  "viewZToReversedPerspectiveDepth",
+  "viewport",
+  "viewportCoordinate",
+  "viewportDepthTexture",
+  "viewportLinearDepth",
+  "viewportMipTexture",
+  "viewportOpaqueMipTexture",
+  "viewportSafeUV",
+  "viewportSharedTexture",
+  "viewportSize",
+  "viewportTexture",
+  "viewportUV",
+  "vogelDiskSample",
+  "wgsl",
+  "wgslFn",
+  "workgroupArray",
+  "workgroupBarrier",
+  "workgroupId",
+  "workingToColorSpace",
+  "xor"
+ ],
+ "source_files": 754,
+ "corpus_chars": 12300676
+}

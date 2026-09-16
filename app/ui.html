@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FahadPrimeX — Playground</title>
+<style>
+  :root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2128;--border:#30363d;
+    --fg:#e6edf3;--dim:#8b949e;--accent:#2f81f7;--ok:#3fb950;--warn:#d29922;
+    --bad:#f85149;--code:#0a0e14;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:"Segoe UI",Tahoma,system-ui,sans-serif;font-size:14px;}
+  header{background:var(--panel);border-bottom:1px solid var(--border);
+    padding:10px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  header h1{margin:0;font-size:17px;font-weight:600;}
+  header h1 span{color:var(--accent);}
+  .pill{padding:3px 9px;border-radius:20px;font-size:11.5px;
+    border:1px solid var(--border);background:var(--panel2);}
+  .pill.ready{color:var(--ok);border-color:#238636;}
+  .pill.loading{color:var(--warn);border-color:#9e6a03;}
+  .pill.error{color:var(--bad);border-color:#da3633;}
+  .pill.clean{color:var(--ok);border-color:#238636;}
+  .pill.suspicious{color:var(--warn);border-color:#9e6a03;}
+  .pill.hallucinated{color:var(--bad);border-color:#da3633;}
+  main{display:grid;grid-template-columns:400px 1fr;gap:12px;padding:12px;
+    height:calc(100vh - 54px);}
+  .col{display:flex;flex-direction:column;gap:10px;min-height:0;}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;
+    padding:11px;display:flex;flex-direction:column;min-height:0;}
+  .card h2{margin:0 0 8px;font-size:11.5px;color:var(--dim);font-weight:600;
+    text-transform:uppercase;letter-spacing:.04em;}
+  textarea{width:100%;min-height:84px;resize:vertical;background:var(--bg);
+    color:var(--fg);border:1px solid var(--border);border-radius:6px;padding:9px;
+    font-family:inherit;font-size:13px;line-height:1.55;}
+  textarea:focus{outline:none;border-color:var(--accent);}
+  .presets,.quick{display:flex;flex-wrap:wrap;gap:5px;}
+  .presets{margin-bottom:8px;}
+  .presets button,.quick button{background:var(--panel2);color:var(--fg);
+    border:1px solid var(--border);border-radius:6px;padding:4px 9px;
+    cursor:pointer;font-size:11.5px;font-family:inherit;}
+  .presets button:hover,.quick button:hover{border-color:var(--accent);
+    color:var(--accent);}
+  .quick{margin-top:5px;}
+  .row{display:flex;align-items:center;gap:8px;margin-top:6px;}
+  .row label{flex:0 0 126px;color:var(--dim);font-size:11.5px;}
+  .row input[type=range]{flex:1;accent-color:var(--accent);min-width:50px;}
+  .row input[type=number]{flex:0 0 84px;background:var(--bg);color:var(--fg);
+    border:1px solid var(--border);border-radius:5px;padding:3px 5px;
+    font-family:inherit;font-size:11.5px;text-align:center;}
+  .row output{flex:0 0 44px;text-align:left;font-size:11.5px;}
+  .note{margin-top:7px;font-size:11px;line-height:1.6;color:var(--dim);}
+  .note b{color:var(--warn);}
+  .note .est{color:var(--accent);font-weight:600;}
+  .actions{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+  button.primary{background:var(--accent);color:#fff;border:none;border-radius:6px;
+    padding:8px 16px;cursor:pointer;font-weight:600;font-family:inherit;font-size:13px;}
+  button.primary:disabled{opacity:.45;cursor:not-allowed;}
+  button.ghost{background:transparent;color:var(--fg);border:1px solid var(--border);
+    border-radius:6px;padding:8px 12px;cursor:pointer;font-family:inherit;font-size:12.5px;}
+  button.ghost:hover:not(:disabled){border-color:var(--accent);}
+  button.ghost:disabled{opacity:.4;cursor:not-allowed;}
+  .tabs{display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap;align-items:center;}
+  .tabs button{background:transparent;color:var(--dim);border:1px solid transparent;
+    border-radius:6px;padding:4px 11px;cursor:pointer;font-family:inherit;font-size:12.5px;}
+  .tabs button.active{background:var(--panel2);color:var(--fg);
+    border-color:var(--border);}
+  .tabs .spacer{flex:1;}
+  .pane{flex:1;min-height:0;display:none;flex-direction:column;}
+  .pane.active{display:flex;}
+  #chat{flex:1;overflow:auto;padding-left:4px;}
+  .seg-prose{white-space:pre-wrap;word-break:break-word;font-size:13px;
+    line-height:1.75;margin:0 0 10px;color:var(--fg);}
+  .seg-prose code{background:var(--panel2);padding:1px 5px;border-radius:3px;
+    font-family:Consolas,monospace;font-size:12px;color:#79c0ff;}
+  .seg-prose b{color:#fff;}
+  .codeblock{border:1px solid var(--border);border-radius:7px;overflow:hidden;
+    margin:0 0 10px;background:var(--code);}
+  .codehead{display:flex;align-items:center;gap:8px;padding:5px 9px;
+    background:var(--panel2);border-bottom:1px solid var(--border);font-size:11.5px;}
+  .lang{color:var(--accent);font-weight:600;font-family:Consolas,monospace;}
+  .fname{color:var(--dim);font-family:Consolas,monospace;}
+  .codehead .spacer{flex:1;}
+  .copybtn{background:transparent;color:var(--dim);border:1px solid var(--border);
+    border-radius:4px;padding:2px 8px;cursor:pointer;font-size:11px;font-family:inherit;}
+  .copybtn:hover{color:var(--accent);border-color:var(--accent);}
+  .copybtn.done{color:var(--ok);border-color:#238636;}
+  .codeblock pre{margin:0;padding:10px;overflow:auto;max-height:52vh;
+    font-family:Consolas,"Cascadia Mono",monospace;font-size:12px;line-height:1.55;
+    white-space:pre;color:#c9d1d9;}
+  #files{flex:1;overflow:auto;}
+  .filecard{border:1px solid var(--border);border-radius:7px;overflow:hidden;
+    margin-bottom:10px;background:var(--code);}
+  .filecard pre{margin:0;padding:10px;overflow:auto;max-height:60vh;
+    font-family:Consolas,monospace;font-size:12px;line-height:1.55;white-space:pre;
+    color:#c9d1d9;}
+  iframe#preview{flex:1;width:100%;border:1px solid var(--border);border-radius:6px;
+    background:#fff;}
+  .stats{display:flex;gap:12px;margin-top:6px;color:var(--dim);font-size:11px;
+    flex-wrap:wrap;align-items:center;}
+  .bar{flex:1;min-width:70px;height:5px;background:var(--panel2);border-radius:3px;
+    overflow:hidden;border:1px solid var(--border);}
+  .bar>i{display:block;height:100%;width:0%;background:var(--accent);}
+  .checks{margin-top:6px;border-radius:6px;padding:7px 9px;font-size:11.5px;
+    line-height:1.65;border:1px solid var(--border);background:var(--panel2);
+    max-height:120px;overflow:auto;display:none;}
+  .checks.bad{border-color:#da3633;} .checks.warn{border-color:#9e6a03;}
+  .checks.ok{border-color:#238636;color:var(--ok);}
+  .checks code{background:var(--bg);padding:1px 4px;border-radius:3px;
+    color:var(--bad);font-family:Consolas,monospace;}
+  .empty{color:var(--dim);text-align:center;padding:34px 10px;font-size:12.5px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>FahadPrimeX <span>· Three.js</span></h1>
+  <span class="pill" id="statusPill">Checking…</span>
+  <span class="pill" id="paramPill">—</span>
+  <span class="pill" id="ctxPill">—</span>
+  <span class="pill" id="speedPill">—</span>
+  <span class="pill" id="checkPill">API check: —</span>
+</header>
+
+<main>
+  <div class="col">
+    <div class="card">
+      <h2>Task</h2>
+      <div class="presets">
+        <button data-p="Write a complete, self-contained Three.js example that demonstrates instanced mesh rendering with shadows.">Generate: instancing + shadows</button>
+        <button data-p="Analyse this Three.js code and tell me which features it uses.&#10;&#10;const renderer = new THREE.WebGLRenderer({ antialias: true });&#10;renderer.shadowMap.enabled = true;&#10;renderer.setAnimationLoop(animate);&#10;const controls = new OrbitControls(camera, renderer.domElement);&#10;const loader = new GLTFLoader();&#10;const composer = new EffectComposer(renderer);">Analyze code</button>
+        <button data-p="How do I dispose of Three.js resources so I do not leak GPU memory?">Ask: memory leaks</button>
+        <button data-p="What is the correct render loop for a Three.js application?">Ask: render loop</button>
+        <button data-p="How do I use environment maps and image-based lighting in Three.js?">Ask: environment lighting</button>
+      </div>
+      <textarea id="prompt" placeholder="Type your prompt here…"></textarea>
+    </div>
+
+    <div class="card">
+      <h2>Generation budget</h2>
+      <div class="row">
+        <label for="maxTokens">Max tokens</label>
+        <input type="range" id="maxTokens" min="64" max="8192" step="64" value="8192">
+        <input type="number" id="maxTokensNum" min="1" max="131072" value="8192">
+      </div>
+      <div class="quick">
+        <button data-t="512">512</button><button data-t="2048">2,048</button>
+        <button data-t="8192">8,192</button><button data-t="32768">32,768</button>
+        <button data-t="131072">Max</button>
+      </div>
+      <div class="row"><label for="temperature">Temperature</label>
+        <input type="range" id="temperature" min="0" max="1.2" step="0.05" value="0.7">
+        <output id="temperatureOut">0.70</output></div>
+      <div class="row"><label for="repetition">Repetition penalty</label>
+        <input type="range" id="repetition" min="1" max="1.4" step="0.01" value="1.15">
+        <output id="repetitionOut">1.15</output></div>
+      <div class="row"><label for="ngram">N-gram repeat block</label>
+        <input type="range" id="ngram" min="0" max="10" step="1" value="6">
+        <output id="ngramOut">6</output></div>
+      <div class="note" id="estimate"></div>
+    </div>
+
+    <div class="card">
+      <h2>Controls</h2>
+      <div class="actions">
+        <button class="primary" id="run">Run</button>
+        <button class="ghost" id="cont" disabled>Continue</button>
+        <button class="ghost" id="stop" disabled>Stop</button>
+        <button class="ghost" id="clear">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card" style="flex:1">
+      <div class="tabs">
+        <button class="active" data-view="chat">Chat</button>
+        <button data-view="files" id="filesTab">Files (0)</button>
+        <button data-view="preview">3D preview</button>
+        <span class="spacer"></span>
+        <button class="ghost" id="copyAll" style="padding:4px 10px;font-size:11.5px;">Copy all code</button>
+      </div>
+      <div class="pane active" id="pane-chat"><div id="chat"></div></div>
+      <div class="pane" id="pane-files"><div id="files"></div></div>
+      <div class="pane" id="pane-preview">
+        <iframe id="preview" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+      <div class="stats">
+        <span id="statChars">0 chars</span><span id="statTime">0 s</span>
+        <span id="statRate">—</span><span id="statCtx">Context: —</span>
+        <span id="statFiles">Files: 0</span>
+        <span class="bar"><i id="ctxBar"></i></span>
+      </div>
+      <div class="checks" id="checks"></div>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var BT = String.fromCharCode(96);
+  var FENCE = BT + BT + BT;
+
+  var chatEl = $("chat"), filesEl = $("files"), preview = $("preview");
+  var running = false, source = null, accumulated = "";
+  var contextLimit = 131072, lastRate = 2.5, hasHistory = false;
+  var SESSION = "s" + Math.random().toString(36).slice(2, 10);
+  var lastFiles = [];
+
+  function setStatus(t, c) {
+    $("statusPill").textContent = t;
+    $("statusPill").className = "pill" + (c ? " " + c : "");
+  }
+  function fmt(n) { return Number(n).toLocaleString("en-US"); }
+  function human(s) {
+    if (s < 90) return Math.round(s) + " seconds";
+    if (s < 5400) return (s / 60).toFixed(1) + " minutes";
+    return (s / 3600).toFixed(1) + " hours";
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Splitting the model output into conversation and code.
+   *
+   * The model emits three different shapes and all three occur in practice:
+   *   1. prose with fenced blocks   (fence, lang, body, fence)
+   *   2. one complete HTML document (doctype through </html>)
+   *   3. a bare code excerpt with no fences at all
+   *
+   * Case 2 is split further into html / css / js, because the <style> and
+   * <script type="module"> bodies are the parts a developer actually copies,
+   * and having them interleaved with markup helps nobody.
+   * ------------------------------------------------------------------ */
+
+  function detectLang(text) {
+    var head = text.slice(0, 400).toLowerCase();
+    if (head.indexOf("<!doctype") >= 0 || head.indexOf("<html") >= 0) return "html";
+    if (/^\s*[.#@][\w-]+\s*\{/m.test(text) || head.indexOf("@media") >= 0) return "css";
+    if (head.indexOf("import ") >= 0 || head.indexOf("const ") >= 0 ||
+        head.indexOf("function ") >= 0 || head.indexOf("=>") >= 0) return "js";
+    return "text";
+  }
+
+  var LANG_EXT = { html: "html", css: "css", js: "js", javascript: "js",
+                   json: "json", text: "txt", glsl: "glsl", bash: "sh" };
+  var BASE_NAME = { html: "index", css: "style", js: "main", json: "data",
+                    text: "output", glsl: "shader", bash: "script" };
+
+  function nameFiles(files) {
+    var counts = {};
+    files.forEach(function (f) {
+      counts[f.lang] = (counts[f.lang] || 0) + 1;
+    });
+    var seen = {};
+    files.forEach(function (f) {
+      var base = BASE_NAME[f.lang] || "file";
+      var ext = LANG_EXT[f.lang] || "txt";
+      if (counts[f.lang] === 1) {
+        f.name = base + "." + ext;
+      } else {
+        seen[f.lang] = (seen[f.lang] || 0) + 1;
+        f.name = base + "-" + seen[f.lang] + "." + ext;
+      }
+    });
+    return files;
+  }
+
+  // Pull <style> and non-importmap <script> bodies out of an HTML document.
+  function splitHtmlDocument(text) {
+    var cssParts = [], jsParts = [];
+    var rest = text.replace(/<style[^>]*>([\s\S]*?)<\/style>/gi,
+      function (m, body) { if (body.trim()) cssParts.push(body.trim()); return ""; });
+
+    // Keep the import map inside the HTML: it belongs to the document, and
+    // moving it out would break the page when someone copies the file alone.
+    rest = rest.replace(/<script([^>]*)>([\s\S]*?)<\/script>/gi,
+      function (m, attrs, body) {
+        if (/importmap/i.test(attrs)) return m;
+        if (body.trim()) jsParts.push(body.trim());
+        return "";
+      });
+
+    rest = rest.replace(/\n{3,}/g, "\n\n").trim();
+
+    var files = [];
+    if (rest) files.push({ lang: "html", content: rest });
+    if (cssParts.length) files.push({ lang: "css", content: cssParts.join("\n\n") });
+    if (jsParts.length) files.push({ lang: "js", content: jsParts.join("\n\n") });
+    return files.length ? files : [{ lang: "html", content: text }];
+  }
+
+  function parseOutput(text) {
+    var segments = [], files = [];
+    if (!text) return { segments: segments, files: files };
+
+    // Case 2 first: a whole document wins over fence scanning, because an
+    // unclosed document (the model ran out of budget) has no closing fence.
+    // The document must START the output. Searching the first 300 characters
+    // for a doctype also matched one sitting INSIDE a fenced block, so an answer
+    // shaped "prose, then a fenced html block, then a fenced css block" was
+    // swallowed whole as a single document and the later blocks vanished.
+    var trimmed = text.replace(/^[s﻿]+/, "");
+    var lead = trimmed.slice(0, 60).toLowerCase();
+    if (lead.indexOf("<!doctype") === 0 || lead.indexOf("<html") === 0) {
+      var parts = splitHtmlDocument(trimmed);
+      segments.push({ type: "code", lang: "html", content: trimmed, group: 0 });
+      parts.forEach(function (p) { files.push(p); });
+      nameFiles(files);
+      return { segments: segments, files: files };
+    }
+
+    // Case 1: fenced blocks.
+    var index = 0, prose = "";
+    while (index < text.length) {
+      var open = text.indexOf(FENCE, index);
+      if (open < 0) { prose += text.slice(index); break; }
+      prose += text.slice(index, open);
+      var lineEnd = text.indexOf("\n", open);
+      if (lineEnd < 0) { prose += text.slice(open); break; }
+      var lang = text.slice(open + 3, lineEnd).trim().toLowerCase() || "text";
+      var close = text.indexOf(FENCE, lineEnd);
+      if (close < 0) {
+        // Unterminated fence: the model was cut off. Treat the remainder as
+        // code rather than prose so it is still copyable.
+        if (prose.trim()) segments.push({ type: "prose", content: prose.trim() });
+        files.push({ lang: lang, content: text.slice(lineEnd + 1) });
+        nameFiles(files);
+        segments.push({ type: "code", lang: lang,
+                        content: text.slice(lineEnd + 1), group: files.length - 1 });
+        return { segments: segments, files: files };
+      }
+      if (prose.trim()) segments.push({ type: "prose", content: prose.trim() });
+      prose = "";
+      var body = text.slice(lineEnd + 1, close);
+      if (lang === "html" && /<!doctype|<html/i.test(body.slice(0, 300))) {
+        var sub = splitHtmlDocument(body);
+        sub.forEach(function (p) { files.push(p); });
+        nameFiles(files);
+        segments.push({ type: "code", lang: "html", content: body,
+                        group: files.length - sub.length });
+      } else {
+        files.push({ lang: lang, content: body });
+        nameFiles(files);
+        segments.push({ type: "code", lang: lang, content: body,
+                        group: files.length - 1 });
+      }
+      index = close + 3;
+      var nl = text.indexOf("\n", index);
+      index = nl < 0 ? text.length : nl + 1;
+    }
+    if (prose.trim()) segments.push({ type: "prose", content: prose.trim() });
+
+    // Case 3: no fences and no document, but the text is clearly code.
+    // Guarded on segments, not on files: the fence loop already pushed the whole
+    // text as prose when it found no fence, and running this fallback on top of
+    // that duplicated every plain answer.
+    if (files.length === 0 && segments.length === 0) {
+      var looksCode = /(^|\n)\s*(const|let|var|function|class|import|def)\s/.test(text)
+        || /\{[\s\S]*\}/.test(text);
+      if (looksCode && text.length > 120) {
+        files.push({ lang: detectLang(text), content: text });
+        nameFiles(files);
+        segments.push({ type: "code", lang: files[0].lang, content: text, group: 0 });
+      } else {
+        segments.push({ type: "prose", content: text });
+      }
+    }
+    return { segments: segments, files: files };
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  // Minimal markdown for prose: bold and inline code. Deliberately not a full
+  // markdown renderer - anything the model writes that is not code should be
+  // readable as-is, and over-rendering hides mistakes.
+  function renderProse(text) {
+    var html = escapeHtml(text);
+    html = html.replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>");
+    var inline = new RegExp(BT + "([^" + BT + "]+)" + BT, "g");
+    html = html.replace(inline, "<code>$1</code>");
+    return html;
+  }
+
+  function copyText(text, button) {
+    var done = function () {
+      var original = button.textContent;
+      button.textContent = "Copied ✓";
+      button.className = "copybtn done";
+      setTimeout(function () {
+        button.textContent = original;
+        button.className = "copybtn";
+      }, 1400);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () {
+        fallbackCopy(text, done);
+      });
+    } else {
+      fallbackCopy(text, done);
+    }
+  }
+
+  function fallbackCopy(text, done) {
+    // navigator.clipboard needs a secure context; this page is served over
+    // plain http on localhost, so the textarea path is still the reliable one.
+    var area = document.createElement("textarea");
+    area.value = text;
+    area.style.position = "fixed";
+    area.style.opacity = "0";
+    document.body.appendChild(area);
+    area.select();
+    try { document.execCommand("copy"); done(); } catch (e) { /* ignore */ }
+    document.body.removeChild(area);
+  }
+
+  function copyAllCode() {
+    if (!lastFiles.length) { return; }
+    var text;
+    if (lastFiles.length === 1) {
+      text = lastFiles[0].content;
+    } else {
+      text = lastFiles.map(function (f) {
+        var marker = "// ===== " + f.name + " =====";
+        if (f.lang === "css") marker = "/* ===== " + f.name + " ===== */";
+        if (f.lang === "html") marker = "<!-- ===== " + f.name + " ===== -->";
+        return marker + "\n" + f.content;
+      }).join("\n\n");
+    }
+    copyText(text, $("copyAll"));
+  }
+
+  function renderOutput() {
+    var parsed = parseOutput(accumulated);
+    lastFiles = parsed.files;
+
+    // --- conversation view -------------------------------------------------
+    var html = "";
+    parsed.segments.forEach(function (seg) {
+      if (seg.type === "prose") {
+        html += "<div class='seg-prose'>" + renderProse(seg.content) + "</div>";
+      } else {
+        var file = parsed.files[seg.group] || { name: "" };
+        html += "<div class='codeblock'><div class='codehead'>" +
+          "<span class='lang'>" + seg.lang + "</span>" +
+          "<span class='fname'>" + file.name + "</span>" +
+          "<span class='spacer'></span>" +
+          "<button class='copybtn' data-copy='" + seg.group + "'>Copy</button>" +
+          "</div><pre>" + escapeHtml(seg.content) + "</pre></div>";
+      }
+    });
+    if (!html) { html = "<div class='empty'>No output yet.</div>"; }
+    chatEl.innerHTML = html;
+    chatEl.scrollTop = chatEl.scrollHeight;
+
+    Array.prototype.forEach.call(chatEl.querySelectorAll("[data-copy]"), function (b) {
+      b.addEventListener("click", function () {
+        copyText(parsed.files[Number(b.dataset.copy)].content, b);
+      });
+    });
+
+    // --- files view --------------------------------------------------------
+    var fh = "";
+    if (!parsed.files.length) {
+      fh = "<div class='empty'>No code detected in the output yet.</div>";
+    } else {
+      parsed.files.forEach(function (f, i) {
+        fh += "<div class='filecard'><div class='codehead'>" +
+          "<span class='lang'>" + f.lang + "</span>" +
+          "<span class='fname'>" + f.name + "</span>" +
+          "<span class='spacer'></span>" +
+          "<span class='fname'>" + fmt(f.content.length) + " chars</span>" +
+          "<button class='copybtn' data-file='" + i + "'>Copy file</button>" +
+          "</div><pre>" + escapeHtml(f.content) + "</pre></div>";
+      });
+    }
+    filesEl.innerHTML = fh;
+    Array.prototype.forEach.call(filesEl.querySelectorAll("[data-file]"), function (b) {
+      b.addEventListener("click", function () {
+        copyText(parsed.files[Number(b.dataset.file)].content, b);
+      });
+    });
+
+    $("filesTab").textContent = "Files (" + parsed.files.length + ")";
+    $("statFiles").textContent = "Files: " + parsed.files.length;
+
+    var doc = parsed.files.filter(function (f) { return f.lang === "html"; })[0];
+    if (doc) {
+      preview.srcdoc = doc.content;
+    } else if (/<!doctype|<html/i.test(accumulated.slice(0, 300))) {
+      preview.srcdoc = accumulated;
+    }
+  }
+
+  function renderValidation(v) {
+    var pill = $("checkPill"), box = $("checks");
+    if (!v || v.verdict === "unavailable") {
+      pill.textContent = "API check: unavailable";
+      pill.className = "pill";
+      box.style.display = "none";
+      return;
+    }
+    var labels = { clean: "clean", suspicious: "suspicious", hallucinated: "hallucinated",
+                   error: "error" };
+    pill.textContent = "API check: " + (labels[v.verdict] || v.verdict) +
+                       " (" + v.findings + ")";
+    pill.className = "pill " + v.verdict;
+
+    var unknown = []
+      .concat((v.unknown_three_members || []).map(function (x) { return "THREE." + x; }))
+      .concat(v.unknown_methods || [])
+      .concat(v.unknown_constants || []);
+
+    box.style.display = "block";
+    if (!unknown.length) {
+      box.className = "checks ok";
+      box.textContent = "No identifiers missing from three.js were found. (" +
+        (v.method_calls_checked || 0) + " calls checked)";
+    } else {
+      box.className = "checks " + (v.verdict === "suspicious" ? "warn" : "bad");
+      var html = "<b>Identifiers that do not exist in three.js:</b><br>";
+      unknown.slice(0, 14).forEach(function (n) {
+        html += "<code>" + escapeHtml(n) + "</code> ";
+      });
+      if (unknown.length > 14) { html += "<br>... and " + (unknown.length - 14) + " more"; }
+      box.innerHTML = html;
+    }
+  }
+
+  /* ---------------------------------------------------------------- UI --- */
+  function updateEstimate() {
+    var n = parseInt($("maxTokensNum").value, 10) || 512;
+    $("estimate").innerHTML =
+      "Budget: <b>" + fmt(n) + "</b> tokens ≈ <span class='est'>" +
+      human(n / lastRate) + "</span> at this machine's speed (~" +
+      lastRate.toFixed(1) + " tok/s).<br>Model ceiling: " + fmt(contextLimit) + " tokens.";
+  }
+
+  function refreshStatus() {
+    fetch("/api/status").then(function (r) { return r.json(); }).then(function (d) {
+      if (d.context_limit) contextLimit = d.context_limit;
+      if (d.status === "ready") {
+        setStatus("Model ready", "ready");
+        $("paramPill").textContent = fmt(d.parameters) + " parameters";
+        $("ctxPill").textContent = "Context " + fmt(contextLimit);
+      } else if (d.status === "loading") {
+        setStatus("Loading: " + d.message, "loading");
+        setTimeout(refreshStatus, 2500);
+      } else { setStatus("Loads on first run", ""); }
+      updateEstimate();
+    }).catch(function () { setStatus("Server unavailable", "error"); });
+  }
+
+  function linkSlider(sid, nid, digits, onChange) {
+    var s = $(sid), n = nid ? $(nid) : null, out = $(sid + "Out");
+    function sync(from) {
+      if (from === "num" && n) s.value = Math.min(s.max, Math.max(s.min, parseInt(n.value, 10) || 0));
+      if (from === "slider" && n) n.value = s.value;
+      if (out) out.textContent = digits ? Number(s.value).toFixed(digits) : s.value;
+      if (onChange) onChange();
+    }
+    s.addEventListener("input", function () { sync("slider"); });
+    if (n) n.addEventListener("input", function () { sync("num"); });
+    sync("slider");
+  }
+  linkSlider("maxTokens", "maxTokensNum", 0, updateEstimate);
+  linkSlider("temperature", null, 2, null);
+  linkSlider("repetition", null, 2, null);
+  linkSlider("ngram", null, 0, null);
+
+  Array.prototype.forEach.call(document.querySelectorAll(".quick button"), function (b) {
+    b.addEventListener("click", function () {
+      $("maxTokensNum").value = b.dataset.t;
+      $("maxTokens").value = Math.min(parseInt($("maxTokens").max, 10),
+                                      parseInt(b.dataset.t, 10));
+      updateEstimate();
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".presets button"), function (b) {
+    b.addEventListener("click", function () { $("prompt").value = b.dataset.p; });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".tabs button[data-view]"), function (b) {
+    b.addEventListener("click", function () {
+      Array.prototype.forEach.call(document.querySelectorAll(".tabs button[data-view]"), function (x) {
+        x.classList.toggle("active", x === b);
+      });
+      Array.prototype.forEach.call(document.querySelectorAll(".pane"), function (p) {
+        p.classList.remove("active");
+      });
+      $("pane-" + b.dataset.view).classList.add("active");
+    });
+  });
+
+  function setRunning(on) {
+    running = on;
+    $("run").disabled = on;
+    $("stop").disabled = !on;
+    $("cont").disabled = on || !hasHistory;
+  }
+  function stop() {
+    if (source) { source.close(); source = null; }
+    setRunning(false);
+  }
+
+  function start(continueMode) {
+    var prompt = $("prompt").value.trim();
+    if (!continueMode && !prompt) { $("prompt").focus(); return; }
+    if (continueMode && !hasHistory) return;
+    if (!continueMode) { accumulated = ""; chatEl.innerHTML = ""; filesEl.innerHTML = "";
+      preview.srcdoc = ""; hasHistory = false; }
+
+    var charsAtStart = accumulated.length, t0 = Date.now();
+    setRunning(true);
+
+    var p = new URLSearchParams({
+      session: SESSION, max_tokens: $("maxTokensNum").value,
+      temperature: $("temperature").value,
+      repetition_penalty: $("repetition").value,
+      no_repeat_ngram: $("ngram").value
+    });
+    if (continueMode) { p.set("continue", "1"); p.set("prompt", ""); }
+    else { p.set("prompt", prompt); }
+
+    source = new EventSource("/api/generate?" + p.toString());
+    source.onmessage = function (ev) {
+      var d = JSON.parse(ev.data);
+      if (d.type === "token") {
+        accumulated += d.text;
+        renderOutput();
+        var producedHere = accumulated.length - charsAtStart;
+        var secs = (Date.now() - t0) / 1000;
+        if (producedHere > 40 && secs > 4) lastRate = Math.max(0.2, producedHere / secs / 4);
+        $("statChars").textContent = fmt(accumulated.length) + " chars";
+        $("statTime").textContent = secs.toFixed(0) + " s";
+        $("statRate").textContent = d.chars_per_second + " chars/s";
+        $("speedPill").textContent = d.chars_per_second + " chars/s";
+        hasHistory = true; $("cont").disabled = false;
+      } else if (d.type === "done") {
+        hasHistory = true;
+        renderValidation(d.validation);
+        if (d.context_used) {
+          $("statCtx").textContent = "Context: " + fmt(d.context_used) + " / " + fmt(d.context_limit);
+          $("ctxBar").style.width = Math.min(100, (d.context_used / d.context_limit) * 100) + "%";
+        }
+        if (d.stalled) setStatus("Generation stalled — check the log", "error");
+        else if (d.truncated) setStatus("Near context ceiling", "loading");
+        else setStatus("Generation done", "ready");
+        renderOutput();
+        setRunning(false);
+      } else if (d.type === "error") {
+        chatEl.innerHTML += "<div class='seg-prose' style='color:var(--bad)'>[Error] " +
+          escapeHtml(d.message) + "</div>";
+        setStatus("Generation error", "error");
+        setRunning(false);
+      }
+    };
+    source.onerror = function () {
+      if (running) setStatus("Connection lost", "error");
+      setRunning(false);
+    };
+  }
+
+  $("run").addEventListener("click", function () { start(false); });
+  $("cont").addEventListener("click", function () { start(true); });
+  $("stop").addEventListener("click", stop);
+  $("copyAll").addEventListener("click", copyAllCode);
+  $("clear").addEventListener("click", function () {
+    fetch("/api/reset?session=" + SESSION);
+    accumulated = ""; chatEl.innerHTML = ""; filesEl.innerHTML = "";
+    preview.srcdoc = ""; hasHistory = false; lastFiles = [];
+    $("cont").disabled = true;
+    $("statChars").textContent = "0 chars"; $("statTime").textContent = "0 s";
+    $("statRate").textContent = "—"; $("statCtx").textContent = "Context: —";
+    $("statFiles").textContent = "Files: 0";
+    $("filesTab").textContent = "Files (0)";
+    $("ctxBar").style.width = "0%";
+    $("checks").style.display = "none";
+    $("checkPill").textContent = "API check: —";
+    $("checkPill").className = "pill";
+  });
+  $("prompt").addEventListener("keydown", function (e) {
+    if (e.ctrlKey && e.key === "Enter") start(false);
+  });
+
+  refreshStatus();
+}());
+</script>
+</body>
+</html>
